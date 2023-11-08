@@ -1,0 +1,31 @@
+.map-container {
+    position: relative;
+    width: 800px; /* Adjust as needed */
+    height: 400px; /* Adjust as needed */
+    background-image: url('world-map.jpg'); /* Replace with your map image */
+    background-size: cover;
+  }
+  .coordinate {
+    position: absolute;
+    background-color: transparent; /* Invisible overlay */
+    cursor: pointer;
+  }
+  .info-box {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    width: 200px; /* Adjust as needed */
+    z-index: 100;
+    transition: all 0.3s ease-in-out;
+  }
+  .info-box-img {
+    width: 100%; /* Image will fill the container */
+    height: auto;
+    border-radius: 8px 8px 0 0; /* Rounded top corners */
+  }
+  .info-box-content {
+    padding: 5px;
+  }
