@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Festivals of the World</title>
+<style>
+  .map-container {
+    position: relative;
+    width: 800px; /* Adjust as needed */
+    height: 400px; /* Adjust as needed */
+    background-image: url('world_map.png'); /* Replace with your map image */
+    background-size: cover;
+  }
+  .coordinate {
+    position: absolute;
+    background-color: transparent; /* Invisible overlay */
+    cursor: pointer;
+  }
+  .info-box {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #000;
+    padding: 10px;
+    z-index: 100;
+  }
+</style>
+</head>
+<body>
+
+<div class="map-container">
+  <!-- Example: Overlay for India (Diwali Festival) -->
+  <div class="coordinate" style="top: 100px; left: 200px; width: 50px; height: 50px;"
+       onmouseenter="showInfo('diwali-info')" onmouseleave="hideInfo('diwali-info')">
+    <!-- Info box for Diwali -->
+    <div id="diwali-info" class="info-box">
+      <strong>Diwali</strong>
+      <p>The festival of lights celebrated across India.</p>
+    </div>
+  </div>
+
+  <!-- Add more .coordinate divs for different countries and festivals -->
+</div>
+
+<script>
+function showInfo(id) {
+  document.getElementById(id).style.display = 'block';
+}
+
+function hideInfo(id) {
+  document.getElementById(id).style.display = 'none';
+}
+</script>
+
+</body>
+</html>
