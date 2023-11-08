@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Festivals of the World</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="map-container">
+  <!-- Overlay for India (Diwali Festival) -->
+  <div class="coordinate" style="top: 100px; left: 200px; width: 50px; height: 50px;"
+       onmouseenter="showInfo('diwali-info')" onmouseleave="hideInfo('diwali-info')">
+    <!-- Info box for Diwali -->
+    <div id="diwali-info" class="info-box">
+      <img src="diwali-thumbnail.png" alt="Diwali" class="info-box-img"> <
+      <div class="info-box-content">
+        <strong>Diwali</strong>
+        <p>The festival of lights celebrated across India.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function showInfo(id) {
+  document.getElementById(id).style.display = 'block';
+}
+
+function hideInfo(id) {
+  document.getElementById(id).style.display = 'none';
+}
+</script>
+
+</body>
+</html>
