@@ -57,20 +57,20 @@ body {
     text-align: center;
 }
 
+:root {
+    --bg-colour: #c5b6b6;
+    --text-colour: #292525;
+    --left-colour:#aaa;
+    --middle-colour:#bbb;
+    --right-colour:#ccc;
+}
+
 .dark-mode {
     --bg-colour: #292525;
     --text-colour: #c5b6b6;
     --left-colour:#333;
     --middle-colour:#555;
     --right-colour:#777;
-}
-
-.light-mode {
-    --bg-colour: #c5b6b6;
-    --text-colour: #292525;
-    --left-colour:#aaa;
-    --middle-colour:#bbb;
-    --right-colour:#ccc;
 }
 
 /* Responsive layout - stacks the columns on top of each other */
