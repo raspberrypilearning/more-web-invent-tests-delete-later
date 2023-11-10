@@ -141,11 +141,11 @@
                 // If the element observed by the observer is visible
                 if (entry.isIntersecting) {
                     // Add the animation class
-                    square.classList.add('animated');
+                    animate.classList.add('animated');
                     return; // if we added the class, exit the function
                 }
                 // We're not intersecting, so remove the class!
-                square.classList.remove('animated');
+                animate.classList.remove('animated');
             });
         });
 
