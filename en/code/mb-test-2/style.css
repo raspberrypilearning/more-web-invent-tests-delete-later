@@ -10,10 +10,6 @@ body {
     flex-direction: column;
 }
 
-.page {
-    
-}
-
 main {
     height: 100%;
     display: flex;
@@ -89,7 +85,6 @@ nav {
 }
 
 .user {
-    display: flex;
     gap: 10px;
     padding-right: 5px;
     color: #141414;
