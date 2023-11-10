@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- Title shown in web browsers-->
+    <title>Memory Game</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+     
+  <div class="card" onclick="flipCard(this)"></div>
+
+    <script>
+      let flippedCards = [];
+
+      function flipCard(card) {
+        // Flip the card by changing its background color
+        card.backgroundColor = "blue";
+
+        // Add the flipped card to the array
+        flippedCards.push(card);
+
+        //Check if two cards are flipped and matched
+        if (flippedCards.length === 2) {
+          if (flippedCards[0].style.backgroundColor === flippedCards[i].style.backgroundColor) {
+              alert("Congratulations! You found a pair");
+          } else {
+            // Flip the cards back if they don't match
+            setTimeout(() => {
+              flippedCards[0].card.backgroundColor = "#DDD";
+              flippedCards[1].card.backgroundColor = "#DDD";
+            }, 1000);
+
+          }
+
+          // Clear the array for the next turn
+          flippedCards = [];
+        }
+
+
+      }
+        
+
+    </script>
+
+</body>
+</html>
