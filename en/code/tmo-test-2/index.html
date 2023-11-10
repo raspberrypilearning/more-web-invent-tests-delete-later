@@ -15,26 +15,27 @@
 <body>
      
   <div class="card" onclick="flipCard(this)"></div>
+<div class="card" onclick="flipCard(this)"></div>
 
     <script>
       let flippedCards = [];
-
+    
       function flipCard(card) {
         // Flip the card by changing its background color
-        card.backgroundColor = "blue";
+        card.style.backgroundColor = "blue";
 
         // Add the flipped card to the array
         flippedCards.push(card);
 
         //Check if two cards are flipped and matched
         if (flippedCards.length === 2) {
-          if (flippedCards[0].style.backgroundColor === flippedCards[i].style.backgroundColor) {
+          if (flippedCards[0].style.backgroundColor === flippedCards[1].style.backgroundColor) {
               alert("Congratulations! You found a pair");
           } else {
             // Flip the cards back if they don't match
             setTimeout(() => {
-              flippedCards[0].card.backgroundColor = "#DDD";
-              flippedCards[1].card.backgroundColor = "#DDD";
+              flippedCards[0].style.backgroundColor = "#DDD";
+              flippedCards[1].style.backgroundColor = "#DDD";
             }, 1000);
 
           }
@@ -45,6 +46,7 @@
 
 
       }
+
         
 
     </script>
