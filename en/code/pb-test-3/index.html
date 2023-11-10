@@ -14,8 +14,9 @@
             <h2>Scroll to the bottom</h2>
         </div>
 
-        <div class="left">Dark Mode
-            <div id="theme-btn" class="far fa-moon"></div>
+        <div class="left">
+            <div id="theme-txt">Dark mode</div>
+            <div id="theme-btn" class="far fa-2x fa-moon"></div>
         </div>
 
         <div class="middle">Middle column
@@ -147,27 +148,26 @@
                     animate.classList.add('animated');
                     return; // if we added the class, exit the function
                 }
-                // We're not intersecting, so remove the class!
+                // If not intersecting, remove the class
                 animate.classList.remove('animated');
             });
         });
-
         observer.observe(document.querySelector('.animate-wrapper'));
 
-
-        var element = document.body;
-        //element.classList.toggle("dark-mode");
-
-        //gets the button by ID from your HTML element
+        //gets the button and text by ID from HTML elements
         const themeBtn = document.getElementById("theme-btn");
+        const themetxt = document.getElementById("theme-txt");
         //when you click that button
         themeBtn.onclick = () => {
-            //the default class "fa-moon" switches to "fa-sun" on toggle
+            //the default class "fa-moon" switches to "fa-sun"
             themeBtn.classList.toggle("fa-sun");
-            element.classList.toggle("dark-mode");
-
-
-
+            document.body.classList.toggle("dark-mode");
+            //the text displayed switches
+            if (themetxt.innerHTML === "Dark mode") {
+                themetxt.innerHTML = "Light mode";
+            } else {
+                themetxt.innerHTML = "Dark mode";
+            }
         }
     </script>
 
