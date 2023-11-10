@@ -8,18 +8,6 @@ body {
     color: var(--text-colour);
 }
 
-/*button {
-  font-size: 2rem;
-  font-weight: bold;
-  padding: 0.5rem 1rem;
-  transition: all var(--global-transition-time) ease-in-out;
-  border-radius: 2rem;
-  cursor: pointer;
-  color: var(--text--color);
-  background-color: var(--bg-colour);
-  border: 0.25rem solid var(--text--color);
-*/
-
 /* Style the header */
 .header {
     grid-area: header;
@@ -47,15 +35,20 @@ body {
 /* Style the left column */
 .left {
     grid-area: left;
+    background-color: var(--left-colour);
 }
 
 /* Style the middle column */
 .middle {
     grid-area: middle;
+    background-color: var(--middle-colour);
 }
 
 /* Style the right column */
-.right {}
+.right {
+    grid-area: right;
+    background-color: var(--right-colour);
+}
 
 /* Style the footer */
 .footer {
@@ -67,11 +60,17 @@ body {
 .dark-mode {
     --bg-colour: #292525;
     --text-colour: #c5b6b6;
+    --left-colour:#333;
+    --middle-colour:#555;
+    --right-colour:#777;
 }
 
 .light-mode {
     --bg-colour: #c5b6b6;
     --text-colour: #292525;
+    --left-colour:#aaa;
+    --middle-colour:#bbb;
+    --right-colour:#ccc;
 }
 
 /* Responsive layout - stacks the columns on top of each other */
