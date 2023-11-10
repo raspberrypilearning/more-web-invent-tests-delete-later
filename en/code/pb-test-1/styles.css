@@ -4,9 +4,9 @@ body {
     display: grid;
     place-items: center;
     height: 100vh;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    transition: background-color 0.3s ease, color 0.3s ease;
+    background-colour: var(--bg-colour);
+    colour: var(--text-colour);
+    transition: background-colour 0.3s ease, colour 0.3s ease;
 }
 
 .container {
@@ -23,6 +23,6 @@ button {
 }
 
 .dark-mode {
-    --bg-color: #1a1a1a;
-    --text-color: #fff;
+    --bg-colour: #1a1a1a;
+    --text-colour: #fff;
 }
