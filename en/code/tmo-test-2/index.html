@@ -9,46 +9,49 @@
     <title>Memory Game</title>
 
     <link rel="stylesheet" href="styles.css">
-
-</head>
-
-<body>
-     
-  <div class="card" onclick="flipCard(this)"></div>
-<div class="card" onclick="flipCard(this)"></div>
+  </head>
+    
+  <body>   
+    <div class="card" onclick="flipCard(this)" data-flipped="false"></div>
+    <div class="card" onclick="flipCard(this)"></div>
 
     <script>
-      let flippedCards = [];
-    
-      function flipCard(card) {
-        // Flip the card by changing its background color
-        card.style.backgroundColor = "blue";
+      const colors = [
+          "red",
+          "green",
+          "purple",
+          "blue",
+          "aliceblue",
+          "yellow",
+          "orange"
+      ]
 
-        // Add the flipped card to the array
-        flippedCards.push(card);
+      let flippedCards = []
+        
+      function flipCard(card) {
+        // Set card to flipped
+        card.dataset.flipped = true;
+
+        // Randomise card color
+        card.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)]
+
+        // Get flipped cards 
+        flippedCards.push(card)
 
         //Check if two cards are flipped and matched
         if (flippedCards.length === 2) {
           if (flippedCards[0].style.backgroundColor === flippedCards[1].style.backgroundColor) {
-              alert("Congratulations! You found a pair");
-          } else {
-            // Flip the cards back if they don't match
-            setTimeout(() => {
-              flippedCards[0].style.backgroundColor = "#DDD";
-              flippedCards[1].style.backgroundColor = "#DDD";
-            }, 1000);
-
+            alert("Congratulations! You found a pair");
           }
-
-          // Clear the array for the next turn
-          flippedCards = [];
+            
+          setTimeout(() => {
+              flippedCards.forEach(card => {
+                  card.style.backgroundColor = "blueviolet";
+                })
+              flippedCards = []
+          }, 1000);
         }
-
-
       }
-
-        
-
     </script>
 
 </body>
