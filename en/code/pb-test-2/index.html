@@ -118,8 +118,10 @@
                 much text here so much text here so much text here so much text here so much text here so much text here
                 so much text here </p>
 
-            <div class="middle animate">
+            <div class="animate-wrapper">
+                <div class="middle animate">
                 <img src="Menschliche_Hand_umgrenzt_menschliche_Silhouette_20200911_DSC3711.jpg" width="100%" />
+                </div>
             </div>
         </div>
 
@@ -132,8 +134,6 @@
     </div>
 
     <script>
-
-
         const observer = new IntersectionObserver(entries => {
             // Loop over the entries
             entries.forEach(entry => {
@@ -148,9 +148,8 @@
                 animate.classList.remove('animated');
             });
         });
-
-        observer.observe(document.querySelector('.animate'));
-
+        
+        observer.observe(document.querySelector('.animate-wrapper'));
     </script>
 
 </body>
