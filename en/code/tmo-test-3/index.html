@@ -33,11 +33,10 @@
           const character = document.getElementById("character");
 
         // Generate random coordinates within the window
-          const randomX = Math.floor(Math.random() * window.innerWidth);
-          const randomY = Math.floor(Math.random() * window.innerHeight)
+        const random = Math.floor(Math.random() * 240);
         
         // Move the character to the random coordinates
-        character.style.fontSize = `${randomX}px`;
+        character.style.fontSize = `${random}px`;
     
 
         }
