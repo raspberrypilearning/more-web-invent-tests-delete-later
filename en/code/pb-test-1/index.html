@@ -9,8 +9,6 @@
 <body>
     <div class="container">
         <h1>Dark and griddy!</h1>
-        <p>Click the button to change the background colour!</p>
-        <button onclick="changeBackgroundColour()">Change Colour</button>
         <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
     </div>
 
@@ -18,7 +16,7 @@
         function changeBackgroundColour() {
             const colours = ["#ff9999", "#99ff99", "#9999ff", "#ffff99", "#ff99ff", "#99ffff"];
             const randomIndex = Math.floor(Math.random() * colours.length);
-            document.body.style.backgroundColour = colours[randomIndex];
+            document.body.style.backgroundColor = colours[randomIndex];
         }
 
         function toggleDarkMode() {
