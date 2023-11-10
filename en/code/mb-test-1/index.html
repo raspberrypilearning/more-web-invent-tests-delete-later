@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Show and hide</title>     
+    </head>
+    <body>
+        <script>
+            function hideHeader(){
+                console.log("Test");
+                header = document.getElementById("heading");
+                if (header.style.display != "none"){
+                    header.style.display = "none";
+                } else {
+                    header.style.display = "block";
+                }
+                
+            }
+        </script>
+        <main>
+            <div id="heading">
+                <h1>My page</h1>
+                <p>Click the button below to make this disappear</p>
+            </div>
+            
+            <button onclick="hideHeader()">Click</button>
+        </main>  
+    </body>
+</html>
