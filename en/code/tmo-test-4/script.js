@@ -5,7 +5,7 @@ document.getElementById("orderButton").addEventListener("click", function(){
 
     // Get selected toppings
     var selectedToppings =[];
-    var checkboxes = document.getElementsByName(topping);
+    var checkboxes = document.getElementsByName("topping");
     for (var i =0; i < checkboxes.length; i++) {
         if (checkboxes[i].checked) {
             selectedToppings.push(checkboxes[i].value);

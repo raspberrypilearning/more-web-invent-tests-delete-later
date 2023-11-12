@@ -17,13 +17,13 @@ header h1{
 
 nav ul {
     list-style-type: none;
-    margin: 0;
+    margin: 10px;
     padding: 0;
 }
 
 nav ul li {
     list-style-type: none;
-    margin: 0;
+    margin: 30px;
     display: inline;
 }
 
