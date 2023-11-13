@@ -3,11 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Fashion Design Studio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <h1>Fashion Design Studio</h1>
+
+    <div id="wardrobe">
+        <div class="clothing-item" onclick="changeStyle(this, 'dress')">
+            <img src="dress1.png" alt="Dress">
+        </div>
+        <div class="clothing-item" onclick="changeStyle(this, 'shirt')">
+            <img src="shirt1.png" alt="Shirt">
+        </div>
+        <div class="clothing-item" onclick="changeStyle(this, 'shoes')">
+            <img src="shoes1.png" alt="Shoes">
+        </div>
+    </div>
+
     <script>
+        function changeStyle(element, type) {
+            let styles = {
+                'dress': ['dress-style1', 'dress-style2', 'dress-style3', 'dress-style4', 'dress-style5'],
+                'shirt': ['shirt-style1', 'shirt-style2', 'shirt-style3', 'shirt-style4', 'shirt-style5'],
+                'shoes': ['shoes-style1', 'shoes-style2', 'shoes-style3', 'shoes-style1', 'shoes-style2'],
+
+            };
+
+            let currentStyle = element.className.split(' ').find(cls => cls.startsWith(type));
+            let styleIndex = styles[type].indexOf(currentStyle);
+
+            styleIndex = (styleIndex + 1) % styles[type].length; // Cycle through styles
+            element.className = `clothing-item ${styles[type][styleIndex]}`;
+        }
     </script>
 </body>
 </html>
