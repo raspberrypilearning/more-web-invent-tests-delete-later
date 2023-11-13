@@ -1,0 +1,89 @@
+body,
+html {
+    height: 100%;
+    margin: 10;
+    font: 400 15px/1.8 "Lato", sans-serif;
+    color: rgb(14, 14, 14);
+}
+
+.mountain,
+.forest,
+.godafoss,
+.ocean,
+.rose,
+.blossom,
+.aurora,
+.tree {
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: black;
+    background-size: cover;
+    min-height: 100%;
+    background-attachment: fixed;
+    opacity: 0.8;
+}
+
+.forest {
+    background-image: url("forest.jpg");
+}
+
+.godafoss {
+    background-image: url("godafoss.jpg");
+}
+
+.ocean {
+    background-image: url("ocean.jpg");
+}
+
+.rose {
+    background-image: url("rose.jpg");
+}
+
+.tree {
+    background-image: url("tree.jpg");
+    min-height: 1;
+    background-size: cover;
+}
+
+.blossom {
+    background-image: url("blossom.jpg");
+}
+
+.aurora {
+    background-image: url("aurora.jpg");
+}
+
+.mountain {
+    background-image: url("mountain.jpg");
+}
+
+h3 {
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font: 20px "Lato", sans-serif;
+    color: whitesmoke;
+    text-align: center
+}
+
+.textSection {
+    background-color: rgb(214, 206, 190);
+    padding: 30px 80px;
+    min-height: 1;
+}
+
+.caption {
+    position: absolute;
+    text-transform: uppercase;
+    top: 40%;
+    width: 100%;
+    text-align: center;
+}
+
+.border {
+    background-color: #2c3233;
+    color: White;
+    padding: 18px;
+    font-size: 25px;
+    letter-spacing: 10px;
+}
