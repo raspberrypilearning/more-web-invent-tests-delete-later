@@ -3,40 +3,25 @@ body {
     text-align: center;
 }
 
+#styleButtons {
+    margin: 20px 0;
+}
+
 #wardrobe {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-gap: 10px;
+    padding: 10px;
 }
 
 .clothing-item {
-    cursor: pointer;
-    transition: transform 0.3s ease;
+    width: 100%;
+    height: 500px; 
+    object-fit: cover;
 }
 
-.clothing-item:hover {
-    transform: scale(1.1);
-}
-
-/* Dress Styles */
-.dress-style1 { filter: hue-rotate(90deg); }
-.dress-style2 { filter: sepia(60%); }
-.dress-style3 { filter: saturate(150%); }
-.dress-style4 { filter: grayscale(100%); }
-.dress-style5 { filter: brightness(120%); }
-
-/* Shirt Styles */
-.shirt-style1 { filter: contrast(150%); }
-.shirt-style2 { filter: blur(2px); }
-.shirt-style3 { filter: invert(100%); }
-.shirt-style4 { background-color: lightpink; } /* Works well with PNGs */
-.shirt-style5 { filter: opacity(70%); }
-
-/* Shoes Styles */
-.shoes-style1 { filter: brightness(80%); }
-.shoes-style2 { filter: saturate(200%); }
-.shoes-style3 { filter: hue-rotate(180deg); }
-.shoes-style4 { filter: contrast(200%) brightness(120%); }
-.shoes-style5 { filter: drop-shadow(2px 4px 6px black); }
+.style1 { filter: hue-rotate(90deg); }
+.style2 { filter: sepia(60%); }
+.style3 { filter: saturate(150%); }
+.style4 { filter: grayscale(100%); }
+.style5 { filter: brightness(120%); }

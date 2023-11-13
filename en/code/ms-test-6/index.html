@@ -9,32 +9,27 @@
 <body>
     <h1>Fashion Design Studio</h1>
 
+    <div id="styleButtons">
+        <button onclick="changeStyle('style1')">Style 1</button>
+        <button onclick="changeStyle('style2')">Style 2</button>
+        <button onclick="changeStyle('style3')">Style 3</button>
+        <button onclick="changeStyle('style4')">Style 4</button>
+        <button onclick="changeStyle('style5')">Style 5</button>
+    </div>
+
     <div id="wardrobe">
-        <div class="clothing-item" onclick="changeStyle(this, 'dress')">
-            <img src="dress1.png" alt="Dress">
-        </div>
-        <div class="clothing-item" onclick="changeStyle(this, 'shirt')">
-            <img src="shirt1.png" alt="Shirt">
-        </div>
-        <div class="clothing-item" onclick="changeStyle(this, 'shoes')">
-            <img src="shoes1.png" alt="Shoes">
-        </div>
+        <img class="clothing-item" src="dress1.png" alt="Dress">
+        <img class="clothing-item" src="shirt1.png" alt="Shirt">
+        <img class="clothing-item" src="shoes1.png" alt="Shoes">
+
     </div>
 
     <script>
-        function changeStyle(element, type) {
-            let styles = {
-                'dress': ['dress-style1', 'dress-style2', 'dress-style3', 'dress-style4', 'dress-style5'],
-                'shirt': ['shirt-style1', 'shirt-style2', 'shirt-style3', 'shirt-style4', 'shirt-style5'],
-                'shoes': ['shoes-style1', 'shoes-style2', 'shoes-style3', 'shoes-style1', 'shoes-style2'],
-
-            };
-
-            let currentStyle = element.className.split(' ').find(cls => cls.startsWith(type));
-            let styleIndex = styles[type].indexOf(currentStyle);
-
-            styleIndex = (styleIndex + 1) % styles[type].length; // Cycle through styles
-            element.className = `clothing-item ${styles[type][styleIndex]}`;
+        function changeStyle(style) {
+            var items = document.getElementsByClassName('clothing-item');
+            for (var i = 0; i < items.length; i++) {
+                items[i].className = 'clothing-item ' + style;
+            }
         }
     </script>
 </body>
