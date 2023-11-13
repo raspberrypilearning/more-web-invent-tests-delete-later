@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Design Studio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Fashion Design Studio</h1>
+
+    <div id="styleButtons">
+        <button onclick="changeStyle('style1')">Style 1</button>
+        <button onclick="changeStyle('style2')">Style 2</button>
+        <button onclick="changeStyle('style3')">Style 3</button>
+        <button onclick="changeStyle('style4')">Style 4</button>
+        <button onclick="changeStyle('style5')">Style 5</button>
+    </div>
+
+    <div id="wardrobe">
+        <img class="clothing-item" src="dress1.png" alt="Dress">
+        <img class="clothing-item" src="shirt1.png" alt="Shirt">
+        <img class="clothing-item" src="shoes1.png" alt="Shoes">
+
+    </div>
+
+    <script>
+        function changeStyle(style) {
+            var items = document.getElementsByClassName('clothing-item');
+            for (var i = 0; i < items.length; i++) {
+                items[i].className = 'clothing-item ' + style;
+            }
+        }
+    </script>
+</body>
+</html>
