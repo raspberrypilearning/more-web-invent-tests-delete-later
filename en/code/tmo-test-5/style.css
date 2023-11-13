@@ -20,7 +20,7 @@ body {
     background-color: brown;
     border-radius: 50%;
     position: relative;
-    animation: moveSpacehsip 10s linear infinite;
+    animation: moveSpaceship 10s linear infinite;
 }
 
 @keyframes moveSpaceship {
