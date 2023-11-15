@@ -13,7 +13,7 @@
     </div>
 </div>
 
-<div class="mountain">
+<div class="mountain parallax">
     <div class="caption">
         <span class="border">Mountains</span>
     </div>
@@ -42,7 +42,7 @@
 </div>
 
 
-<div class="aurora">
+<div class="aurora parallax">
     <div class="caption">
         <span class="border">Aurora</span>
     </div>
@@ -65,5 +65,26 @@
         witness its celestial ballet to marvel at the wonders of the natural world.</p>
 
 </div>
+
+<script>
+    const options = {
+        threshold: 0.5, // Trigger the callback when 50% of the image is in the viewport
+    };
+
+    const observer = new IntersectionObserver(handleIntersection, options);
+
+    document.querySelectorAll('.parallax').forEach(section => {
+        observer.observe(section);
+    });
+
+    function handleIntersection(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = 1; // Fade-in effect
+                observer.unobserve(entry.target); // Stop observing once the section is visible
+            }
+        });
+    }
+</script>
 
 </html>

@@ -12,7 +12,18 @@ html {
 .ocean,
 .rose,
 .blossom,
-.aurora,
+.aurora {
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: black;
+    background-size: cover;
+    min-height: 100%;
+    background-attachment: fixed;
+    opacity: 0.1;
+    transition: opacity 2s ease;
+}
+
 .tree {
     position: relative;
     background-position: center;
@@ -21,7 +32,8 @@ html {
     background-size: cover;
     min-height: 100%;
     background-attachment: fixed;
-    opacity: 0.8;
+    opacity: 1;
+    transition: opacity 2s ease;
 }
 
 .forest {
