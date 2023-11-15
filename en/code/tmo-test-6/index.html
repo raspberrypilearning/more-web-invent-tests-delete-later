@@ -1,30 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-
-    <!-- Title shown in web browsers-->
-    <title>3D Parallax Scrolling</title>
-
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-
-  </head>
-
+    <title>Intersection observer</title>
+</head>
 <body>
-  <div class="container">
-    <div class="background">
-        <img src="anime-scrolling.jpg" height="500" width="1400" alt="Male and female anime characters on a white background">
-    </div>
-    <div class="content">
-      <h1>Welcome to 3D CSS</h1>
-      <p>Scroll to enter!</p>
-    </div>
-    <div class="section">
-      <h2>Girls Rock!</h2>
-      <p>Keep scrolling for more tech girls!</p>
-    </div>
-  </div>
+    
+    <section>
+        <h1>
+            Scrolling Animations!
+        </h1>
+
+    </section>
+    <section> 
+        <p class="animation"><img src="anime-scrolling.jpg" height="400" width="500" alt="Male and female anime characters on a white background">
+        </p>
+    
+        </section>
+        <section>
+        <h1 class="animation">
+            Find out how to make them!
+        </h1>
+
+    </section>
+    <script>
+      const the_animation = document.querySelectorAll('.animation')
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('scroll-animation')
+        }
+            else {
+                entry.target.classList.remove('scroll-animation')
+            }
+        
+    })
+},
+   { threshold: 0.5
+   });
+//
+  for (let i = 0; i < the_animation.length; i++) {
+   const elements = the_animation[i];
+
+    observer.observe(elements);
+  } 
+
+    </script>
 </body>
 </html>
