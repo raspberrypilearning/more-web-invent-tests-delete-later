@@ -1,0 +1,6 @@
+TODO:
+1) Personalise the pages so they have:
+    a) the colours of the teams
+    b) the team scores on the Home Page (from the list in the txt file)
+    c) The team news on the news page (from the news txt file)
+    d) Make the changes persistent across all pages

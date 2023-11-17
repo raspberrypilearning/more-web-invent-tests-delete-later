@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+    <title>Historical Timelines</title>
+  </head>
+  <body>
+    <header>
+      <h1>Interactive Historical Timelines</h1>
+      <p>Explore the events that shaped our world</p>
+    </header>
+
+    <main>
+      <section id="timeline">
+        <div id="line"></div>
+        <div id="nodes"></div>
+      </section>
+    </main>
+
+    <label for="year-input">Year:</label>
+    <input type="number" id="year-input" required />
+    <label for="event-input">Event:</label>
+    <input type="text" id="event-input" required />
+    <button id="add-event-btn">Add Event</button>
+
+    <footer>
+      <p>&copy; 2023 Historical Timelines. All rights reserved.</p>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const nodesContainer = document.getElementById("nodes");
+        const addButton = document.getElementById("add-event-btn");
+        const inputYear = document.getElementById("year-input");
+        const inputEvent = document.getElementById("event-input");
+
+        // Example data for initial events
+        let historicalEvents = [
+          {
+            year: 1776,
+            event: "Declaration of Independence in the United States",
+          },
+          { year: 1969, event: "Apollo 11 Moon Landing" },
+          { year: 1990, event: "Reunification of Germany" },
+          // Add more events as needed
+        ];
+
+        // Function to render events on the timeline
+        function renderTimelineEvents() {
+          nodesContainer.innerHTML = "";
+
+          historicalEvents.forEach((event) => {
+            const node = document.createElement("div");
+            node.classList.add("event");
+            node.innerHTML = `<span class="year">${event.year}</span><span class="event-description">${event.event}</span>`;
+            nodesContainer.appendChild(node);
+          });
+        }
+
+        // Function to add a new event
+        function addNewEvent(year, event) {
+          const newEvent = { year: parseInt(year), event: event };
+          historicalEvents.push(newEvent);
+          historicalEvents.sort((a, b) => a.year - b.year); // Sort events chronologically
+          renderTimelineEvents();
+        }
+
+        // Render initial events when the page loads
+        renderTimelineEvents();
+
+        // Add event listener for rollover
+        nodesContainer.addEventListener("mouseover", function (event) {
+          const targetNode = event.target.closest(".event");
+          if (targetNode) {
+            const description = targetNode.querySelector(".event-description");
+            description.style.display = "block";
+          }
+        });
+
+        nodesContainer.addEventListener("mouseout", function (event) {
+          const targetNode = event.target.closest(".event");
+          if (targetNode) {
+            const description = targetNode.querySelector(".event-description");
+            description.style.display = "none";
+          }
+        });
+
+        // Add event listener for adding a new event
+        addButton.addEventListener("click", function () {
+          const yearInputValue = inputYear.value;
+          const eventInputValue = inputEvent.value;
+
+          if (yearInputValue && eventInputValue) {
+            addNewEvent(yearInputValue, eventInputValue);
+            inputYear.value = "";
+            inputEvent.value = "";
+          } else {
+            alert("Please fill in both the year and event fields.");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
