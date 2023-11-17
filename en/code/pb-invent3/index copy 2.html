@@ -18,7 +18,7 @@
         <div id="line"></div>
         <div id="nodes"></div>
       </section>
-      <section class="entry">
+      <section id="nodes">
         <label for="year-input">Year:</label>
         <input type="number" id="year-input" required />
         <label for="event-input">Event:</label>
@@ -62,13 +62,9 @@
             node.classList.add("event");
 
             // Calculate the percentage width based on the time difference
-            let percentageWidth = ((event.year - minYear) / totalYears) * 100;
+            const percentageWidth = ((event.year - minYear) / totalYears) * 100;
 
-            console.log(percentageWidth);
-
-            node.style.left = percentageWidth + "%";  // TODO: Need to minus 1px (or whatever the width of a node is set to)
-
-            node.innerHTML = `<span class="year">${event.year}</span><span class="event-description">${event.event}</span>`;
+            node.innerHTML = `<span class="year" style="left: ${percentageWidth}%">${event.year}</span><span class="event-description">${event.event}</span>`;
             nodesContainer.appendChild(node);
           });
         }
