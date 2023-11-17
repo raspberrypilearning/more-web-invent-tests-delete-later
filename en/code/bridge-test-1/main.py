@@ -16,11 +16,11 @@ circle_radius = 20
 
 is_drawing = False
 
-my_image = "moon.png"
+my_image = "pic1.jpg"
 
 
 def draw():
-    add_background()
+    add_background(100, 100)
     if is_drawing:
         fill(current_color)
         circle(mouse_x, mouse_y, 20)
@@ -55,10 +55,10 @@ def get_global_colors():
     return colors
 
 
-def add_background():
+def add_background(x, y):
     global image_set, background_img
     if not image_set:
-        image(background_img, 0, 0) 
+        image(background_img, x, y) 
         image_set = True
 
 
