@@ -14,14 +14,12 @@ pos_5 = (250, 20)
 
 circle_radius = 20
 
-is_drawing = False
-
 my_image = "pic1.jpg"
 
 
 def draw():
     add_background(100, 100, 250, 300)
-    if is_drawing:
+    if is_drawing() and not_in_circle():
         fill(current_color)
         circle(mouse_x, mouse_y, 20)
 
@@ -30,11 +28,15 @@ def draw():
 
 # Variable to track drawing state
 # Current drawing color
-
+pen_safe = False
 current_color = None
 default = (0, 0, 0)
 image_set = False
 
+def is_drawing():
+    return pen_safe
+     
+    
 def get_global_positions():
     # Generate list dynamically
     positions = []
@@ -70,7 +72,7 @@ def setup():
     # Initialize color choices within setup
     color_choices = get_global_colors()
     current_color = Color(default[0],default[1],default[2])  # Default color (black)
-    global is_drawing
+    global pen_safe
     color_positions = get_global_positions()
     # Draw color choice circles
     for i, col in enumerate(color_choices):
@@ -95,22 +97,23 @@ def check_which_circle():
             current_color = get_color(color_choices[i])
             return current_color
 
+def not_in_circle():
+    safe = True
+    color_positions = get_global_positions()
+    for i, pos in enumerate(color_positions):
+        if dist(mouse_x, mouse_y, *pos) < circle_radius * 2:
+            current_color = color_choices[i]
+            safe = False
+    return safe
 
 def mouse_pressed():
-    global is_drawing
+    global pen_safe
     check_which_circle()
-    color_positions = get_global_positions()
-    # Check if a color circle is clicked
-    for i, pos in enumerate(color_positions):
-        if dist(mouse_x, mouse_y, *pos) < circle_radius:
-            current_color = color_choices[i]
-            return  # Return early to prevent starting drawing when selecting color
-
-    is_drawing = True  # Start drawing
+    pen_safe = True  # Start drawing
 
 def mouse_released():
-    global is_drawing
-    is_drawing = False  # Stop drawing
+    global pen_safe
+    pen_safe = False  # Stop drawing
 
 if __name__ == '__main__':
     run()
