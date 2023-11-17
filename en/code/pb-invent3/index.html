@@ -64,7 +64,11 @@
             // Calculate the percentage width based on the time difference
             const percentageWidth = ((event.year - minYear) / totalYears) * 100;
 
-            node.innerHTML = `<span class="year" style="left: ${percentageWidth}%">${event.year}</span><span class="event-description">${event.event}</span>`;
+            console.log(percentageWidth);
+
+            node.style.left = percentageWidth + "%";
+
+            node.innerHTML = `<span class="year">${event.year}</span><span class="event-description">${event.event}</span>`;
             nodesContainer.appendChild(node);
           });
         }

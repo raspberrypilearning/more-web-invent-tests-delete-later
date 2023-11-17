@@ -40,7 +40,6 @@ section {
 #nodes {
   position: relative;
   display: flex;
-  justify-content: space-between;
   margin-top: 10px;
   transform: translateY(100%);
 }
