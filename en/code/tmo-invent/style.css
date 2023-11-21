@@ -20,7 +20,7 @@ body {
     left: 0;
     width: 100%;
     padding: 20px 100px;
-    background: transparent;
+    background: seagreen;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -48,7 +48,7 @@ body {
     position: absolute;
     top: 100%;
     left: 0;
-    width: 100%;
+    width: 0%;
     height: 2px;
     background: yellowgreen;
     transition: .3s;
@@ -56,4 +56,39 @@ body {
 
 .navbar a:hover::before {
     width: 100%;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        padding: 20px;
+    }
+
+    .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: seagreen;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .navbar a {
+        margin: 10px 0;
+    }
+
+    .menu-icon {
+        display: block;
+    }
 }
