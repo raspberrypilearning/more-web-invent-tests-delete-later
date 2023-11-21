@@ -5,50 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Intersection observer</title>
+    <title>QuizzyKids</title>
 </head>
 <body>
     
-    <section>
-        <h1>
-            Scrolling Animations!
-        </h1>
-
-    </section>
-    <section> 
-        <p class="animation"><img src="anime-scrolling.jpg" height="400" width="500" alt="Male and female anime characters on a white background">
-        </p>
-    
-        </section>
-        <section>
-        <h1 class="animation">
-            Find out how to make them!
-        </h1>
-
-    </section>
-    <script>
-      const the_animation = document.querySelectorAll('.animation')
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('scroll-animation')
-        }
-            else {
-                entry.target.classList.remove('scroll-animation')
-            }
+    <header class = "header">
+        <a href="#" class="logo">QuizzyKids</a>
         
-    })
-},
-   { threshold: 0.5
-   });
-//
-  for (let i = 0; i < the_animation.length; i++) {
-   const elements = the_animation[i];
-
-    observer.observe(elements);
-  } 
-
-    </script>
+        <nav class="navbar">
+          <a href="#">Home</a>
+          <a href="#">Quizzes</a>
+          <a href="#">Posts</a>
+        </nav>
+      </header>
 </body>
 </html>
