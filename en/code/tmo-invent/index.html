@@ -5,15 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>QuizzyKids</title>
 </head>
 <body>
     
-    <div class="header">
+    <header class="header">
         <a href="#" class="logo">QuizzyKids</a>
-        <nav class="navbar">
+        <nav class="navbar" id="nav">
             <a href="#">Home</a>
             <a href="#">Quizzes</a>
             <a href="#">Posts</a>
@@ -21,6 +20,34 @@
         <div class="menu-icon">
             <i class="fas fa-bars"></i>
         </div>
-    </div>
+    </header>
+    <div class="hero"></div>
+
+    <main class="main">
+        <div class="card">
+            <img src="cardcover.jpg">
+            <h2>Afrobeats Quiz</h2>
+            <p>Afrobeats is a music genre that has taken the world by storm. But how much do you know about it?</p>
+            <button type="submit" name="takequiz">Take Quiz</button>
+        </div>
+        <div class="card">
+            <img src="cardcover.jpg">
+            <h2>Sports Quiz</h2>
+            <p>Is MJ the greatest basketball player of all time? Are you a Messi or a CR7 Fan? </p>
+            <button type="submit" name="takequiz">Take Quiz</button>
+        </div>
+        <div class="card">
+            <img src="cardcover.jpg">
+            <h2>Brands</h2>
+            <p>Do you know your Maccies from your Burger King? Can you spot the Snapchat logo? </p>
+            <button type="submit" name="takequiz">Take Quiz</button>
+        </div>
+    
+    </main>
+
+    <footer class="bottom">
+        <p>QuizzyKids Ⓒ 2023 - All Rights Reserved</p>
+    </footer>
 </body>
+<script src="script.js"></script>
 </html>
