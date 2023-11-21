@@ -4,22 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Navbar and Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins&display=swap" rel="stylesheet">
+    <title>Dungeons and Dragons Fan Page</title>
 </head>
 <body>
     <header class="navigation-header">
         <nav>
             <div class="logo-container">
-                <a href="./index.html">Home</a>
+                <a href="./index.html">D&D</a>
             </div>
             <div class="navigation-items" id="navigation-items">
-                <a href="">About</a>
-                <a href="">Projects</a>
-                <a href="">Contacts</a>
+                <a href="">Journey</a>
+                <a href="">Character</a>
             </div>
-            <div class="user">
-                <span>&#128100;</span>
-                <span id="userName">Name</span>
+            <div class="colour-dropdown">
+                <button class="colourbtn">Choose theme</button>
+                <div class="colour-dropdown-content">
+                    <a class="lightTheme" onclick="changeTheme('light')">☀ Light</a>
+                    <a class="darkTheme" onclick="changeTheme('dark')">☾ Dark</a>
+                    <a class="dungeonTheme" onclick="changeTheme('dungeon')">🔥 Dungeon</a>
+                </div>
             </div>
             <div class="hamburger">
                 <span id="openHam">&#9776;</span>
@@ -28,17 +32,7 @@
         </nav>
     </header>
     <main>
-        <section class="userLogin" id="loginSection">
-            <h1>Login</h1>
-            <p>Please enter a username:</p>
-            <input type="text" id="userNameInput">
-            <button onclick="changeUsername()">Enter</button>
-            <p id="alert">Please type something</p>
-        </section>
-        <section id="sucessfullLogin">
-            <h1 id="greeting"></h1>
-            <p>Thank you for choosing a username</p>
-        </section>
+        
     </main>
     <script>
         let openHam = document.querySelector('#openHam');
@@ -54,23 +48,14 @@
         openHam.addEventListener('click', () => hamburgerEvent("flex", "block", "none"));
         closeHam.addEventListener('click', () => hamburgerEvent("none", "none", "block"));
 
-        const username = document.querySelector('#userNameInput');
-        const loginSection = document.querySelector('#loginSection');
-        const userDisplay = document.querySelector('#userName');
-        const userGreeting = document.querySelector('#sucessfullLogin');
-        const alert = document.querySelector('#alert');
-        const greeting = document.querySelector('#greeting');
+        var root = document.querySelector(":root");
+        var rootVars = getComputedStyle(root);
 
-        function changeUsername(){
-            usernameText = username.value;
-            if (usernameText.length > 0){
-                userDisplay.textContent = usernameText;
-                greeting.textContent = "Hello " + usernameText;
-                loginSection.style.display = "none"
-                userGreeting.style.display = "block"
-            } else {
-                alert.style.display = "block";
-            }
+        function changeTheme(theme){
+            root.style.setProperty( '--background-colour', rootVars.getPropertyValue('--'+theme+'-background-colour'));
+            root.style.setProperty( '--foreground-colour', rootVars.getPropertyValue('--'+theme+'-foreground-colour'));
+            root.style.setProperty( '--highlight-1', rootVars.getPropertyValue('--'+theme+'-highlight-1'));
+            root.style.setProperty( '--highlight-2', rootVars.getPropertyValue('--'+theme+'-highlight-2'));
         }
     </script>
 </body>

@@ -1,6 +1,38 @@
+:root{
+    /* Fonts */
+    --header-font: 'Abril Fatface', serif;
+    --text-font: 'Poppins', sans-serif;
+    
+    --light-background-colour: #FFFBF5;
+    --light-foreground-colour: #F7EFE5;
+    --light-highlight-1: #C3ACD0;
+    --light-highlight-2: #7743DB;
+    --dark-background-colour: #0F0F0F;
+    --dark-foreground-colour: #232D3F;
+    --dark-highlight-1: #005B41;
+    --dark-highlight-2: #008170;
+    --dungeon-background-colour: #22092C;
+    --dungeon-foreground-colour: #872341;
+    --dungeon-highlight-1: #BE3144;
+    --dungeon-highlight-2: #F05941;
+
+    /* Actual colour variables */
+    
+    --background-colour: #FFFBF5;
+    --foreground-colour: #F7EFE5;
+    --highlight-1: #C3ACD0;
+    --highlight-2: #7743DB;
+    --text-colour: #000000;
+    --light-text-colour: #FFFFFF;
+}
+
+* {
+    transition: .4s ease-in-out;
+}
+
 body {
-    background-color: #141414;
-    color: white;
+    background-color: var(--background-colour);
+    color: --text-colour;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -8,6 +40,7 @@ body {
     min-height: 100vh; /* Make the content fill the page so the footer is at the bottom */
     display: flex;
     flex-direction: column;
+    font-family: var(--text-font);
 }
 
 main {
@@ -20,36 +53,16 @@ main {
     padding: 0;
 }
 
-section {
-    width: 100%;
-    padding: 15px;
-    text-align: center;
-    padding: 1rem 2rem;
-    margin: 1rem auto;
-}
-
-button {
-    background-color: #EEC643;
-    color: #141414;
-    font-size: 14px;
-    padding: 3px;
-    border: none;
-    border-radius: 2px;
-    transition: .2s ease-in-out;
-}
-
-button:hover {
-    background-color: white;
-    color: #EEC643;
-}
+/* Navigation styling */
 
 .navigation-header {
-    background-color: #EEC643;
+    background-color: var(--foreground-colour);
     padding: 0 15px;
     height: 60px;
     display: flex;
     justify-content: center;
     align-content: center;
+    font-family: var(--header-font);
 }
 
 nav {
@@ -61,7 +74,7 @@ nav {
 }
 
 .logo-container > a {
-    color: #141414;
+    color: var(--highlight-2);
     text-decoration: none;
     font-weight: 700;
     font-size: 26px;
@@ -73,43 +86,82 @@ nav {
 }
 
 .navigation-items > a {
-    color: #141414;
+    color: var(--highlight-2);
     text-decoration: none;
     font-weight: 500;
     font-size: 16px;
-    transition: .4s ease-in-out;
 }
 
 .navigation-items > a:hover {
-    color: white;
-}
-
-.user {
-    gap: 10px;
-    padding-right: 5px;
-    color: #141414;
-}
-
-#sucessfullLogin {
-    display: none;
-}
-
-#alert {
-    color: red;
-    display: none;
+    color: var(--highlight-1);
 }
 
 .hamburger {
     display: none;
     font-size: 20px;
     font-weight: 800;
-    color: white;
+    color: var(--highlight-2);
+}
+
+/* Colour picker */
+
+.colourbtn {
+    background-color: var(--highlight-1);
+    color: var(--text-colour);
+    padding: 14px;
+    font-size: 14px;
+    border: none;
+    min-width: 140px;
+    font-family: var(--header-font);
+}
+
+.colour-dropdown {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+}
+
+.colour-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--highlight-2);
+    min-width: 140px;
+    z-index: 2;
+}
+
+.colour-dropdown-content a {
+    color: var(--light-text-colour);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-family: var(--text-font);
+}
+
+.lightTheme:hover {
+    background-color: var(--light-foreground-colour);
+    color: var(--light-highlight-2);
+}
+
+.darkTheme:hover {
+    background-color: var(--dark-foreground-colour);
+    color: var(--dark-highlight-2);
+}
+
+.dungeonTheme:hover {
+    background-color: var(--dungeon-foreground-colour);
+    color: var(--dungeon-highlight-2);
+}
+
+.colour-dropdown:hover .colour-dropdown-content {
+    display: block;
+}
+
+.colour-dropdown:hover .colourbtn {
+    background-color: var(--highlight-2);
+    color: var(--light-text-colour);
 }
 
 @media screen and (max-width:768px) {
-    .user {
-        margin-left: auto;
-    }
     
     .hamburger {
         display: flex;
@@ -126,10 +178,15 @@ nav {
         position: absolute;
         right: 0;
         top: 58px;
-        background-color: #EEC643;
+        background-color: var(--foreground-colour);
         width: 100%;
         height: calc(100vh - 58px);
         padding-top: 60px;
         gap: 10vh;
+    }
+
+    .colour-dropdown {
+        margin-left: auto;
+        padding-right: 10px;
     }
 }
