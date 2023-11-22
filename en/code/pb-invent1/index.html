@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="bball">
+      <div class="caption">
+        <span id="textContainer" class="border"></span>
+      </div>
+    </div>
+
+    <div class="ball parallax">
+      <div class="caption">
+        <span class="border">Training</span>
+      </div>
+    </div>
+
+    <div class="textSection">
+      <p>
+        The Wildcats want you in their next training session. We know the
+        streets can be tough, but so are you, and that's what makes you perfect
+        for this.
+      </p>
+      <p>
+        A court where your skills are not just appreciated but celebrated, where
+        your dedication to the game is recognised and nurtured. You're not just
+        honing your skills; you're becoming a part of a family that stands
+        together through thick and thin.
+      </p>
+      <p>
+        We get it; life might throw some challenges your way, but the Wildcats
+        have been there, conquered that. This isn't just about the game; it's
+        about empowering yourself and your community. Show up, and not only will
+        you be perfecting that jump shot, but you'll also be joining a support
+        system that believes in your potential. We have a legacy of producing
+        stars, and it's time for you to claim your spot.
+      </p>
+      <p>
+        Your journey starts here, and we can't wait to see you bring your spirit
+        to the Wildcats family.
+      </p>
+    </div>
+
+    <div class="score parallax">
+      <div class="caption">
+        <span class="border">LATEST SCORE - 23:11</span>
+      </div>
+    </div>
+
+    <script>
+      const options = {
+        threshold: 0.5, // Trigger the callback when 50% of the image is in the viewport
+      };
+
+      const observer = new IntersectionObserver(handleIntersection, options);
+
+      document.querySelectorAll(".parallax").forEach((section) => {
+        observer.observe(section);
+      });
+
+      function handleIntersection(entries, observer) {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = 1; // Fade-in effect
+            observer.unobserve(entry.target); // Stop observing once the section is visible
+          }
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // Fetch the content of the .txt file
+        fetch("headline.txt")
+          .then((response) => response.text())
+          .then((data) => {
+            // Update the content of the div with the fetched text
+            document.getElementById("textContainer").innerText = data;
+          })
+          .catch((error) => console.error("Error fetching text:", error));
+      });
+    </script>
+  </body>
+</html>
