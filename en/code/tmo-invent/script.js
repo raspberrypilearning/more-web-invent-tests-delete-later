@@ -21,3 +21,6 @@ function reveal() {
   }
   
   window.addEventListener("scroll", reveal);
+
+  const currentYear = new Date();
+  document.querySelector("#currentYear").innerHTML = `${currentYear.getFullYear()}`;
