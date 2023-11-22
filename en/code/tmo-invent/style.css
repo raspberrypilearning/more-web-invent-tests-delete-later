@@ -74,7 +74,6 @@
     flex-flow: row wrap;
     align-items: stretch;
     overflow: hidden;
-    gap: 40px;
   }
   
   .card {
@@ -118,6 +117,29 @@
     color: #fff;
     text-align: center;
   }
+
+  .view-more {
+    flex: 0 1 61%;
+    text-align: right;
+    position: relative;
+}
+
+.view-more-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: seagreen;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+
+}
+
+.view-more-btn:hover {
+    background-color: darkgreen;
+}
+
   
 @media screen and (max-width: 768px) {
     .header {
