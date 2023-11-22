@@ -24,19 +24,25 @@
     <div class="hero"></div>
 
     <main class="main reveal fade-left">
-        <div class="card">
+        <div id="buttons">
+            <button onclick="filterQuiz('Music')">Music</button>
+            <button onclick="filterQuiz('Sports')">Sports</button>
+            <button onclick="filterQuiz('Brands')">Brands</button>
+            <button onclick="filterQuiz('All')">Show All</button>
+        </div>
+        <div class="card" data-topic="Music">
             <img src="cardcover.jpg">
             <h2>Music Quiz</h2>
             <p>Which songs stayed on the charts for the longest? What are the most trending Tik Tok sounds ever?</p>
             <button type="submit" name="takequiz">Take Quiz</button>
         </div>
         <div class="card">
-            <img src="cardcover.jpg">
+            <img src="cardcover.jpg" data-topic="Sports">
             <h2>Sports Quiz</h2>
             <p>Is MJ the greatest basketball player of all time? Are you a Messi or a CR7 Fan? </p>
             <button type="submit" name="takequiz">Take Quiz</button>
         </div>
-        <div class="card">
+        <div class="card" data-topic="Brands">
             <img src="cardcover.jpg">
             <h2>Brands Quiz</h2>
             <p>Do you know your Maccies from your Burger King? Can you spot the Snapchat logo? </p>
@@ -54,7 +60,7 @@
         </div>
         <div class="card">
             <img src="cardcover.jpg">
-            <h2>Movies Quiz</h2>
+            <h2>Personality Quiz</h2>
             <p>Is MJ the greatest basketball player of all time? Are you a Messi or a CR7 Fan? </p>
             <button type="submit" name="takequiz">Take Quiz</button>
         </div>
