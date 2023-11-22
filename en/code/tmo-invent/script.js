@@ -1,9 +1,11 @@
+// Responsive menu function
 const menuIcon = document.querySelector('.menu-icon');
 const navbar = document.querySelector('#nav');
 menuIcon.addEventListener('click', () => {
     navbar.classList.toggle('active');
 });
 
+//Animation function
 function reveal() {
     var reveals = document.querySelectorAll(".reveal");
   
@@ -22,5 +24,11 @@ function reveal() {
   
   window.addEventListener("scroll", reveal);
 
+  // Update Copyright Year function
   const currentYear = new Date();
   document.querySelector("#currentYear").innerHTML = `${currentYear.getFullYear()}`;
+
+// Take Quiz button function
+  function musicFunction() {
+    window.location.href = "quizapp.html"
+  }
