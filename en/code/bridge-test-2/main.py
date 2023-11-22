@@ -14,14 +14,16 @@ pos_5 = (250, 20)
 
 circle_radius = 20
 
-my_image = "pic1.jpg"
+my_image = "snake.webp"
 
 
 def draw():
-    add_background(100, 100, 250, 300)
+    add_background(200, 50, 400, 400)
     if is_drawing() and not_in_circle():
         fill(current_color)
-        circle(mouse_x, mouse_y, 20)
+        circle(mouse_x, mouse_y, 10)
+
+
 
 
 ####### Hide this code #######
