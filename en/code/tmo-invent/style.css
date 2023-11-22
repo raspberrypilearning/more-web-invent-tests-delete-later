@@ -114,9 +114,6 @@
     padding: 20px 100px;
     background: seagreen;
     align-items: center;
-    font-size: 18px;
-    color: #fff;
-    text-align: center;
   }
   
 @media screen and (max-width: 768px) {
@@ -197,4 +194,4 @@
       transform: translateX(0);
       opacity: 1;
     }
-  } 
+  }
