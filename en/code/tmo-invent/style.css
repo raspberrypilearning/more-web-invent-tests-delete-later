@@ -85,7 +85,14 @@
     font-family: 'Lexend', sans-serif;
     padding: 40px;
     gap: 20px;
+    margin: 20px;
+    box-shadow: 0 4px 8px seagreen;
+    transition: transform 0.3s ease-in-out;
   }
+
+  .card:hover {
+    transform: scale(1.05); /* Increase the size on hover */
+}
   
   .card > img {
     border-radius: 100%;
@@ -106,8 +113,12 @@
     width: 150px;
     font-size: 15px;
     font-family: 'Lexend', sans-serif;
+    transition: background-color 0.3s ease-in-out;
   }
 
+  .card > button:hover {
+    background-color: pink;
+}
   .bottom {
     width: 100%;
     padding: 20px 100px;
@@ -119,25 +130,26 @@
   }
 
   .view-more {
-    flex: 0 1 61%;
     text-align: right;
     position: relative;
 }
 
 .view-more-btn {
-    display: inline-block;
-    padding: 10px 20px;
+    flex: content;
     background-color: seagreen;
     color: #fff;
     text-decoration: none;
     font-weight: 500;
     border-radius: 5px;
+    width: fit-content;
+    padding: 5px;
+    align-self: flex-end;
     transition: background-color 0.3s ease-in-out;
 
 }
 
 .view-more-btn:hover {
-    background-color: darkgreen;
+    background-color: pink;
 }
 
 #blog{
@@ -174,6 +186,12 @@
     background-color: #f2eb8c;
     border: 1px solid #e8c37f;
     margin: 20px;
+    box-shadow: 0 4px 8px seagreen;
+    transition: transform 0.5s ease-in-out;
+}
+
+.blog-box:hover {
+    transform: scale(1.3); 
 }
 
 .blog-img{
@@ -203,6 +221,7 @@
     font-size: 18px;
     font-weight: 300;
     color: #272727;
+    text-decoration: none;
 }
 
 .blog-text .blog-title:hover{
