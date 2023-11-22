@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Basketball Website</title>
+  </head>
+  <body>
+    <div class="grid-container">
+      <nav class="navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="timeline.html">Timeline</a></li>
+          <li><a href="myprofile.html">My Profile</a></li>
+        </ul>
+        <div class="toggle-container">
+          <label class="switch">
+            <input type="checkbox" id="darkModeToggle" />
+            <span class="slider"></span>
+          </label>
+          <span class="toggle-label">Dark Mode</span>
+        </div>
+      </nav>
+      <div class="content">
+        <h1>Add your favourite moments!</h1>
+
+        <section id="timeline">
+          <div id="line"></div>
+          <div id="nodes"></div>
+        </section>
+        <section class="entry">
+          <label for="year-input">Year:</label>
+          <input type="number" id="year-input" required />
+          <label for="event-input">Event:</label>
+          <input type="text" id="event-input" required />
+          <button id="add-event-btn">Add Event</button>
+        </section>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const nodesContainer = document.getElementById("nodes");
+        const addButton = document.getElementById("add-event-btn");
+        const inputYear = document.getElementById("year-input");
+        const inputEvent = document.getElementById("event-input");
+
+        // Initial events
+        let historicalEvents = [
+          {
+            year: 1977,
+            event: "Wildcats formed",
+          },
+          { year: 1980, event: "Joined National League" },
+          { year: 1996, event: "Won Championship trophy" },
+          { year: 2023, event: "Now" },
+          // Add more initial events?
+        ];
+
+        // Function to render events on the timeline
+        function renderTimelineEvents() {
+          nodesContainer.innerHTML = "";
+
+          const minYear = historicalEvents[0].year;
+          const maxYear = historicalEvents[historicalEvents.length - 1].year;
+          const totalYears = maxYear - minYear;
+
+          historicalEvents.forEach((event) => {
+            const node = document.createElement("div");
+            node.classList.add("event");
+
+            // Calculate the percentage width based on the time difference
+            let percentageWidth = ((event.year - minYear) / totalYears) * 100;
+
+            console.log(percentageWidth);
+
+            node.style.left = percentageWidth + "%"; // TODO: Need to minus 1px (or whatever the width of a node is set to)
+
+            node.innerHTML = `<span class="year">${event.year}</span><span class="event-description">${event.event}</span>`;
+            nodesContainer.appendChild(node);
+          });
+        }
+
+        // Function to add a new event
+        function addNewEvent(year, event) {
+          const newEvent = { year: parseInt(year), event: event };
+          historicalEvents.push(newEvent);
+          historicalEvents.sort((a, b) => a.year - b.year); // Sort events chronologically
+          renderTimelineEvents();
+        }
+
+        // Render initial events when the page loads
+        renderTimelineEvents();
+
+        // Add event listener for rollover
+        nodesContainer.addEventListener("mouseover", function (event) {
+          const targetNode = event.target.closest(".event");
+          if (targetNode) {
+            const description = targetNode.querySelector(".event-description");
+            description.style.display = "block";
+          }
+        });
+
+        nodesContainer.addEventListener("mouseout", function (event) {
+          const targetNode = event.target.closest(".event");
+          if (targetNode) {
+            const description = targetNode.querySelector(".event-description");
+            description.style.display = "none";
+          }
+        });
+
+        // Add event listener for adding a new event
+        addButton.addEventListener("click", function () {
+          const yearInputValue = inputYear.value;
+          const eventInputValue = inputEvent.value;
+
+          if (yearInputValue && eventInputValue) {
+            addNewEvent(yearInputValue, eventInputValue);
+            inputYear.value = "";
+            inputEvent.value = "";
+          } else {
+            alert("Please fill in both the year and event fields.");
+          }
+        });
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const darkModeToggle = document.getElementById("darkModeToggle");
+
+        darkModeToggle.addEventListener("change", function () {
+          document.body.classList.toggle("dark-mode", darkModeToggle.checked);
+        });
+      });
+    </script>
+  </body>
+</html>
