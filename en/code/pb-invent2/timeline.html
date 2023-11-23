@@ -8,7 +8,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Anton&family=Kdam+Thmor+Pro&family=Oswald:wght@200&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-        <title>Hoops!</title>
+        <title>Wildcats</title>
       </head>
   <body>
     <div class="grid-container">
@@ -43,6 +43,8 @@
       </div>
     </div>
 
+
+    <!-- TIMELINE -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const nodesContainer = document.getElementById("nodes");
@@ -130,6 +132,7 @@
       });
     </script>
 
+<!-- LIGHT MODE -->
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const darkModeToggle = document.getElementById("darkModeToggle");
@@ -144,9 +147,12 @@
         darkModeToggle.addEventListener("change", function () {
           const isDarkMode = darkModeToggle.checked;
       
+          // Check if dark mode is already in the desired state
+        if (isDarkMode !== document.body.classList.contains("dark-mode")) {
           // Update body class and store the user's preference in local storage
           document.body.classList.toggle("dark-mode", isDarkMode);
           localStorage.setItem("darkMode", isDarkMode.toString());
+        }
         });
       });
     </script>

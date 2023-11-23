@@ -7,12 +7,12 @@
 
 .navigation {
   background-color: #333;
-  color: #fff;
+  color: rgb(221, 221, 221);
   padding: 20px;
   display: flex;
   flex-direction: column;
   font: 1.5rem "Anton", sans-serif;
-  letter-spacing: 0.4rem;
+  letter-spacing: 0.1rem;
 }
 
 .material-symbols-outlined {
@@ -112,6 +112,7 @@
 .content {
   padding: 20px;
   font: 1.2rem "Anton", sans-serif;
+  letter-spacing: 0.1rem;
 }
 
 .toggle-container {
@@ -277,7 +278,9 @@ h3 {
   background-color: rgb(130, 61, 11);
   padding: 30px 80px;
   min-height: 1;
-  font: 1.5rem "Anton", sans-serif;
+  font: 1.3rem "Anton", sans-serif;
+  letter-spacing: 0.1rem;
+  color: rgb(221, 221, 221);
 }
 
 .caption {
