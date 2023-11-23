@@ -22,15 +22,14 @@
         </div>
     </header>
     <div class="hero"></div>
-
+    <div id="buttons">
+        <p>Filter Quiz: <p>
+        <button class="button" onclick="filterQuiz('Music')">Music</button>
+        <button class="button" onclick="filterQuiz('Sports')">Sports</button>
+        <button class="button" onclick="filterQuiz('Brands')">Brands</button>
+        <button class="button" onclick="filterQuiz('All')">All</button>
+    </div>
     <main class="main reveal fade-left">
-        <div id="buttons">
-            <p>Filter Quiz: <p>
-            <button class="button" onclick="filterQuiz('Music')">Music</button>
-            <button class="button" onclick="filterQuiz('Sports')">Sports</button>
-            <button class="button" onclick="filterQuiz('Brands')">Brands</button>
-            <button class="button" onclick="filterQuiz('All')">All</button>
-        </div>
         <div class="card" data-topic="Music">
             <img src="cardcover.jpg">
             <h2>Music Quiz</h2>

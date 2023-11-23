@@ -20,6 +20,12 @@
   cursor: pointer;
 }
 
+#buttons{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #e8c37f;
+}
+
 .button:hover {
   background-color: pink;
 }
@@ -94,7 +100,7 @@
   }
   
   .card {
-    flex: 0 0 calc(20% - 40px);
+    flex: 0 0 calc(20% - 40%);
     display: flex;
     flex-flow: column;
     background-color: pink;
