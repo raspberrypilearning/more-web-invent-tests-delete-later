@@ -32,7 +32,7 @@ function reveal() {
   function musicFunction() {
     window.location.href = "quizapp.html"
   }
-
+  
   // Filter Function
 
   function filterQuiz(topic) {
