@@ -11,7 +11,18 @@
   padding: 20px;
   display: flex;
   flex-direction: column;
+  font: 1.5rem "Anton", sans-serif;
+  letter-spacing: 0.4rem;
+  <style>
 }
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+  }
 
 .navigation a {
   text-decoration: none;
@@ -54,7 +65,7 @@
   position: relative;
   display: flex;
   margin-top: 50px;
-  gap: 5px
+  gap: 5px;
 }
 
 #nodes {
@@ -265,8 +276,8 @@ h3 {
 .textSection {
   background-color: rgb(130, 61, 11);
   padding: 30px 80px;
-  font: 1.5rem "Lato", sans-serif;
   min-height: 1;
+  font: 1.5rem "Anton", sans-serif;
 }
 
 .caption {
