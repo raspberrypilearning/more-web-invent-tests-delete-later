@@ -13,7 +13,6 @@
   flex-direction: column;
   font: 1.5rem "Anton", sans-serif;
   letter-spacing: 0.4rem;
-  <style>
 }
 
 .material-symbols-outlined {
@@ -112,6 +111,7 @@
 /* General Styling */
 .content {
   padding: 20px;
+  font: 1.2rem "Anton", sans-serif;
 }
 
 .toggle-container {
@@ -195,7 +195,7 @@ body,
 html {
   height: 100%;
   font: 400 15px/1.8 "Lato", sans-serif;
-  margin: 10;
+  margin: 0;
 }
 
 body {
