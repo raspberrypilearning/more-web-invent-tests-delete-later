@@ -207,12 +207,14 @@
 }
 
 .article-box{
-  width: 1000px;
+  width: 1500;
   background-color: #f2eb8c;
   border: 1px solid #e8c37f;
   margin: 20px;
   box-shadow: 0 4px 8px seagreen;
   transition: transform 0.5s ease-in-out;
+  text-align: center;
+  padding: 100px;
 }
 
 .blog-container{
@@ -370,3 +372,8 @@
       opacity: 1;
     }
   } 
+
+  p{
+    text-align: justify;
+    margin-bottom: 20px;
+  }
