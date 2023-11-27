@@ -1,0 +1,135 @@
+body {
+    background-color: #141414;
+    color: white;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100vh; /* Make the content fill the page so the footer is at the bottom */
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto; /* Center if the browser is really wide */
+    min-width: 25rem; /* Don't let the content get too narrow */
+    max-width: 70rem; /*  Don't let the content get too wide */
+    padding: 0;
+}
+
+section {
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    padding: 1rem 2rem;
+    margin: 1rem auto;
+}
+
+button {
+    background-color: #EEC643;
+    color: #141414;
+    font-size: 14px;
+    padding: 3px;
+    border: none;
+    border-radius: 2px;
+    transition: .2s ease-in-out;
+}
+
+button:hover {
+    background-color: white;
+    color: #EEC643;
+}
+
+.navigation-header {
+    background-color: #EEC643;
+    padding: 0 15px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+nav {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container > a {
+    color: #141414;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 26px;
+}
+
+.navigation-items {
+    display: flex;
+    gap: 40px;
+}
+
+.navigation-items > a {
+    color: #141414;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    transition: .4s ease-in-out;
+}
+
+.navigation-items > a:hover {
+    color: white;
+}
+
+.user {
+    gap: 10px;
+    padding-right: 5px;
+    color: #141414;
+}
+
+#sucessfullLogin {
+    display: none;
+}
+
+#alert {
+    color: red;
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    font-size: 20px;
+    font-weight: 800;
+    color: white;
+}
+
+@media screen and (max-width:768px) {
+    .user {
+        margin-left: auto;
+    }
+    
+    .hamburger {
+        display: flex;
+        cursor: pointer;
+    }
+    .hamburger #closeHam {
+        display: none;
+    }
+
+    .navigation-items {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        right: 0;
+        top: 58px;
+        background-color: #EEC643;
+        width: 100%;
+        height: calc(100vh - 58px);
+        padding-top: 60px;
+        gap: 10vh;
+    }
+}

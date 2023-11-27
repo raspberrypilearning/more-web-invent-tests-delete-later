@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+body{
+  background-color: #e8c37f;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  background: seagreen;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 32px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.navbar a {
+  position: relative;
+  font-size: 18px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 40px;
+}
+
+.navbar a::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: yellowgreen;
+  transition: .3s;
+}
+
+.navbar a:hover::before {
+  width: 100%;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+}
+.app{
+  background-color: seagreen;
+  width: 90%;
+  max-width: 600px;
+  margin: 100px auto 0;
+  border-radius: 10px;
+  padding: 30px;
+}
+.app h1{
+  font-size: 25px;
+  color: #001e4d;
+  font-weight: 600;
+  border-bottom: 1px solid #333;
+  padding-bottom: 30px;
+}
+.quiz{
+  padding: 20px 0;
+}
+.quiz h2{
+  font-size: 25px;
+  color: #e8c37f;
+  font-weight: 600;
+}
+.btn{
+  background-color: whitesmoke;
+  color: #222;
+  font-weight: 500;
+  width: 100%;
+  border: 1px solid #222;
+  padding: 10px;
+  margin: 10px 0;
+  text-align: left;
+  border-radius: 4px;
+  cursor: pointer;
+  transition:all 0.3s;
+}
+.btn:hover:not([disabled]){
+  background-color: #222;
+  color: whitesmoke;
+}
+.btn:disabled{
+  cursor: no-drop;
+}
+#next-btn{
+  background-color: #001e4d;
+  color: white;
+  font-weight: 500;
+  width: 100%;
+  border: 0;
+  padding: 10px;
+  margin: 20px 0;
+  border-radius: 4px;
+  cursor: pointer;
+  align-self: center;
+  display: none;
+}
+.correct{
+  background-color: green;
+}
+.incorrect{
+  background-color: red;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+      padding: 20px;
+  }
+
+  .navbar {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      background: seagreen;
+      z-index: 100;
+  }
+
+  .navbar.active {
+      display: flex;
+  }
+
+  .navbar a {
+      margin: 10px 0;
+  }
+
+  .menu-icon {
+      display: block;
+  }
+
+}

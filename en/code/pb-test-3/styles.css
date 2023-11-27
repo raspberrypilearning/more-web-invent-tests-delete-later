@@ -1,0 +1,109 @@
+html {
+    font-family: 'Alexandria', 'Almarai', 'Instrument Sans', sans-serif;
+     scroll-behavior: smooth;
+   }
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--bg-colour);
+    color: var(--text-colour);
+}
+
+/* Style the header */
+.header {
+    grid-area: header;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+}
+
+/* The grid container */
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        'header header header header header header'
+        'left middle middle middle middle right'
+        'footer footer footer footer footer footer';
+    grid-column-gap: 10px;
+}
+
+.left,
+.middle,
+.right {
+    padding: 10px;
+}
+
+/* Style the left column */
+.left {
+    grid-area: left;
+    background-color: var(--left-colour);
+}
+
+/* Style the middle column */
+.middle {
+    grid-area: middle;
+    background-color: var(--middle-colour);
+}
+
+/* Style the right column */
+.right {
+    grid-area: right;
+    background-color: var(--right-colour);
+}
+
+/* Style the footer */
+.footer {
+    grid-area: footer;
+    padding: 10px;
+    text-align: center;
+}
+
+:root {
+    --bg-colour: #c5b6b6;
+    --text-colour: #292525;
+    --left-colour:#aaa;
+    --middle-colour:#bbb;
+    --right-colour:#ccc;
+}
+
+.dark-mode {
+    --bg-colour: #292525;
+    --text-colour: #c5b6b6;
+    --left-colour:#333;
+    --middle-colour:#555;
+    --right-colour:#777;
+}
+
+/* Responsive layout - stacks the columns on top of each other */
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-areas:
+            'header header header header header header'
+            'left left left left left left'
+            'middle middle middle middle middle middle'
+            'right right right right right right'
+            'footer footer footer footer footer footer';
+    }
+}
+
+/* Define the animation */
+@keyframes wipe-enter {
+    0% {
+        transform: scale(0, .025);
+    }
+
+    50% {
+        transform: scale(1, .025);
+    }
+}
+
+/* Animated entrance */
+@media (prefers-reduced-motion: no-preference) {
+    .animated {
+        animation: wipe-enter 1s 1;
+    }
+}

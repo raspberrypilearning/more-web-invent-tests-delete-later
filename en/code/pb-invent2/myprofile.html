@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Kdam+Thmor+Pro&family=Oswald:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <title>Wildcats</title>
+  </head>
+
+  <body>
+    <div class="grid-container">
+        
+        <nav class="navigation">
+            <ul>
+              <li><a href="index.html">Wildcats</a></li>
+              <li><a href="timeline.html">Timeline</a></li>
+              <li><a href="myprofile.html">Profile</a></li>
+            </ul>
+            <div class="toggle-container">
+              <label class="switch">
+                <input type="checkbox" id="darkModeToggle" />
+                <span class="slider"></span>
+              </label>
+              <span class="toggle-label material-symbols-outlined">light_mode</span>
+            </div>
+          </nav>
+
+      <div class="content">
+        <h1 id="headerText">My Basketball Profile</h1>
+        <div class="team-selector">
+          <label for="teamDropdown">Style your Profile:</label>
+          <select id="teamDropdown" onchange="updateHeaderText()">
+            <option value="default" selected disabled>Select a player</option>
+            <!-- Add the list of teams here -->
+            <option value="hawks">Slam-Dunk Tessy</option>
+            <option value="steelers">KT From Downtown</option>
+            <option value="bears">Marcia O'Malice</option>
+            <option value="pumas">Three-Point Petrice</option>
+            <option value="pumas">Mac Attack</option>
+            <!-- Add more teams as needed -->
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- UPDATE THE HEADER TEXT FROM DROPDOWN-->
+    <script>
+      function updateHeaderText() {
+        const teamDropdown = document.getElementById("teamDropdown");
+        const headerText = document.getElementById("headerText");
+
+        // Get the selected team from the dropdown
+        const selectedTeam =
+          teamDropdown.options[teamDropdown.selectedIndex].text;
+
+        // Update the header text
+        headerText.textContent = `Go, ${selectedTeam}!`;
+
+        // Store the selected team in localStorage
+        localStorage.setItem("selectedTeam", selectedTeam);
+      }
+
+      function populateDropdown() {
+        const teamDropdown = document.getElementById("teamDropdown");
+
+        // Set the selected team from localStorage if available
+        const storedTeam = localStorage.getItem("selectedTeam");
+        if (storedTeam) {
+          const option = document.createElement("option");
+          option.value = storedTeam.toLowerCase().replace(/\s/g, ""); // Convert to lowercase and remove spaces
+          option.text = storedTeam;
+          teamDropdown.add(option);
+          teamDropdown.value = option.value; // Set the selected value
+          updateHeaderText();
+        }
+      }
+
+      // Call the function to populate the dropdown and change the text from localStorage on page load
+      window.onload = populateDropdown;
+    </script>
+      
+      <!-- LIGHT MODE -->
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const darkModeToggle = document.getElementById("darkModeToggle");
+          
+            // Check if dark mode preference is stored in local storage
+            const isDarkMode = localStorage.getItem("darkMode") === "true";
+          
+            // Set initial dark mode state based on the stored preference
+            document.body.classList.toggle("dark-mode", isDarkMode);
+            darkModeToggle.checked = isDarkMode;
+          
+            darkModeToggle.addEventListener("change", function () {
+              const isDarkMode = darkModeToggle.checked;
+          
+              // Check if dark mode is already in the desired state
+            if (isDarkMode !== document.body.classList.contains("dark-mode")) {
+              // Update body class and store the user's preference in local storage
+              document.body.classList.toggle("dark-mode", isDarkMode);
+              localStorage.setItem("darkMode", isDarkMode.toString());
+            }
+            });
+          });
+        </script>
+  </body>
+</html>

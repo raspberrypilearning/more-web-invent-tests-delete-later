@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>World Gallery</h1>
+
+    <div id="buttons">
+        <button onclick="filterImages('Kenya')">Kenya</button>
+        <button onclick="filterImages('Brazil')">Brazil</button>
+        <button onclick="filterImages('Japan')">Japan</button>
+        <button onclick="filterImages('All')">Show All</button>
+    </div>
+
+    <div id="gallery">
+        <img class="country" src="kenya1.jpg" data-country="Kenya" alt="Kenya Image 1">
+        <img class="country" src="kenya2.jpg" data-country="Kenya" alt="Kenya Image 2">
+        <img class="country" src="kenya3.jpg" data-country="Kenya" alt="Kenya Image 3">
+        <img class="country" src="brazil1.jpg" data-country="Brazil" alt="Brazil Image 1">
+        <img class="country" src="brazil2.jpg" data-country="Brazil" alt="Brazil Image 2">
+        <img class="country" src="brazil3.jpg" data-country="Brazil" alt="Brazil Image 3">        
+        <img class="country" src="japan1.jpg" data-country="Japan" alt="Japan Image 1">
+        <img class="country" src="japan2.jpg" data-country="Japan" alt="Japan Image 2">
+        <img class="country" src="japan3.jpg" data-country="Japan" alt="Japan Image 3">        
+    </div>
+
+    <script>
+        function filterImages(country) {
+            var images = document.getElementsByClassName('country');
+            for (var i = 0; i < images.length; i++) {
+                if (country === 'All' || images[i].getAttribute('data-country') === country) {
+                    images[i].style.display = 'block';
+                } else {
+                    images[i].style.display = 'none';
+                }
+            }
+        }
+    </script>
+</body>
+</html>

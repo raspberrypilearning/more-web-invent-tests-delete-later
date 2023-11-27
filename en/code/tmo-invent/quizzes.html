@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>QuizzyKids</title>
+</head>
+<body>
+    
+    <header class="header">
+        <a href="#" class="logo">QuizzyKids</a>
+        <nav class="navbar" id="nav">
+            <a href="index.html">Home</a>
+            <a href="quizzes.html">Quizzes</a>
+            <a href="posts.html">Posts</a>
+        </nav>
+        <div class="menu-icon">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+    <div class="hero"></div>
+    <div id="buttons">
+        <p>Filter Quiz: <p>
+        <button class="button" onclick="filterQuiz('Music')">Music</button>
+        <button class="button" onclick="filterQuiz('Sports')">Sports</button>
+        <button class="button" onclick="filterQuiz('Brands')">Brands</button>
+        <button class="button" onclick="filterQuiz('All')">All</button>
+    </div>
+    <main class="main reveal fade-left">
+        <div class="card" data-topic="Music">
+            <img src="cardcover.jpg">
+            <h2>Music Quiz</h2>
+            <p>Which songs stayed on the charts for the longest? What are the most trending Tik Tok sounds ever?</p>
+            <button type="submit" name="takequiz">Take Quiz</button>
+        </div>
+        <div class="card" data-topic="Sports">
+            <img src="cardcover.jpg">
+            <h2>Sports Quiz</h2>
+            <p>Is MJ the greatest basketball player of all time? Are you a Messi or a CR7 Fan? </p>
+            <button type="submit" name="takequiz">Take Quiz</button>
+        </div>
+        <div class="card" data-topic="Brands">
+            <img src="cardcover.jpg">
+            <h2>Brands Quiz</h2>
+            <p>Do you know your Maccies from your Burger King? Can you spot the Snapchat logo? </p>
+            <button type="submit" name="takequiz">Take Quiz</button>
+        </div>
+
+        <div class="card">
+            <img src="cardcover.jpg">
+            <h2>Countries Quiz</h2>
+            <p>Which songs stayed on the charts for the longest? What are the most trending Tik Tok sounds ever?</p>
+            <button type="submit" name="takequiz">Take Quiz</button>
+        </div>
+        <div class="card">
+            <img src="cardcover.jpg">
+            <h2>Personality Quiz</h2>
+            <p>Is MJ the greatest basketball player of all time? Are you a Messi or a CR7 Fan? </p>
+            <button type="submit" name="takequiz">Take Quiz</button>
+        </div>
+        <div class="card" data-topic="Brands">
+            <img src="cardcover.jpg">
+            <h2>Food Quiz</h2>
+            <p>Do you know your Maccies from your Burger King? Can you spot the Snapchat logo? </p>
+            <button type="submit" name="takequiz">Take Quiz</button>
+        </div>
+    
+    </main>
+
+    <footer class="bottom">
+        <p>QuizzyKids Ⓒ <span id="currentYear"></span> - All Rights Reserved</p>
+    </footer>
+</body>
+<script src="script.js"></script>
+</html>

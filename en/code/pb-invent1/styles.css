@@ -1,0 +1,74 @@
+body,
+html {
+  height: 100%;
+  margin: 10;
+  font: 400 15px/1.8 "Lato", sans-serif;
+  color: rgb(243, 242, 242);
+}
+
+.bball {
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: black;
+    background-size: cover;
+    min-height: 100%;
+    background-attachment: fixed;
+    opacity: 1;
+    transition: opacity 2s ease;
+  }
+
+.ball,
+.score {
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: black;
+  background-size: cover;
+  min-height: 100%;
+  background-attachment: fixed;
+  opacity: 0.1;
+  transition: opacity 2s ease;
+}
+
+.bball {
+  background-image: url("bball_bg2.jpg");
+}
+
+.score {
+    background-image: url("score.jpg");
+  }
+
+.ball {
+    background-image: url("ball.jpg");
+  }
+
+h3 {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font: 20px "Lato", sans-serif;
+  color: whitesmoke;
+  text-align: center;
+}
+
+.textSection {
+  background-color: rgb(130, 61, 11);
+  padding: 30px 80px;
+  min-height: 1;
+}
+
+.caption {
+  position: absolute;
+  text-transform: uppercase;
+  top: 40%;
+  width: 100%;
+  text-align: center;
+}
+
+.border {
+  background-color: #2c3233;
+  color: White;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 10px;
+}

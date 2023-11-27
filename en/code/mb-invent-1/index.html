@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins&display=swap" rel="stylesheet">
+    <title>Dungeons and Dragons Fan Page</title>
+</head>
+<body>
+    <header class="navigation-header">
+        <nav>
+            <div class="logo-container">
+                <a href="./index.html">D&D</a>
+            </div>
+            <div class="navigation-items" id="navigation-items">
+                <a href="">Journey</a>
+                <a href="">Character</a>
+            </div>
+            <div class="colour-dropdown">
+                <button class="colourbtn">Choose theme</button>
+                <div class="colour-dropdown-content">
+                    <a class="lightTheme" onclick="changeTheme('light')">☀ Light</a>
+                    <a class="darkTheme" onclick="changeTheme('dark')">☾ Dark</a>
+                    <a class="dungeonTheme" onclick="changeTheme('dungeon')">🔥 Dungeon</a>
+                </div>
+            </div>
+            <div class="hamburger">
+                <span id="openHam">&#9776;</span>
+                <span id="closeHam">&#x2716;</span>
+            </div>
+        </nav>
+    </header>
+    <main>
+        
+    </main>
+    <script>
+        let openHam = document.querySelector('#openHam');
+        let closeHam = document.querySelector('#closeHam');
+        let navigationItems = document.querySelector('.navigation-items')
+
+        const hamburgerEvent = (navigation, close, open) => {
+            navigationItems.style.display = navigation;
+            closeHam.style.display = close;
+            openHam.style.display = open;
+        }
+
+        openHam.addEventListener('click', () => hamburgerEvent("flex", "block", "none"));
+        closeHam.addEventListener('click', () => hamburgerEvent("none", "none", "block"));
+
+        var root = document.querySelector(":root");
+        var rootVars = getComputedStyle(root);
+
+        function changeTheme(theme){
+            root.style.setProperty( '--background-colour', rootVars.getPropertyValue('--'+theme+'-background-colour'));
+            root.style.setProperty( '--foreground-colour', rootVars.getPropertyValue('--'+theme+'-foreground-colour'));
+            root.style.setProperty( '--highlight-1', rootVars.getPropertyValue('--'+theme+'-highlight-1'));
+            root.style.setProperty( '--highlight-2', rootVars.getPropertyValue('--'+theme+'-highlight-2'));
+        }
+    </script>
+</body>
+</html>

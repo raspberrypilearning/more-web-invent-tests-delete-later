@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Kdam+Thmor+Pro&family=Oswald:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <title>Wildcats</title>
+  </head>
+  
+  
+  <body>
+    <div class="grid-container">
+        
+      <nav class="navigation">
+        <ul>
+          <li><a href="index.html">Wildcats</a></li>
+          <li><a href="timeline.html">Timeline</a></li>
+          <li><a href="myprofile.html">Profile</a></li>
+        </ul>
+        <div class="toggle-container">
+          <label class="switch">
+            <input type="checkbox" id="darkModeToggle" />
+            <span class="slider"></span>
+          </label>
+          <span class="toggle-label material-symbols-outlined">light_mode</span>
+        </div>
+      </nav>
+      
+      
+      <div class="scrolling-section">
+
+
+      <div class="bball">
+        <div class="caption">
+          <span id="textContainer" class="border"></span>
+        </div>
+      </div>
+
+      <div class="ball parallax">
+        <div class="caption">
+          <span class="border">Training</span>
+        </div>
+      </div>
+
+      <div class="textSection">
+        <p>
+          The Wildcats want you in their next training session. We know the
+          streets can be tough, but so are you, and that's what makes you
+          perfect for this.
+        </p>
+        <p>
+          A court where your skills are not just appreciated but celebrated,
+          where your dedication to the game is recognised and nurtured. You're
+          not just honing your skills; you're becoming a part of a family that
+          stands together through thick and thin.
+        </p>
+        <p>
+          We get it; life might throw some challenges your way, but the Wildcats
+          have been there, conquered that. This isn't just about the game; it's
+          about empowering yourself and your community. Show up, and not only
+          will you be perfecting that jump shot, but you'll also be joining a
+          support system that believes in your potential. We have a legacy of
+          producing stars, and it's time for you to claim your spot.
+        </p>
+        <p>
+          Your journey starts here, and we can't wait to see you bring your
+          spirit to the Wildcats family.
+        </p>
+      </div>
+
+    
+
+      <div class="score parallax">
+        <div class="caption">
+          <span class="border">LATEST SCORE - 23:11</span>
+        </div>
+      </div>
+    
+    </div>
+
+</div>
+    </body>
+
+<!-- LIGHT MODE -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const darkModeToggle = document.getElementById("darkModeToggle");
+  
+    // Check if dark mode preference is stored in local storage
+    const isDarkMode = localStorage.getItem("darkMode") === "true";
+  
+    // Set initial dark mode state based on the stored preference
+    document.body.classList.toggle("dark-mode", isDarkMode);
+    darkModeToggle.checked = isDarkMode;
+  
+    darkModeToggle.addEventListener("change", function () {
+      const isDarkMode = darkModeToggle.checked;
+  
+      // Check if dark mode is already in the desired state
+    if (isDarkMode !== document.body.classList.contains("dark-mode")) {
+      // Update body class and store the user's preference in local storage
+      document.body.classList.toggle("dark-mode", isDarkMode);
+      localStorage.setItem("darkMode", isDarkMode.toString());
+    }
+    });
+  });
+</script>
+
+<!-- PARALLAX SCROLLING -->
+    <script>
+      const options = {
+        threshold: 0.5, // Trigger the callback when 50% of the image is in the viewport
+      };
+
+      const observer = new IntersectionObserver(handleIntersection, options);
+
+      document.querySelectorAll(".parallax").forEach((section) => {
+        observer.observe(section);
+      });
+
+      function handleIntersection(entries, observer) {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = 1; // Fade-in effect
+            observer.unobserve(entry.target); // Stop observing once the section is visible
+          }
+        });
+      }
+    </script>
+
+<!-- GET THE HEADLINE TEXT -->
+    <script>      
+        document.addEventListener("DOMContentLoaded", function () {
+            // Fetch the content of the .txt file
+            fetch("headline.txt")
+            .then((response) => response.text())
+            .then((data) => {
+                // Update the content of the div with the fetched text
+                document.getElementById("textContainer").innerText = data;
+            })
+            .catch((error) => console.error("Error fetching text:", error));
+        });
+    </script>
+  </body>
+</html>

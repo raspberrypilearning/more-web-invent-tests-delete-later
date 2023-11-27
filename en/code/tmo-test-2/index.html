@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- Title shown in web browsers-->
+    <title>Memory Game</title>
+
+    <link rel="stylesheet" href="style.css">
+  </head>
+    
+  <body>   
+    <div class="card" onclick="flipCard(this)" data-flipped="false"></div>
+    <div class="card" onclick="flipCard(this)"></div>
+
+    <script>
+      const colors = [
+          "red",
+          "green",
+          "purple",
+          "blue",
+          "aliceblue",
+          "yellow",
+          "orange"
+      ]
+
+      let flippedCards = []
+        
+      function flipCard(card) {
+        // Set card to flipped
+        card.dataset.flipped = true;
+
+        // Randomise card color
+        card.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)]
+
+        // Get flipped cards 
+        flippedCards.push(card)
+
+        //Check if two cards are flipped and matched
+        if (flippedCards.length === 2) {
+          if (flippedCards[0].style.backgroundColor === flippedCards[1].style.backgroundColor) {
+            alert("Congratulations! You found a pair");
+          }
+            
+          setTimeout(() => {
+              flippedCards.forEach(card => {
+                  card.style.backgroundColor = "blueviolet";
+                })
+              flippedCards = []
+          }, 1000);
+        }
+      }
+    </script>
+
+</body>
+</html>

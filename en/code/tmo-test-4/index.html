@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- Title shown in web browsers-->
+    <title>Pizza Builder</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
+  </head>
+
+<body>
+  
+  <header>
+    <h1>TikTok Pizza</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#creators">Creators</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section id="Home">
+    <h2>Welcome to TikTok Pizza</h2>
+    <p> Select your pizza size and toppings:</p>
+    <label for="pizzaSize">Pizza Size</label>
+    <select id="pizzaSize">
+      <option value="small">Small</option>
+      <option value="medium">Medium</option>
+      <option value="large">Large</option>
+    </select>
+    <h3>Toppings:</h3>
+    <div id="toppings">
+      <label><input type="checkbox" name="topping" value="likes"> Likes</label>
+      <label><input type="checkbox" name="topping" value="followers"> Followers</label>
+      <label><input type="checkbox" name="topping" value="views"> Views</label>
+      <label><input type="checkbox" name="topping" value="content"> Content</label>
+      <label><input type="checkbox" name="topping" value="comments"> Comments</label>
+    </div>
+    <button id="orderButton">Order Pizza</button>
+  </section>
+  <section id="menu">
+    <h2>Our Delicious Pizza Menu</h2>
+  </section>
+  <section id="creators">
+    <h2>Meet Awesome Content Creators</h2>
+  </section>
+  <section id="contact">
+    <h2>Contact Us</h2>
+  </section>
+</body>
+</html>

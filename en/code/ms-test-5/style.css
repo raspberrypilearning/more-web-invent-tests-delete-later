@@ -1,0 +1,25 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#buttons {
+    margin-bottom: 20px;
+}
+
+#buttons button {
+    padding: 10px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+#gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 10px;
+}
+
+#gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
