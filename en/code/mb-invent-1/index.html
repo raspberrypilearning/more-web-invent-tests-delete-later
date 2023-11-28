@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins&display=swap" rel="stylesheet">
     <title>Dungeons and Dragons Fan Page</title>
 </head>
@@ -14,8 +15,8 @@
                 <a href="./index.html">D&D</a>
             </div>
             <div class="navigation-items" id="navigation-items">
-                <a href="">Journey</a>
-                <a href="">Character</a>
+                <a href="journey.html">Journey</a>
+                <a href="character.html">Character</a>
             </div>
             <div class="colour-dropdown">
                 <button class="colourbtn">Choose theme</button>
@@ -31,32 +32,29 @@
             </div>
         </nav>
     </header>
+    <section class="hero-image">
+        <div class="hero-title">
+            <h1>I love Dungeons & Dragons</h1>
+        </div>
+    </section>
     <main>
-        
+        <section>
+            <h2>Greetings, fellow travelers of the virtual realms!</h2>
+
+            <p>Welcome to Mac's D&D site, where I invite you to join me on a captivating journey through the enchanting landscapes of Dungeons and Dragons.</p>
+            
+            <p>Here, I share my personal odyssey in the world of D&D — from the exhilarating victories to the humbling defeats, the laughter around the table to the moments of sheer wonder. As I navigate dungeons and craft narratives, you're invited to witness the magic unfold and become part of this ever-expanding epic.</p>
+        </section>
+        <section class="journey-link">
+            <a href="journey.html">View my journey</a>
+        </section>
+        <section class="character-link">
+            <a href="character.html">Make a Character</a>
+        </section>
     </main>
-    <script>
-        let openHam = document.querySelector('#openHam');
-        let closeHam = document.querySelector('#closeHam');
-        let navigationItems = document.querySelector('.navigation-items')
-
-        const hamburgerEvent = (navigation, close, open) => {
-            navigationItems.style.display = navigation;
-            closeHam.style.display = close;
-            openHam.style.display = open;
-        }
-
-        openHam.addEventListener('click', () => hamburgerEvent("flex", "block", "none"));
-        closeHam.addEventListener('click', () => hamburgerEvent("none", "none", "block"));
-
-        var root = document.querySelector(":root");
-        var rootVars = getComputedStyle(root);
-
-        function changeTheme(theme){
-            root.style.setProperty( '--background-colour', rootVars.getPropertyValue('--'+theme+'-background-colour'));
-            root.style.setProperty( '--foreground-colour', rootVars.getPropertyValue('--'+theme+'-foreground-colour'));
-            root.style.setProperty( '--highlight-1', rootVars.getPropertyValue('--'+theme+'-highlight-1'));
-            root.style.setProperty( '--highlight-2', rootVars.getPropertyValue('--'+theme+'-highlight-2'));
-        }
-    </script>
+    <footer class="bottom">
+        <p>Mac Bowley <span id="currentYear"></span> - All Rights Reserved</p>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>

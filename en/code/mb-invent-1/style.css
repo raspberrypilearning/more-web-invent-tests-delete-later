@@ -16,6 +16,9 @@
     --dungeon-highlight-1: #BE3144;
     --dungeon-highlight-2: #F05941;
 
+    --base-text-colour: #000000;
+    --light-text-colour: #FFFFFF;
+
     /* Actual colour variables */
     
     --background-colour: #FFFBF5;
@@ -23,7 +26,6 @@
     --highlight-1: #C3ACD0;
     --highlight-2: #7743DB;
     --text-colour: #000000;
-    --light-text-colour: #FFFFFF;
 }
 
 * {
@@ -32,7 +34,7 @@
 
 body {
     background-color: var(--background-colour);
-    color: --text-colour;
+    color: var(--text-colour);
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -46,6 +48,8 @@ body {
 main {
     height: 100%;
     display: flex;
+    flex-wrap: wrap;
+    width: 100%;
     justify-content: center;
     margin: 0 auto; /* Center if the browser is really wide */
     min-width: 25rem; /* Don't let the content get too narrow */
@@ -71,6 +75,11 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.logo-container {
+    min-width: 140px;
+    text-align: center;
 }
 
 .logo-container > a {
@@ -159,6 +168,321 @@ nav {
 .colour-dropdown:hover .colourbtn {
     background-color: var(--highlight-2);
     color: var(--light-text-colour);
+}
+
+/* Hero image */
+
+.hero-image {
+    min-height: 50vh;
+    background: url('dungeon_hero_image.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+    align-content: center;
+    display: flex;
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+}
+
+.hero-title {
+    background-color: var(--foreground-colour);
+    opacity: 0.8;
+    text-align: center;
+    max-width: 50%;
+    margin: auto;
+    border-radius: 5px;
+    padding: 25px;
+    color: var(--highlight-2);
+    font-size: 36px;
+}
+
+.journey {
+    background: url('journey.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.character {
+    background: url('character.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Page elements */
+
+section {
+    background-color: var(--foreground-colour);
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    margin: 1rem auto;
+    text-align: center;
+    width: 100%;
+    transition: .4s ease-in-out;
+}
+
+.bottom {
+    width: 100%;
+    margin: auto;
+    background: var(--foreground-colour);
+    align-items: center;
+    font-size: 18px;
+    text-align: center;
+}
+
+/* Home page links */
+
+.journey-link {
+    width: 100%;
+    background: url(journey.jpg) no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+}
+
+.journey-link > a {
+    background-color: var(--highlight-1);
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: var(--text-colour);
+    font-size: 28px;
+}
+
+.character-link {
+    width: 100%;
+    background: url(character.jpg) no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+}
+
+.character-link > a {
+    background-color: var(--highlight-1);
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: var(--text-colour);
+    font-size: 28px;
+}
+
+/* Journey Grid */
+
+.journey-section {
+    width: 70%;
+}
+
+.journey-container {
+    display: grid;
+    grid-template: 200px / 20fr 1fr 20fr;
+    grid-template-areas: "left center right";
+    justify-content: center;
+    align-items: center;
+    background: var(--foreground-colour);
+    margin: 0 10px 0 10px;
+}
+
+.journey-timeline {
+    background-color: var(--highlight-1);
+    grid-area: center;
+    height: 100%;
+    width: 100%;
+    content: "";
+}
+
+.journey-item {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.journey-container .left {
+    text-align: right;
+    grid-area: left;
+}
+
+.journey-container .right {
+    text-align: left;
+    grid-area: right;
+}
+
+.journey-content {
+    opacity: 0;
+}
+
+/* Character Grid */
+
+.character-sheet {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template: 200px 400px 400px / 1fr 2fr 2fr;
+    grid-gap: 20px;
+    grid-template-areas: "left center right";
+    justify-content: center;
+    align-items: center;
+    background: var(--foreground-colour);
+    margin: 1vh;
+}
+
+.character-sheet span {
+    align-items: center;
+    display: flex;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    font-size: 1.5em;
+    padding-left: 10px;
+}
+
+.character-sheet button {
+    align-items: flex-end;
+    background-color: var(--highlight-1);
+    padding: 8px;
+    margin: 5px;
+    border-radius: 3px;
+    border: none;
+}
+
+.character-picture{
+    grid-area: left;
+    grid-row: 1;
+    height: 100%;
+}
+
+.name-section {
+    grid-area: center;
+    grid-row: 1;
+    display: flex;
+}
+
+#name-display {
+    display: none;
+    justify-content: space-between;
+}
+
+#name {
+    background-color: var(--background-colour);
+    border: none;
+    height: 100%;
+    color: var(--text-colour);
+}
+
+.class-section {
+    grid-area: right;
+    grid-row: 1;
+    display: flex;
+}
+
+#class-display {
+    display: none;
+}
+
+#class {
+    background-color: var(--background-colour);
+    border: none;
+    height: 100%;
+    color: var(--text-colour);
+}
+
+.stats-section {
+    grid-area: left;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    height: 100%;
+    display: flex;
+}
+
+#stats-input {
+    width: 100%;
+}
+
+#stats-display {
+    display: none;
+}
+
+.description-section {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row: 2;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    
+}
+
+#description-input {
+    width:100%;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+#description {
+    width: 70%;
+    height: 50%;
+    background-color: var(--background-colour);
+    border: none;
+    color: var(--text-colour);
+}
+
+#description-display {
+    display: none;
+}
+
+.background-section {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row: 3;
+    height: 100%;
+    align-items: center;
+    display: flex;
+}
+
+#background-input {
+    width:100%;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+#background {
+    width: 70%;
+    height: 50%;
+    background-color: var(--background-colour);
+    border: none;
+    color: var(--text-colour);
+}
+
+#background-display {
+    display: none;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+/* Animations */
+
+@keyframes wipe-enter {
+	0% {
+		transform: scale(0, .025);
+	}
+	50% {
+		transform: scale(1, .025);
+	}
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .appear {
+      animation-name: wipe-enter;
+      animation-duration: 1s;
+      animation-iteration-count: 1;
+    }
 }
 
 @media screen and (max-width:768px) {
