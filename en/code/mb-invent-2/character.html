@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins&display=swap" rel="stylesheet">
+    <title>Dungeons and Dragons Fan Page</title>
+</head>
+<body>
+    <header class="navigation-header">
+        <nav>
+            <div class="logo-container">
+                <a href="./index.html">D&D</a>
+            </div>
+            <div class="navigation-items" id="navigation-items">
+                <a href="journey.html">Journey</a>
+                <a href="character.html">Character</a>
+            </div>
+            <div class="colour-dropdown">
+                <button class="colourbtn">Choose theme</button>
+                <div class="colour-dropdown-content">
+                    <a class="lightTheme" onclick="changeTheme('light')">☀ Light</a>
+                    <a class="darkTheme" onclick="changeTheme('dark')">☾ Dark</a>
+                    <a class="dungeonTheme" onclick="changeTheme('dungeon')">🔥 Dungeon</a>
+                </div>
+            </div>
+            <div class="hamburger">
+                <span id="openHam">&#9776;</span>
+                <span id="closeHam">&#x2716;</span>
+            </div>
+        </nav>
+    </header>
+    <section class="hero-image character">
+        <div class="hero-title">
+            <h1>Make a Character</h1>
+        </div>
+    </section>
+    <main>
+        <div class="character-sheet">
+            <img src="character-portrait.jpg" class="character-picture">
+            <div class="name-section">
+                <div id="name-input">
+                    <label>Name:</label>
+                    <input type="text" id="name">
+                    <button onclick="changeDisplay('name')">Submit</button>
+                </div>
+                <div id="name-display">
+                    <h2>Name:</h2>
+                    <span id="name-span"></span>
+                </div>
+            </div>
+            <div class="class-section">
+                <div id="class-input">
+                    <label>Class:</label>
+                    <select id="class">
+                        <option value="Artificer">Artificer</option>
+                        <option value="Barbarian">Barbarian</option>
+                        <option value="Bard">Bard</option>
+                        <option value="Cleric">Cleric</option>
+                        <option value="Druid">Druid</option>
+                        <option value="Fighter">Fighter</option>
+                        <option value="Monk">Monk</option>
+                        <option value="Paladin">Paladin</option>
+                        <option value="Ranger">Ranger</option>
+                        <option value="Rogue">Rogue</option>
+                        <option value="Sorcerer">Sorcerer</option>
+                        <option value="Warlock">Warlock</option>
+                        <option value="Wizard">Wizard</option>
+                    </select>
+                    <button onclick="changeDisplay('class')">Submit</button>
+                </div>
+                <div id="class-display">
+                    <h2>Class:</h2>
+                    <span id="class-span"></span>
+                </div>
+            </div>
+            <div class="description-section">
+                <div id="description-input">
+                    <h2>Description:</h2>
+                    <textarea id="description">Type your description here....</textarea>
+                    <button onclick="changeDisplay('description')">Submit</button>
+                </div>
+                <div id="description-display">
+                    <h2>Description:</h2>
+                    <span id="description-span"></span>
+                </div>
+            </div>
+            <div class="background-section">
+                <div id="background-input">
+                    <h2>Background:</h2>
+                    <textarea id="background">Type your background here....</textarea>
+                    <button onclick="changeDisplay('background')">Submit</button>
+                </div>
+                <div id="background-display">
+                    <h2>Background:</h2>
+                    <span id="background-span"></span>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="bottom">
+        <p>Mac Bowley <span id="currentYear"></span> - All Rights Reserved</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

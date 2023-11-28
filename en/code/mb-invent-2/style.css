@@ -1,0 +1,516 @@
+:root{
+    /* Fonts */
+    --header-font: 'Abril Fatface', serif;
+    --text-font: 'Poppins', sans-serif;
+    
+    --light-background-colour: #FFFBF5;
+    --light-foreground-colour: #F7EFE5;
+    --light-highlight-1: #C3ACD0;
+    --light-highlight-2: #7743DB;
+    --dark-background-colour: #0F0F0F;
+    --dark-foreground-colour: #232D3F;
+    --dark-highlight-1: #005B41;
+    --dark-highlight-2: #008170;
+    --dungeon-background-colour: #22092C;
+    --dungeon-foreground-colour: #872341;
+    --dungeon-highlight-1: #BE3144;
+    --dungeon-highlight-2: #F05941;
+
+    --base-text-colour: #000000;
+    --light-text-colour: #FFFFFF;
+
+    /* Actual colour variables */
+    
+    --background-colour: #FFFBF5;
+    --foreground-colour: #F7EFE5;
+    --highlight-1: #C3ACD0;
+    --highlight-2: #7743DB;
+    --text-colour: #000000;
+}
+
+* {
+    transition: .4s ease-in-out;
+}
+
+body {
+    background-color: var(--background-colour);
+    color: var(--text-colour);
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100vh; /* Make the content fill the page so the footer is at the bottom */
+    display: flex;
+    flex-direction: column;
+    font-family: var(--text-font);
+}
+
+main {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    margin: 0 auto; /* Center if the browser is really wide */
+    min-width: 25rem; /* Don't let the content get too narrow */
+    max-width: 70rem; /*  Don't let the content get too wide */
+    padding: 0;
+}
+
+/* Navigation styling */
+
+.navigation-header {
+    background-color: var(--foreground-colour);
+    padding: 0 15px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-family: var(--header-font);
+}
+
+nav {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    min-width: 140px;
+    text-align: center;
+}
+
+.logo-container > a {
+    color: var(--highlight-2);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 26px;
+}
+
+.navigation-items {
+    display: flex;
+    gap: 40px;
+}
+
+.navigation-items > a {
+    color: var(--highlight-2);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.navigation-items > a:hover {
+    color: var(--highlight-1);
+}
+
+.hamburger {
+    display: none;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--highlight-2);
+}
+
+/* Colour picker */
+
+.colourbtn {
+    background-color: var(--highlight-1);
+    color: var(--text-colour);
+    padding: 14px;
+    font-size: 14px;
+    border: none;
+    min-width: 140px;
+    font-family: var(--header-font);
+}
+
+.colour-dropdown {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+}
+
+.colour-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--highlight-2);
+    min-width: 140px;
+    z-index: 2;
+}
+
+.colour-dropdown-content a {
+    color: var(--light-text-colour);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-family: var(--text-font);
+}
+
+.lightTheme:hover {
+    background-color: var(--light-foreground-colour);
+    color: var(--light-highlight-2);
+}
+
+.darkTheme:hover {
+    background-color: var(--dark-foreground-colour);
+    color: var(--dark-highlight-2);
+}
+
+.dungeonTheme:hover {
+    background-color: var(--dungeon-foreground-colour);
+    color: var(--dungeon-highlight-2);
+}
+
+.colour-dropdown:hover .colour-dropdown-content {
+    display: block;
+}
+
+.colour-dropdown:hover .colourbtn {
+    background-color: var(--highlight-2);
+    color: var(--light-text-colour);
+}
+
+/* Hero image */
+
+.hero-image {
+    min-height: 50vh;
+    background: url('dungeon_hero_image.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+    align-content: center;
+    display: flex;
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+}
+
+.hero-title {
+    background-color: var(--foreground-colour);
+    opacity: 0.8;
+    text-align: center;
+    max-width: 50%;
+    margin: auto;
+    border-radius: 5px;
+    padding: 25px;
+    color: var(--highlight-2);
+    font-size: 36px;
+}
+
+.journey {
+    background: url('journey.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.character {
+    background: url('character.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Page elements */
+
+section {
+    background-color: var(--foreground-colour);
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    margin: 1rem auto;
+    text-align: center;
+    width: 100%;
+    transition: .4s ease-in-out;
+}
+
+.bottom {
+    width: 100%;
+    margin: auto;
+    background: var(--foreground-colour);
+    align-items: center;
+    font-size: 18px;
+    text-align: center;
+}
+
+/* Home page links */
+
+.journey-link {
+    width: 100%;
+    background: url(journey.jpg) no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+}
+
+.journey-link > a {
+    background-color: var(--highlight-1);
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: var(--text-colour);
+    font-size: 28px;
+}
+
+.character-link {
+    width: 100%;
+    background: url(character.jpg) no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+}
+
+.character-link > a {
+    background-color: var(--highlight-1);
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: var(--text-colour);
+    font-size: 28px;
+}
+
+/* Journey Grid */
+
+.journey-section {
+    width: 70%;
+}
+
+.journey-container {
+    display: grid;
+    grid-template: 200px / 20fr 1fr 20fr;
+    grid-template-areas: "left center right";
+    justify-content: center;
+    align-items: center;
+    background: var(--foreground-colour);
+    margin: 0 10px 0 10px;
+}
+
+.journey-timeline {
+    background-color: var(--highlight-1);
+    grid-area: center;
+    height: 100%;
+    width: 100%;
+    content: "";
+}
+
+.journey-item {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.journey-container .left {
+    text-align: right;
+    grid-area: left;
+}
+
+.journey-container .right {
+    text-align: left;
+    grid-area: right;
+}
+
+.journey-content {
+    opacity: 0;
+}
+
+/* Character Grid */
+
+.character-sheet {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template: 200px 400px 400px / 1fr 2fr 2fr;
+    grid-gap: 20px;
+    grid-template-areas: "left center right";
+    justify-content: center;
+    align-items: center;
+    background: var(--foreground-colour);
+    margin: 1vh;
+}
+
+.character-sheet span {
+    align-items: center;
+    display: flex;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    font-size: 1.5em;
+    padding-left: 10px;
+}
+
+.character-sheet button {
+    align-items: flex-end;
+    background-color: var(--highlight-1);
+    padding: 8px;
+    margin: 5px;
+    border-radius: 3px;
+    border: none;
+}
+
+.character-picture{
+    grid-area: left;
+    grid-row: 1;
+    height: 100%;
+}
+
+.name-section {
+    grid-area: center;
+    grid-row: 1;
+    display: flex;
+}
+
+#name-display {
+    display: none;
+    justify-content: space-between;
+}
+
+#name {
+    background-color: var(--background-colour);
+    border: none;
+    height: 100%;
+    color: var(--text-colour);
+}
+
+.class-section {
+    grid-area: right;
+    grid-row: 1;
+    display: flex;
+}
+
+#class-display {
+    display: none;
+}
+
+#class {
+    background-color: var(--background-colour);
+    border: none;
+    height: 100%;
+    color: var(--text-colour);
+}
+
+.stats-section {
+    grid-area: left;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    height: 100%;
+    display: flex;
+}
+
+#stats-input {
+    width: 100%;
+}
+
+#stats-display {
+    display: none;
+}
+
+.description-section {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row: 2;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    
+}
+
+#description-input {
+    width:100%;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+#description {
+    width: 70%;
+    height: 50%;
+    background-color: var(--background-colour);
+    border: none;
+    color: var(--text-colour);
+}
+
+#description-display {
+    display: none;
+}
+
+.background-section {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row: 3;
+    height: 100%;
+    align-items: center;
+    display: flex;
+}
+
+#background-input {
+    width:100%;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+#background {
+    width: 70%;
+    height: 50%;
+    background-color: var(--background-colour);
+    border: none;
+    color: var(--text-colour);
+}
+
+#background-display {
+    display: none;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+/* Animations */
+
+@keyframes wipe-enter {
+	0% {
+		transform: scale(0, .025);
+	}
+	50% {
+		transform: scale(1, .025);
+	}
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .appear {
+      animation-name: wipe-enter;
+      animation-duration: 1s;
+      animation-iteration-count: 1;
+    }
+}
+
+@media screen and (max-width:768px) {
+    
+    .hamburger {
+        display: flex;
+        cursor: pointer;
+    }
+    .hamburger #closeHam {
+        display: none;
+    }
+
+    .navigation-items {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        right: 0;
+        top: 58px;
+        background-color: var(--foreground-colour);
+        width: 100%;
+        height: calc(100vh - 58px);
+        padding-top: 60px;
+        gap: 10vh;
+    }
+
+    .colour-dropdown {
+        margin-left: auto;
+        padding-right: 10px;
+    }
+}
