@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Kdam+Thmor+Pro&family=Oswald:wght@200&display=swap" rel="stylesheet">
     <title>SuperPi Comic Book</title>
 </head>
 <body>
@@ -16,9 +19,13 @@
             <a href="index.html">Home</a>
             <a href="comicbook.html">Comic Book</a>
         </nav>
-        <div class="menu-icon">
-            <i class="fas fa-bars"></i>
-        </div>
+        <div class="toggle-container">
+            <label class="switch">
+              <input type="checkbox" id="darkModeToggle" />
+              <span class="slider"></span>
+            </label>
+            <span class="toggle-label material-symbols-outlined">light_mode</span>
+          </div>  
     </header>
 
     <footer class="bottom">
