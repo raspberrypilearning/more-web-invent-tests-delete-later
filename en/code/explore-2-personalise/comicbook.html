@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <title>Story Book</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Comic Book</title>
 </head>
 <body>
     
@@ -16,9 +17,13 @@
             <a href="index.html">Home</a>
             <a href="comicbook.html">Comic Book</a>
         </nav>
-        <div class="menu-icon">
-            <i class="fas fa-bars"></i>
-        </div>
+        <div class="toggle-container">
+            <label class="switch">
+              <input type="checkbox" id="darkModeToggle" />
+              <span class="slider"></span>
+            </label>
+            <span class="toggle-label material-symbols-outlined">light_mode</span>
+          </div>  
     </header>
    
     <main>
@@ -37,7 +42,7 @@
             </div>
             <div class="class-section">
                 <div id="class-input">
-                    <label>Class:</label>
+                    <label>Abilities:</label>
                     <select id="class">
                         <option value="Artificer">Artificer</option>
                         <option value="Barbarian">Barbarian</option>
@@ -56,18 +61,18 @@
                     <button onclick="changeDisplay('class')">Submit</button>
                 </div>
                 <div id="class-display">
-                    <h2>Class:</h2>
+                    <h2>Abilities:</h2>
                     <span id="class-span"></span>
                 </div>
             </div>
             <div class="description-section">
                 <div id="description-input">
-                    <h2>Description:</h2>
+                    <h2>Appearance:</h2>
                     <textarea id="description">Type your description here....</textarea>
                     <button onclick="changeDisplay('description')">Submit</button>
                 </div>
                 <div id="description-display">
-                    <h2>Description:</h2>
+                    <h2>Appearance:</h2>
                     <span id="description-span"></span>
                 </div>
             </div>
