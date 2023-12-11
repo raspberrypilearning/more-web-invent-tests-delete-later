@@ -12,10 +12,14 @@
 <body>
     
     <header class="header">
-        <a href="#" class="logo">SuperPi Comics</a>
+        <a href="#" class="logo">Pi Comics</a>
         <nav class="navbar" id="nav">
             <a href="index.html">Home</a>
-            <a href="comicbook.html">Comic Book</a>
+            <a href="comicbook.html">Create Comic</a>
+            <a href="#">TV shows</a>
+            <a href="#">Movies</a>
+            <a href="#">Books</a>
+            <a href="#">Games</a>
         </nav>
         <div class="toggle-container">
             <label class="switch">
@@ -24,9 +28,21 @@
             </label>
             <span class="toggle-label material-symbols-outlined">light_mode</span>
           </div>  
-    </header>
+        </header>
 
-    <footer class="bottom">
+        <main>
+
+        <div class="hero-container">
+            <div class="hero-slider">
+                <div class="hero-slide"><img src="stacey_hero.jpg" alt="Slide 1"></div>
+                <div class="hero-slide"><img src="safina_hero.jpg" alt="Slide 2"></div>
+                <div class="hero-slide"><img src="layton_hero.jpg" alt="Slide 3"></div>
+            </div>
+            <button class="hero-nav-btn prev" onclick="prevHero()">❮</button>
+            <button class="hero-nav-btn next" onclick="nextHero()">❯</button>
+        </div>
+    </main>
+    <footer>
         <p> Ⓒ <span id="currentYear"></span> - All Rights Reserved</p>
     </footer>
 </body>

@@ -2,6 +2,7 @@
 const currentYear = new Date();
 document.querySelector("#currentYear").innerHTML = `${currentYear.getFullYear()}`;
 
+// Update Create Comic function 
 function changeDisplay(id){
     var input = document.querySelector("#" + id);
     var inputSection = document.querySelector("#" + id + "-input");
@@ -13,6 +14,7 @@ function changeDisplay(id){
     displaySection.style.display = "flex";
 }
 
+// Dark mode function 
 document.addEventListener("DOMContentLoaded", function () {
     const darkModeToggle = document.getElementById("darkModeToggle");
   
@@ -35,3 +37,22 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+// Hero slider function 
+let currentHeroIndex = 0;
+const totalHeroSlides = document.querySelectorAll('.hero-slide').length;
+
+function nextHero() {
+    currentHeroIndex = (currentHeroIndex + 1) % totalHeroSlides;
+    updateHeroSlider();
+}
+
+function prevHero() {
+    currentHeroIndex = (currentHeroIndex - 1 + totalHeroSlides) % totalHeroSlides;
+    updateHeroSlider();
+}
+
+function updateHeroSlider() {
+    const heroSlider = document.querySelector('.hero-slider');
+    const heroSlideWidth = document.querySelector('.hero-slide').offsetWidth;
+    heroSlider.style.transform = `translateX(${-currentHeroIndex * heroSlideWidth}px)`;
+}

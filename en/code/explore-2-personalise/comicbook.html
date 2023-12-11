@@ -12,10 +12,14 @@
 <body>
     
     <header class="header">
-        <a href="#" class="logo">SuperPi Comics</a>
+        <a href="#" class="logo">Pi Comics</a>
         <nav class="navbar" id="nav">
             <a href="index.html">Home</a>
-            <a href="comicbook.html">Comic Book</a>
+            <a href="comicbook.html">Create Comic</a>
+            <a href="#">TV shows</a>
+            <a href="#">Movies</a>
+            <a href="#">Books</a>
+            <a href="#">Games</a>
         </nav>
         <div class="toggle-container">
             <label class="switch">
@@ -28,15 +32,14 @@
    
     <main>
         <div class="character-sheet">
-            <img src="character-portrait.jpg" class="character-picture">
             <div class="name-section">
                 <div id="name-input">
-                    <label>Name:</label>
+                    <label>Superhero Name:</label>
                     <input type="text" id="name">
                     <button onclick="changeDisplay('name')">Submit</button>
                 </div>
                 <div id="name-display">
-                    <h2>Name:</h2>
+                    <h2>Superhero Name:</h2>
                     <span id="name-span"></span>
                 </div>
             </div>
@@ -44,19 +47,19 @@
                 <div id="class-input">
                     <label>Abilities:</label>
                     <select id="class">
-                        <option value="Artificer">Artificer</option>
-                        <option value="Barbarian">Barbarian</option>
-                        <option value="Bard">Bard</option>
-                        <option value="Cleric">Cleric</option>
-                        <option value="Druid">Druid</option>
-                        <option value="Fighter">Fighter</option>
-                        <option value="Monk">Monk</option>
-                        <option value="Paladin">Paladin</option>
-                        <option value="Ranger">Ranger</option>
-                        <option value="Rogue">Rogue</option>
-                        <option value="Sorcerer">Sorcerer</option>
-                        <option value="Warlock">Warlock</option>
-                        <option value="Wizard">Wizard</option>
+                        <option value="Flight">Flying</option>
+                        <option value="XXL Strength">XXL Strength</option>
+                        <option value="Fire">Fire</option>
+                        <option value="Ice">Ice</option>
+                        <option value="Laser Rays">Laser Rays</option>
+                        <option value="Telepathy">Telepathy</option>
+                        <option value="Visions">Visions</option>
+                        <option value="Stretch">Stretch</option>
+                        <option value="Invisibility">Invisibility</option>
+                        <option value="Shapeshift">Shapeshift</option>
+                        <option value="Super speed">Speedstar</option>
+                        <option value="Magic">Magic</option>
+                        <option value="Time hop">Time hop</option>
                     </select>
                     <button onclick="changeDisplay('class')">Submit</button>
                 </div>
@@ -67,8 +70,8 @@
             </div>
             <div class="description-section">
                 <div id="description-input">
-                    <h2>Appearance:</h2>
-                    <textarea id="description">Type your description here....</textarea>
+                    <h2>Appearance: </h2>
+                    <textarea id="description">Type the appearance of your comic character here....</textarea>
                     <button onclick="changeDisplay('description')">Submit</button>
                 </div>
                 <div id="description-display">
@@ -90,7 +93,7 @@
         </div>
     </main>
 
-    <footer class="bottom">
+    <footer>
         <p> Ⓒ <span id="currentYear"></span> - All Rights Reserved</p>
     </footer>
 </body>
