@@ -56,3 +56,69 @@ function updateHeroSlider() {
     const heroSlideWidth = document.querySelector('.hero-slide').offsetWidth;
     heroSlider.style.transform = `translateX(${-currentHeroIndex * heroSlideWidth}px)`;
 }
+
+// Username & password function
+function checkCredentials() {
+  const username = userNameInput.value;
+  const password = passwordInput.value;
+
+  
+  if (username === "your_username" && password === "your_password") {
+      loginSection.style.display = "none";
+      successfulLoginSection.style.display = "block";
+  } else {
+      alertMessage.style.display = "block";
+  }
+}
+
+// Function to load content on successful login
+document.addEventListener("DOMContentLoaded", function () {
+  const loginSection = document.getElementById("loginSection");
+  const successfulLoginSection = document.getElementById("successfulLogin");
+  const userNameInput = document.getElementById("userNameInput");
+  const passwordInput = document.getElementById("passwordInput");
+  const alertMessage = document.getElementById("alert");
+
+  successfulLoginSection.style.display = "none";
+});
+
+ // Function to generate a random captcha string
+document.addEventListener('DOMContentLoaded', function() {
+  function generateCaptcha() {
+      const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+      let captcha = '';
+      for (let i = 0; i < 6; i++) {
+          captcha += characters.charAt(Math.floor(Math.random() * characters.length));
+      }
+      return captcha;
+  }
+
+  // Function to update the captcha image
+  function updateCaptchaImage() {
+      const captchaImage = document.getElementById('captchaImage');
+      const captchaText = generateCaptcha();
+      captchaImage.alt = captchaText;
+      captchaImage.src = 'https://via.placeholder.com/150x50?text=' + captchaText;
+  }
+
+  // Function to check the entered captcha
+  window.checkCaptcha = function() {
+      const enteredCaptcha = document.getElementById('captchaInput').value;
+      const correctCaptcha = document.getElementById('captchaImage').alt;
+
+      const captchaAlert = document.getElementById('captchaAlert');
+      const successfulLoginSection = document.getElementById('successfulLogin');
+
+      if (enteredCaptcha === correctCaptcha) {
+          captchaAlert.style.display = 'none';
+          captchaSection.style.display = 'none';
+          successfulLoginSection.style.display = 'block';
+      } else {
+          captchaAlert.style.display = 'block';
+          successfulLoginSection.style.display = 'none';
+      }
+  };
+
+  // Update the captcha image on page load
+  updateCaptchaImage();
+});

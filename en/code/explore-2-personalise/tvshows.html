@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Comic Book</title>
+</head>
+<body>
+    
+    <header class="header">
+        <a href="#" class="logo">Pi Comics</a>
+        <nav class="navbar" id="nav">
+            <a href="index.html">HOME</a>
+            <a href="comicbook.html">CREATE COMIC</a>
+            <a href="tvshows.html">TV SHOWS</a>
+            <a href="#">MOVIES</a>
+            <a href="#">BOOKS</a>
+            <a href="#">GAMES</a>
+        </nav>
+        <div class="toggle-container">
+            <label class="switch">
+                <input type="checkbox" id="darkModeToggle" />
+                <span class="slider"></span>
+            </label>
+            <span class="toggle-label material-symbols-outlined">light_mode</span>
+        </div>  
+    </header>
+   
+    <main>
+        <section class="userLogin" id="captchaSection">
+            <h1>Puzzle Verification</h1>
+            <p>Enter the characters from the image below to unlock exclusive content:</p>
+            <img id="captchaImage" alt="Captcha Image">
+            <input type="text" id="captchaInput">
+            <button onclick="checkCaptcha()">Enter</button>
+            <p id="captchaAlert" style="display: none;">Incorrect captcha. Please try again.</p>
+        </section>
+        <section id="successfulLogin" style="display: none;">
+            <div class="blog-heading">
+                <span> Heroes of Pi</span>
+            </div>
+    
+            <div class="blog-container">
+                <div class="blog-box">
+                    <img src="sandstorm.jpg" alt="AI robot with diagnostic bolts and tools surrounding the robot" class="blog-img">
+                
+    
+                <div class="blog-text">
+                    <span>10 December 2023| Superheroes</span>
+                    <a href="#" class="blog-title"> Heroes of Pi just doing their thing</a>
+                    <p>When heroes have super abilities is there anything they're unable to do?</p>
+                    <a href="#"> Read More</a>
+                </div>
+                </div>
+    
+                <div class="blog-box">
+                    <img src="electroshock.jpg" alt="An astronaut next to a rocket ship" class="blog-img">
+                
+    
+                <div class="blog-text">
+                    <span>10 December 2023| Comic Strips</span>
+                    <a href="#" class="blog-title"> Popeye reimagined to be published for Gen Z</a>
+                    <p>Can Popeye find his place in  modern reimagined world where eating spinach might just be the key to saving the planet?</p>
+                    <a href="#"> Read More</a>
+                </div>
+                </div>
+    
+                <div class="blog-box">
+                    <img src="ai_elemental.jpg" alt="AI robot with diagnostic bolts and tools surrounding the robot" class="blog-img">
+                
+    
+                <div class="blog-text">
+                    <span>10 December 2023| New Comics</span>
+                    <a href="#" class="blog-title"> Raspberry Pi launches an AI superhero</a>
+                    <p>A Superhero AI character that can solve any problem</p>
+                    <a href="#"> Read More</a>
+                </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p> Ⓒ <span id="currentYear"></span> - All Rights Reserved</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -14,8 +14,9 @@ body {
 
   main {
     padding: 20px;
-
-}
+    min-height: 72.5%;
+    width: 100%;
+  }
 
 .character-sheet {
     display: flex;
@@ -41,7 +42,7 @@ label {
 input,
 select,
 textarea {
-    width: calc(100% - 16px); 
+    width: calc(100% - 32px); 
     padding: 8px;
     margin-bottom: 10px;
     box-sizing: border-box;
@@ -96,8 +97,7 @@ footer {
   color: #e6b400;
   padding: 10px;
   text-align: center;
-  position: relative;
-  bottom: 0;
+  position: absolute;
   width: 100%;
 }
 
@@ -121,7 +121,7 @@ footer {
 
 .navbar a {
     position: relative;
-    font-size: 18px;
+    font-size: 14px;
     color: #e6b400;
     text-decoration: none;
     font-weight: 500;
@@ -257,6 +257,86 @@ input:checked + .slider:before {
   display: none;
   justify-content: space-between;
   margin: 20px;
+}
+
+.blog-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.blog-box {
+  width: 300px;
+  margin: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.blog-box:hover {
+  transform: scale(1.05);
+}
+
+.blog-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px 8px 0 0;
+}
+
+.blog-text {
+  padding: 20px;
+}
+
+.blog-text span {
+  font-size: 14px;
+  color: #777;
+}
+
+.blog-title {
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 10px 0;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.blog-title:hover {
+  color: #007BFF;
+}
+
+.blog-text p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #555;
+}
+
+.blog-text a {
+  display: inline-block;
+  font-size: 14px;
+  color: #007BFF;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.blog-text a:hover {
+  color: #0056b3;
+}
+
+.blog-heading {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 40px 0;
+  color: #333;
+}
+
+@media screen and (max-width: 768px) {
+  .blog-box {
+      width: 100%;
+  }
 }
 
 
