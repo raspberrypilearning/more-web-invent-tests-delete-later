@@ -4,22 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Navbar and Login</title>
+    <script src="script.js"></script>
+    <title>Antartica Travel Website</title>
 </head>
 <body>
-    <header class="navigation-header">
-        <nav>
-            <div class="logo-container">
-                <a href="./index.html">Home</a>
-            </div>
+    <header>
+        <nav class="navigation-header">
             <div class="navigation-items" id="navigation-items">
-                <a href="">About</a>
-                <a href="">Projects</a>
-                <a href="">Contacts</a>
-            </div>
-            <div class="user">
-                <span>&#128100;</span>
-                <span id="userName">Name</span>
+                <a class="active" href="index.html">Home</a>
+                <a href="wildlife.html">Wildlife</a>
+                <a href="climate.html">Climate</a>
             </div>
             <div class="hamburger">
                 <span id="openHam">&#9776;</span>
@@ -27,51 +21,33 @@
             </div>
         </nav>
     </header>
+    <div class="hero-image home"></div>
     <main>
-        <section class="userLogin" id="loginSection">
-            <h1>Login</h1>
-            <p>Please enter a username:</p>
-            <input type="text" id="userNameInput">
-            <button onclick="changeUsername()">Enter</button>
-            <p id="alert">Please type something</p>
+        <section>
+            <h1>Welcome to the Antartica Facts Website</h1>
         </section>
-        <section id="sucessfullLogin">
-            <h1 id="greeting"></h1>
-            <p>Thank you for choosing a username</p>
+        <section>
+            <h2>Hover on the cards below to read some facts about Antartica</h2>
+            <section class="fact-holder">
+                <span class="fact-card sun">
+                    <p class="fact">You probably know it’s the coldest continent on the planet, but did you know Antarctica is also the driest? On average, the 7th Continent sees just 200 mm (8 in) of precipitation a year, the majority of it along the coast.</p>
+                </span>
+                <span class="fact-card discovery">
+                    <p class="fact">The southernmost continent is thought to have been discovered relatively late in human history, in 1820 by the Russian expedition of Fabian Gottlieb von Bellingshausen and Mikhail Lazarev.</p>
+                </span>
+                <span class="fact-card explorers">
+                    <p class="fact">One of the more controversial Antarctic facts among historians is who first set foot on the continent. Many believe it was sealer John Davis in February, 1821. However, the first documented and confirmed landing was by a whaling and sealing Antarctic expedition in January, 1895.</br>
+
+                        A crew led by Norwegian Leonard Kristensen landed a small boat with six men aboard from their ship - aptly named Antarctic - at Cape Adare.</p>
+                </span>
+                <div class="fact-card ownership">
+                    <p class="fact">Antarctica is governed by the Antarctic Treaty system, which suspends all territorial claims. First signed by 12 nations in 1959, the Treaty now has 53 supporting nations, 29 of which are considered “Consultative Parties” and are actively involved in decision-making.</p>
+                </span>
+            </div>
         </section>
     </main>
-    <script>
-        let openHam = document.querySelector('#openHam');
-        let closeHam = document.querySelector('#closeHam');
-        let navigationItems = document.querySelector('.navigation-items')
-
-        const hamburgerEvent = (navigation, close, open) => {
-            navigationItems.style.display = navigation;
-            closeHam.style.display = close;
-            openHam.style.display = open;
-        }
-
-        openHam.addEventListener('click', () => hamburgerEvent("flex", "block", "none"));
-        closeHam.addEventListener('click', () => hamburgerEvent("none", "none", "block"));
-
-        const username = document.querySelector('#userNameInput');
-        const loginSection = document.querySelector('#loginSection');
-        const userDisplay = document.querySelector('#userName');
-        const userGreeting = document.querySelector('#sucessfullLogin');
-        const alert = document.querySelector('#alert');
-        const greeting = document.querySelector('#greeting');
-
-        function changeUsername(){
-            usernameText = username.value;
-            if (usernameText.length > 0){
-                userDisplay.textContent = usernameText;
-                greeting.textContent = "Hello " + usernameText;
-                loginSection.style.display = "none"
-                userGreeting.style.display = "block"
-            } else {
-                alert.style.display = "block";
-            }
-        }
-    </script>
+    <footer class="bottom">
+        <p>Mac Bowley Explore 1 - More Web Design</p>
+    </footer>
 </body>
 </html>

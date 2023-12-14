@@ -1,6 +1,6 @@
 body {
-    background-color: #141414;
-    color: white;
+    background-color: #ECE8EF;
+    color: #000500;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -12,7 +12,6 @@ body {
 
 main {
     height: 100%;
-    display: flex;
     justify-content: center;
     margin: 0 auto; /* Center if the browser is really wide */
     min-width: 25rem; /* Don't let the content get too narrow */
@@ -22,61 +21,43 @@ main {
 
 section {
     width: 100%;
-    padding: 15px;
     text-align: center;
     padding: 1rem 2rem;
-    margin: 1rem auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
 }
 
-button {
-    background-color: #EEC643;
-    color: #141414;
-    font-size: 14px;
-    padding: 3px;
-    border: none;
-    border-radius: 2px;
-    transition: .2s ease-in-out;
+h1 {
+    width: 100%;
 }
 
-button:hover {
-    background-color: white;
-    color: #EEC643;
+h2 {
+    width: 100%;
 }
 
-.navigation-header {
-    background-color: #EEC643;
+/* Nav bar */
+
+nav {
+    background-color: #33658A;
     padding: 0 15px;
     height: 60px;
     display: flex;
     justify-content: center;
     align-content: center;
-}
-
-nav {
-    width: 100%;
-    max-width: 1200px;
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-}
-
-.logo-container > a {
-    color: #141414;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 26px;
 }
 
 .navigation-items {
     display: flex;
-    gap: 40px;
+    gap: 100px;
 }
 
 .navigation-items > a {
-    color: #141414;
+    color: #55DDE0;
     text-decoration: none;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 22px;
     transition: .4s ease-in-out;
 }
 
@@ -84,19 +65,9 @@ nav {
     color: white;
 }
 
-.user {
-    gap: 10px;
-    padding-right: 5px;
-    color: #141414;
-}
-
-#sucessfullLogin {
-    display: none;
-}
-
-#alert {
-    color: red;
-    display: none;
+.navigation-items .active {
+    color: white;
+    pointer-events: none;
 }
 
 .hamburger {
@@ -106,10 +77,169 @@ nav {
     color: white;
 }
 
+/* Footer */ 
+
+.bottom {
+    width: 100%;
+    bottom: 0;
+    background-color: #33658A;
+    color: #55DDE0;
+    align-items: center;
+    font-size: 20px;
+    text-align: center;
+}
+
+/* Hero Iamge */
+
+.hero-image {
+    min-height: 50vh;
+    background: url('northern-lights.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.wildlife {
+    background: url('penguins.jpg') no-repeat;
+    background-size: cover;
+    background-position: bottom;
+}
+
+.climate {
+    background: url('daytime-antartica.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Fact cards */
+
+.fact-holder {
+    display: grid;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: 50% 50%;
+    height: 50vh;
+}
+
+.sun {
+    background: url('antartic-sun.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.discovery {
+    background: url('aerial-antartica.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.explorers {
+    background: url('explorers.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.ownership {
+    background: url('world_flags.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.fact-holder-animals {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 2fr 3fr;
+    height: 70vh;
+}
+
+.penguins {
+    background: url('penguin-photo.jpg');
+    background-size: cover;
+    background-position: center;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.krill {
+    background: url('krill-photo.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.seals {
+    background: url('seal-photo.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.orcas {
+    background: url('orca-photo.jpg');
+    background-size: cover;
+    background-position: center;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.fact-holder-climate {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+        "top top"
+        "right left"
+        "bottom bottom";
+    height: 70vh;
+}
+
+.temperature {
+    background: url('snow.jpg');
+    background-size: cover;
+    background-position: center;
+    grid-area: top;
+}
+
+.sunburn {
+    background: url('sun.jpg');
+    background-size: cover;
+    background-position: center;
+    grid-area: right;
+}
+
+.ice {
+    background: url('ice.jpg');
+    background-size: cover;
+    background-position: center;
+    grid-area: left;
+}
+
+.rainfall {
+    background: url('rain.jpg');
+    background-size: cover;
+    background-position: center;
+    grid-area: bottom;
+}
+
+.fact-card {
+    width: 100%;
+    display: flex;
+}
+
+.fact {
+    font-size: 20px;
+    color:#ECE8EF;
+    background-color: #000500A5;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    opacity: 0;
+    padding: 5px;
+    transition: .4s ease-in-out;
+}
+
+.fact:hover {
+    opacity: 1;
+}
+
 @media screen and (max-width:768px) {
-    .user {
-        margin-left: auto;
-    }
     
     .hamburger {
         display: flex;
