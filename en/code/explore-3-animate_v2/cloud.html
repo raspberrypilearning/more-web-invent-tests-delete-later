@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+                body {
+                  font-family: 'Arial', sans-serif;
+                  margin: 0;
+                  padding: 0;
+                  overflow-x: hidden;
+                }
+
+                section {
+                  height: 50vh;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  font-size: 20px;
+                }
+
+                .beginning {
+                  background-color: #87CEEB; /* Sky Blue */
+                }
+
+                .middle {
+                  background-color: #90EE90; /* Light Green */
+                }
+
+                .end {
+                  background-color: #FFD700; /* Gold */
+                }
+
+            .cloud div:nth-child(1) {
+              translate: 0vmin 3vmin;
+            }
+
+            .cloud div:nth-child(2) {
+              translate: 11vmin 9vmin;
+            }
+
+            .cloud div:nth-child(3) {
+              translate: 12vmin -6vmin;
+            }
+
+            .cloud div:nth-child(4) {
+              translate: 23vmin -3vmin;
+            }
+
+            .cloud div:nth-child(5) {
+              translate: 30vmin 8vmin;
+            }
+
+            .cloud div {
+              position:absolute;
+              background:inherit;
+              height:20vmin;
+              width:20vmin;
+              background: white;
+              border-radius: 100%;
+            }
+                .cloud {
+              position: absolute;
+              animation: moveCloud;
+              animation-iteration-count: infinite;
+              opacity:70%;
+            }
+
+                .one {
+              top:10vmin;
+              animation-duration: 60s;
+              left:-25vw;
+            }
+
+                @keyframes moveCloud {
+                    60% {
+                translate: 100vw;
+              }
+
+                @keyframes fly-cycle {
+
+      	            100% {
+      		    background-position: -900px 0;
+      	    }
+
+      }
+                }
+
+                .bird {
+            	background-image: url(mix-walk.svg);
+            	background-size: auto 100%;
+            	width: 88px;
+            	height: 125px;
+            	will-change: background-position;
+
+            	animation-name: fly-cycle;
+            	animation-timing-function: steps(10);
+            	animation-iteration-count: infinite;
+
+            	&--one {
+            		animation-duration: 1s;
+            		animation-delay: -0.5s;
+            	}
+
+            }
+
+            @keyframes fly-right-one {
+
+      	0% {
+      		transform: scale(0.3) translateX(-10vw);
+      	}
+
+      	10% {
+      		transform: translateY(2vh) translateX(10vw) scale(0.4);
+      	}
+
+      	20% {
+      		transform: translateY(0vh) translateX(30vw) scale(0.5);
+      	}
+
+      	30% {
+      		transform: translateY(4vh) translateX(50vw) scale(0.6);
+      	}
+
+      	40% {
+      		transform: translateY(2vh) translateX(70vw) scale(0.6);
+      	}
+
+      	50% {
+      		transform: translateY(0vh) translateX(90vw) scale(0.6);
+      	}
+
+      	60% {
+      		transform: translateY(0vh) translateX(110vw) scale(0.6);
+      	}
+
+      	100% {
+      		transform: translateY(0vh) translateX(110vw) scale(0.6);
+      	}
+
+      }
+
+            .bird-container {
+            	position: absolute;
+            	top: 20%;
+            	left: -10%;
+            	transform: scale(0) translateX(-10vw);
+            	will-change: transform;
+
+            	animation-name: fly-right-one;
+            	animation-timing-function: linear;
+            	animation-iteration-count: infinite;
+
+            	&--one {
+            		animation-duration: 15s;
+            		animation-delay: 0;
+            	}
+    </style>
+  </head>
+  <body>
+    <section class="beginning">
+      <p>
+        Once upon a time, in the vast blue sky, there lived a lonely cloud named
+        Fluffy...
+      </p>
+    </section>
+
+    <section class="middle">
+      <p>
+        Fluffy began to change his shape. He formed himself into a whimsical
+        animal...
+      </p>
+      <div class="bird-container bird-container--one">
+        <div class="bird bird--one"></div>
+      </div>
+      <div class="cloud one">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </section>
+
+    <section class="end">
+      <p>
+        As the sun began to set, casting a warm orange glow across the horizon,
+        Fluffy and his friends gathered...
+      </p>
+    </section>
+  </body>
+</html>

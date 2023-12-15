@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Story Generator</title>
+    <script type="text/javascript" src="script2.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Kdam+Thmor+Pro&family=Oswald:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+  </head>
+
+  <body class="grid-container">
+    <nav class="navigation">
+      <ul>
+        <li><a href="index.html">Story Type</a></li>
+        <li>↓</li>
+        <li><a href="plot.html">Plot</a></li>
+        <li>↓</li>
+        <li><a href="share.html">Share</a></li>
+      </ul>
+    </nav>
+
+    <main class="content hide" id="plot">
+      <div class="cover fade">
+        <!-- 
+        Simpler image <div class="fade"><img src="cover.jpg" alt="">  
+        -->
+      </div>
+
+      <div class="start">
+        <span id="textContainer" class="border">START</span>
+        <div class="textSection">
+          <p>
+            On a quiet and mysterious night, eight-year-old Lily stumbled upon a
+            magical book in the dusty corners of her attic. The old cover
+            creaked as she opened it, revealing pages filled with secrets from
+            times long ago. The words, written in a curious script, invited her
+            into a spellbinding tale that unfolded in the village when the moon
+            shone its brightest.
+          </p>
+          <p>
+            Lily's heart raced with excitement as she read about a special cat
+            that only appeared when the world was quiet. Determined to prove her
+            kindness, Lily tiptoed out of her room, wearing her favourite
+            homemade outfit. Armed with a torch and the enchanted book, she made
+            her way through the quiet streets, the wind whispering secrets.
+          </p>
+          <p>
+            The cat's footprints glowed, guiding Lily to a hidden garden behind
+            an old gate.
+          </p>
+        </div>
+
+        <div class="image">
+          <div class="a footprint fade"></div>
+          <div class="b footprint fade"></div>
+          <div class="c footprint fade"></div>
+          <div class="d footprint fade"></div>
+          <div class="e footprint fade"></div>
+          <div class="f footprint fade"></div>
+          <div class="g footprint fade"></div>
+          <div class="h footprint fade"></div>
+          <div class="i footprint fade"></div>
+          <div class="j footprint fade"></div>
+          <div class="k footprint fade"></div>
+        </div>
+
+      </div>
+
+      <div class="textSection">
+        <p>
+          The entrance creaked open as if welcoming her. Lily hesitated for a
+          moment but pressed on, drawn by the garden's enchanting allure. The
+          air within was filled with the scent of flowers and an otherworldly
+          sweetness.
+        </p>
+      </div>
+
+      <span id="textContainer" class="border">MIDDLE</span>
+
+      <p></p>
+      <div class="middle-selector" id="selectMiddle">
+        <label for="middleDropdown"
+          >CHOOSE: <b>Go through the door</b> OR
+          <b>Pick up the clock</b></label
+        >
+        <select id="middleDropdown" onchange="updateMiddle()">
+          <option value="default" selected disabled></option>
+          <option value="door">Door</option>
+          <option value="clock">Clock</option>
+        </select>
+      </div>
+
+      <div class="middle fade hide" id="door">
+        <p>
+          As she stepped further into the garden, Lily encountered a series of
+          magical doors, each leading to a different adventure. The enchanted
+          book in her hands pulsed with anticipation, its pages hinting at the
+          mysteries behind each door. The cat, ever watchful, meowed softly,
+          leaving the choice to Lily.
+        </p>
+      </div>
+
+      <div class="middle fade hide" id="clock">
+        <p>
+          In the heart of the garden, Lily discovered a peculiar device—a
+          magical clock with hands pointing in different directions. The ghost
+          cat, now perched on the edge of the clock, explained that the hands
+          represented choices. Lily had the opportunity to turn the clock's
+          hands and alter her destiny.
+        </p>
+      </div>
+
+      <div class="end fade">
+        <span id="textContainer" class="border">END</span>
+
+        <div class="textSection" id="end1">
+          <p>
+            As the clock struck midnight, Lily returned home, her heart filled
+            with the enchantment of the night. The attic welcomed her back with
+            a warm glow, the mysterious night now a silent secret. Lily tucked
+            the enchanted book under her arm, its cover still radiating a faint
+            glow. She climbed back into bed, the treasures from the garden
+            arranged around her like guardian spirits. The cat, unseen but
+            always watchful, lingered in the shadows, its ethereal presence a
+            reminder of the magical night. Lily drifted into a peaceful slumber,
+            dreams filled with whispers of enchanted gardens and ghostly cats.
+            The next morning, the sun painted the sky in hues of soft pink and
+            orange. Lily awoke with a sense of wonder, half-convinced that the
+            previous night's adventure had been a dream. Yet, the treasures in
+            her hands and the warmth lingering in her heart told her otherwise.
+            Every special night thereafter, as the moon cast its silvery glow,
+            Lily would remember the shimmering feline and the magical garden
+            hidden behind the gate. The enchanted book, now a cherished
+            keepsake, would be passed down through generations, its pages
+            glowing anew for each curious soul who dared to venture into the
+            world of magical nights.
+          </p>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
+
+<!-- animate -->
+<script>
+  const options = {
+    threshold: 0.5, // Trigger the callback when 100% of the image is in the viewport
+  };
+
+  const observer = new IntersectionObserver(handleIntersection, options);
+
+  document.querySelectorAll(".fade").forEach((section) => {
+    observer.observe(section);
+  });
+
+  function handleIntersection(entries, observer) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = 1; // Fade-in effect
+        observer.unobserve(entry.target); // Stop observing once the section is visible
+      }
+    });
+  }
+</script>
