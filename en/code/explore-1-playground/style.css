@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
 body {
     background-color: #ECE8EF;
     color: #000500;
@@ -8,6 +10,7 @@ body {
     min-height: 100vh; /* Make the content fill the page so the footer is at the bottom */
     display: flex;
     flex-direction: column;
+    font-family: 'Orbitron', sans-serif;
 }
 
 main {
