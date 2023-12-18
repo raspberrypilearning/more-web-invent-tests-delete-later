@@ -164,7 +164,7 @@ nav {
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas: 
         "top top"
-        "right left"
+        "left right"
         "bottom bottom";
     height: 70vh;
 }
@@ -175,17 +175,17 @@ nav {
 }
 
 .sunburn {
-    background: url('sun.jpg');
-    grid-area: right;
-}
-
-.ice {
-    background: url('ice.jpg');
+    background-image: url('sun.jpg');
     grid-area: left;
 }
 
+.ice {
+    background-image: url('ice.jpg');
+    grid-area: right;
+}
+
 .rainfall {
-    background: url('rain.jpg');
+    background-image: url('rain.jpg');
     grid-area: bottom;
 }
 
@@ -246,7 +246,7 @@ nav {
     }
     
     .fact-holder-wildlife {
-        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
         grid-template-columns: 1fr;
         height: 140vh;
     }
@@ -257,7 +257,18 @@ nav {
     }
 
     .orcas {
-        grid-column-start: none;
-        grid-column-end: none;
+        grid-column-start: revert;
+        grid-column-end: revert;
+    }
+
+    .fact-holder-climate {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+            "top"
+            "left"
+            "right"
+            "bottom";
+        height: 70vh;
     }
 }
