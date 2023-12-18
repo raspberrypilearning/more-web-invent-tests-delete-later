@@ -261,13 +261,12 @@ nav {
     }
 
     .fact-holder-climate {
-        display: grid;
         grid-template-rows: 1fr 1fr 1fr 1fr;
         grid-template-areas: 
             "top"
             "left"
             "right"
             "bottom";
-        height: 70vh;
+        height: 140vh;
     }
 }
