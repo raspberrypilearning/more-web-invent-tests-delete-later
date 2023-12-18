@@ -94,21 +94,17 @@ nav {
 
 .hero-image {
     min-height: 50vh;
-    background: url('northern-lights.jpg') no-repeat;
+    background-image: url('northern-lights.jpg'); 
     background-size: cover;
     background-position: center;
 }
 
 .wildlife {
-    background: url('penguins.jpg') no-repeat;
-    background-size: cover;
-    background-position: bottom;
+    background-image: url('penguins.jpg');
 }
 
 .climate {
-    background: url('daytime-antartica.jpg') no-repeat;
-    background-size: cover;
-    background-position: center;
+    background-image: url('daytime-antartica.jpg');
 }
 
 /* Fact cards */
@@ -121,27 +117,19 @@ nav {
 }
 
 .sun {
-    background: url('antartic-sun.jpg');
-    background-size: cover;
-    background-position: center;
+    background-image: url('antartic-sun.jpg');
 }
 
 .discovery {
-    background: url('aerial-antartica.jpeg');
-    background-size: cover;
-    background-position: center;
+    background-image: url('aerial-antartica.jpeg');
 }
 
 .explorers {
-    background: url('explorers.jpg');
-    background-size: cover;
-    background-position: center;
+    background-image: url('explorers.jpg');
 }
 
 .ownership {
-    background: url('world_flags.png');
-    background-size: cover;
-    background-position: center;
+    background-image: url('world_flags.png');
 }
 
 .fact-holder-wildlife {
@@ -152,29 +140,21 @@ nav {
 }
 
 .penguins {
-    background: url('penguin-photo.jpg');
-    background-size: cover;
-    background-position: center;
+    background-image: url('penguin-photo.jpg');
     grid-row-start: 1;
     grid-row-end: 3;
 }
 
 .krill {
-    background: url('krill-photo.jpg');
-    background-size: cover;
-    background-position: center;
+    background-image: url('krill-photo.jpg');
 }
 
 .seals {
-    background: url('seal-photo.jpg');
-    background-size: cover;
-    background-position: center;
+    background-image: url('seal-photo.jpg');
 }
 
 .orcas {
-    background: url('orca-photo.jpg');
-    background-size: cover;
-    background-position: center;
+    background-image: url('orca-photo.jpg');
     grid-column-start: 1;
     grid-column-end: 3;
 }
@@ -190,36 +170,30 @@ nav {
 }
 
 .temperature {
-    background: url('snow.jpg');
-    background-size: cover;
-    background-position: center;
+    background-image: url('snow.jpg');
     grid-area: top;
 }
 
 .sunburn {
     background: url('sun.jpg');
-    background-size: cover;
-    background-position: center;
     grid-area: right;
 }
 
 .ice {
     background: url('ice.jpg');
-    background-size: cover;
-    background-position: center;
     grid-area: left;
 }
 
 .rainfall {
     background: url('rain.jpg');
-    background-size: cover;
-    background-position: center;
     grid-area: bottom;
 }
 
 .fact-card {
     width: 100%;
     display: flex;
+    background-size: cover;
+    background-position: center;
 }
 
 .fact {
