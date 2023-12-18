@@ -75,6 +75,7 @@ nav {
     font-size: 20px;
     font-weight: 800;
     color: white;
+    margin-left: auto
 }
 
 /* Footer */ 
@@ -89,7 +90,7 @@ nav {
     text-align: center;
 }
 
-/* Hero Iamge */
+/* Hero Image */
 
 .hero-image {
     min-height: 50vh;
@@ -141,13 +142,6 @@ nav {
     background: url('world_flags.png');
     background-size: cover;
     background-position: center;
-}
-
-.fact-holder-animals {
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 2fr 3fr;
-    height: 70vh;
 }
 
 .penguins {
@@ -262,4 +256,6 @@ nav {
         padding-top: 60px;
         gap: 10vh;
     }
+
+    
 }
