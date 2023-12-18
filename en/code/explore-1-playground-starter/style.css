@@ -1,0 +1,221 @@
+body {
+    background-color: #ECE8EF;
+    color: #000500;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100vh; /* Make the content fill the page so the footer is at the bottom */
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    height: 100%;
+    justify-content: center;
+    margin: 0 auto; /* Center if the browser is really wide */
+    min-width: 25rem; /* Don't let the content get too narrow */
+    max-width: 70rem; /*  Don't let the content get too wide */
+    padding: 0;
+}
+
+section {
+    width: 100%;
+    text-align: center;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+h1, h2 {
+    width: 100%;
+}
+
+/* Nav bar */
+
+nav {
+    padding: 0 15px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+
+/* Hero Iamge */
+
+.hero-image {
+    min-height: 50vh;
+    background: url('northern-lights.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.wildlife {
+    background: url('penguins.jpg') no-repeat;
+    background-size: cover;
+    background-position: bottom;
+}
+
+.climate {
+    background: url('daytime-antartica.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Fact cards */
+
+.fact-holder {
+    display: grid;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: 50% 50%;
+    height: 50vh;
+}
+
+.sun {
+    background: url('antartic-sun.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.discovery {
+    background: url('aerial-antartica.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.explorers {
+    background: url('explorers.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.ownership {
+    background: url('world_flags.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.fact-holder-animals {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 2fr 3fr;
+    height: 70vh;
+}
+
+.penguins {
+    background: url('penguin-photo.jpg');
+    background-size: cover;
+    background-position: center;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.krill {
+    background: url('krill-photo.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.seals {
+    background: url('seal-photo.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.orcas {
+    background: url('orca-photo.jpg');
+    background-size: cover;
+    background-position: center;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.fact-holder-climate {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+        "top top"
+        "right left"
+        "bottom bottom";
+    height: 70vh;
+}
+
+.temperature {
+    background: url('snow.jpg');
+    background-size: cover;
+    background-position: center;
+    grid-area: top;
+}
+
+.sunburn {
+    background: url('sun.jpg');
+    background-size: cover;
+    background-position: center;
+    grid-area: right;
+}
+
+.ice {
+    background: url('ice.jpg');
+    background-size: cover;
+    background-position: center;
+    grid-area: left;
+}
+
+.rainfall {
+    background: url('rain.jpg');
+    background-size: cover;
+    background-position: center;
+    grid-area: bottom;
+}
+
+.fact-card {
+    width: 100%;
+    display: flex;
+}
+
+.fact {
+    font-size: 20px;
+    color:#ECE8EF;
+    background-color: #000500A5;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    opacity: 0; /* THEY DO THIS */
+    padding: 5px;
+    transition: .4s ease-in-out; /* THEY DO THIS */
+}
+ 
+/* THEY DO ALL THIS */
+.fact:hover {
+    opacity: 1;
+}
+
+@media screen and (max-width:768px) {
+    
+    .hamburger {
+        display: flex;
+        cursor: pointer;
+    }
+    .hamburger #closeHam {
+        display: none;
+    }
+
+    .navigation-items {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        right: 0;
+        top: 58px;
+        background-color: #33658A;
+        width: 100%;
+        height: calc(100vh - 58px);
+        padding-top: 60px;
+        gap: 10vh;
+    }
+}

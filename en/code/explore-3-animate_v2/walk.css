@@ -66,7 +66,7 @@ h1 {
 
 @keyframes fly-cycle {
   100% {
-    background-position: -100px 0;
+    background-position: 100px 0;
   }
 }
 

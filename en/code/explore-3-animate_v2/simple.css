@@ -1,0 +1,11 @@
+img {
+  width: 40%;
+  opacity: 0.4;
+  transition: width 3s linear, opacity 4s ease-out, transform 5s;
+}
+
+img:hover {
+  width: 100%;
+  opacity: 1;
+  transform: rotate(45deg);
+}
