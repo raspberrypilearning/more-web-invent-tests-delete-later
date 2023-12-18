@@ -20,9 +20,9 @@ main {
 }
 
 section {
-    width: 100%;
+    width: 95%;
     text-align: center;
-    padding: 1rem 2rem;
+    padding: 2.5% 2.5%;
     display: flex;
     flex-wrap: wrap;
     align-content: center;
@@ -144,6 +144,13 @@ nav {
     background-position: center;
 }
 
+.fact-holder-wildlife {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 2fr 3fr;
+    height: 70vh;
+}
+
 .penguins {
     background: url('penguin-photo.jpg');
     background-size: cover;
@@ -263,16 +270,20 @@ nav {
         grid-template-columns: 100%;
         height: 100vh;
     }
-
-    section {
-        padding: 0.5rem 0.5rem;
+    
+    .fact-holder-wildlife {
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+        height: 140vh;
     }
 
-    header {
-        padding: 0rem 0.5rem;
+    .penguins {
+        grid-row-start: 1;
+        grid-row-end: 3;
     }
 
-    main {
-        min-width: 5rem;
+    .orcas {
+        grid-column-start: none;
+        grid-column-end: none;
     }
 }
