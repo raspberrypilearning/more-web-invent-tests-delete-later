@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+
+html {
+  font: 300 15px/1.8 "Lato", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  padding-left: 20vw;
+  width: 80vw;
+  font-size: 1em;
+}
+
+.topcat {
+  background-image: url("coolCat.jpeg");
+  min-height: 100vh;
+  background-size: cover;
+  background-position: fixed;
+}
+
+.page1 {    
+  min-height: 100vh;
+}
+
+p {
+    font-size: 5cqh;
+}
+
+.topslug {
+  background-image: url("coolSlug.jpeg");
+  min-height: 100vh;
+  background-size: cover;
+  background-position: fixed;
+}
+
+/* NAV BAR */
+
+.navigation {
+  background-color: #49d4cf;
+  color: rgb(0, 0, 0);
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  letter-spacing: 0.1rem;
+  position: fixed;
+  height: 100%;
+  width: 20vw;
+}
+
+.navigation a:hover {
+  color: #4d4d4d; /* Change the color on hover */
+}
+
+.navigation ul {
+  list-style: none;
+  padding: 20px;
+  margin: 0;
+}
+
+.navigation li {
+  margin-bottom: 2px;
+}
+
+.navigation a {
+  text-decoration: none;
+  font-size: 18px;
+  color: rgb(0, 0, 0);
+}
+
+/* VIEWPORT MARKER*/
+
+#mark {
+  width: 100%;
+  position: fixed;
+  bottom: 50%;
+  text-align: center;
+  font-size: 2rem;
+  border-bottom: dashed 2px currentColor;
+  text-shadow: 0 0 3px black;
+}

@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
 
+body,
 html {
   height: 100%;
-  font: 300 15px/1.8 "Lato", sans-serif;
+  font: 400 15px/1.8 "Lato", sans-serif;
 }
 
 img {
@@ -14,7 +15,7 @@ img:hover {
 }
 
 body {
-  background: linear-gradient(to right, #DAA520, #556B2F);
+  background: linear-gradient(to right, #d5e3d6, #606263);
   transition: background 0.3s, color 0.3s;
   min-height: 50%;
 }
@@ -58,18 +59,17 @@ body {
 }
 
 .navigation {
-  background-color: #8B4513;
-  color: rgb(0, 0, 0);
+  background-color: #333;
+  color: rgb(221, 221, 221);
   top: 20px;
   padding: 20px;
   display: flex;
   flex-direction: column;
   letter-spacing: 0.1rem;
-  
 }
 
 .navigation a:hover {
-  color: #4d4d4d; /* Change the color on hover */
+  color: #ffc107; /* Change the color on hover */
 }
 
 .navigation ul {
@@ -84,8 +84,8 @@ body {
 
 .navigation a {
   text-decoration: none;
+  color: #fff;
   font-size: 18px;
-  color:rgb(0, 0, 0)
 }
 
 .hide {
@@ -105,7 +105,7 @@ p {
 }
 
 .textSection {
-  background-color: #8B4513;
+  background-color: rgb(130, 61, 11);
   padding: 30px 80px;
   letter-spacing: 0.1rem;
   color: rgb(255, 255, 255);

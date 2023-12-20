@@ -219,6 +219,7 @@ nav {
         display: flex;
         cursor: pointer;
     }
+    
     .hamburger #closeHam {
         display: none;
     }
