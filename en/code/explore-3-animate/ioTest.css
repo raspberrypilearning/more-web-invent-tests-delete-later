@@ -11,7 +11,6 @@ body {
 main {
   padding-left: 20vw;
   width: 80vw;
-  font-size: 1em;
 }
 
 .topcat {
@@ -26,7 +25,7 @@ main {
 }
 
 p {
-    font-size: 5cqh;
+    font-size: 4cqh;
 }
 
 .topslug {
@@ -44,18 +43,18 @@ p {
   top: 0;
   display: flex;
   flex-direction: column;
-  letter-spacing: 0.1rem;
   position: fixed;
   height: 100%;
   width: 20vw;
+  font-size: 3cqw;
+  font-weight: 900;
 }
 
 .navigation a:hover {
-  color: #4d4d4d; /* Change the color on hover */
+  color: #bffbfd;
 }
 
 .navigation ul {
-  list-style: none;
   padding: 20px;
   margin: 0;
 }
@@ -66,7 +65,6 @@ p {
 
 .navigation a {
   text-decoration: none;
-  font-size: 18px;
   color: rgb(0, 0, 0);
 }
 
@@ -79,5 +77,5 @@ p {
   text-align: center;
   font-size: 2rem;
   border-bottom: dashed 2px currentColor;
-  text-shadow: 0 0 3px black;
+  text-shadow: 0 0 3px black; 
 }

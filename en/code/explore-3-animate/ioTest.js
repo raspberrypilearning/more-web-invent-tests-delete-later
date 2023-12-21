@@ -6,21 +6,11 @@ window.onload = function () {
           if (entry.isIntersecting) {
             console.log(entry);
             /* DO THE THING HERE, for example: */
-            var element = document.getElementById("letter1");
-            element.classList.remove("hide");
-            
-            var element = document.getElementById("letter2");
-            element.classList.remove("hide");
-            
-            var element = document.getElementById("letter3");
-            element.classList.remove("hide");
-            
-            var element = document.getElementById("letter4");
-            element.classList.remove("hide");
-            
-            var element = document.getElementById("letter5");
-            element.classList.remove("hide");
-            
+            for (var i = 1; i <= 5; i++) {
+              var element = document.getElementById("letter" + i);
+              element.classList.remove("hide");
+            }
+
             observer.unobserve(entry.target);
           }
         });
