@@ -43,13 +43,32 @@ window.onload = function () {
 
       snail_observer.observe(elements);
     }
+
+    const letter_animation = document.querySelectorAll(".snail_letter");
+
+    const letter_observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            console.log(entry);
+            entry.target.classList.add("snail_letter_animate");
+          } else {
+            entry.target.classList.remove("snail_letter_animate");
+          }
+        });
+      },
+      { rootMargin: "0% 0% -50% 0%" }
+    );
+
+    for (let i = 0; i < letter_animation.length; i++) {
+      const elements = letter_animation[i];
+
+      letter_observer.observe(elements);
+    }
   } else document.querySelector("#warning").style.display = "block";
 };
 
-
-
 // ^^^^^^^^^^^^^ WORKING!!! ^^^^^^^^^^^^^^^^^^^^^//
-
 
 /* Me trying to get one observer handler with different actions when obserbving different classes
 
