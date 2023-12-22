@@ -13,26 +13,78 @@ main {
   width: 80vw;
 }
 
+.img_section {
+  object-fit: contain;
+  width: 50vw;
+}
+
+section {
+  height: 100vh;
+}
+
 .topcat {
   background-image: url("coolCat.jpeg");
-  min-height: 100vh;
   background-size: cover;
   background-position: fixed;
 }
 
-.page1 {    
-  min-height: 100vh;
+.crawl {
+  margin-top: 0;
+  opacity: 0;
+  transform: translateX(-300px);
+  transition: all 2s ease-out;
+  transition-delay: 0.4s;
+  z-index: -1;
+}
+
+.start-crawl {
+  opacity: 1;
+  transform: translateX(10vw);
 }
 
 p {
-    font-size: 4cqh;
+  font-size: 3cqh;
 }
 
 .topslug {
-  background-image: url("coolSlug.jpeg");
-  min-height: 100vh;
+  background-image: url("coolSnail.jpeg");
   background-size: cover;
   background-position: fixed;
+  background-attachment: fixed;
+}
+
+@keyframes enterFromSides {
+  to {
+    opacity: 1;
+    transform: translateX(30vw);
+  }
+}
+
+.snail_letter {
+  display: inline-block;
+  opacity: 0;
+  animation: enterFromSides 0.8s ease-in-out forwards;
+  font-size: 5cqh;
+  transform: rotate(90deg);
+}
+
+.snail_letter:nth-child(3) {
+  animation-delay: 0.1s;
+  transform: translateX(30vw);
+}
+
+.snail_letter:nth-child(1),
+.snail_letter:nth-child(2) {
+  animation-delay: 0.7s;
+  transform: translateX(0vw);
+  transform: rotate(90deg);
+}
+
+.snail_letter:nth-last-child(1),
+.snail_letter:nth-last-child(2) {
+  animation-delay: 0.4s;
+  transform: translateX(100vw);
+  transform: rotate(90deg);
 }
 
 /* NAV BAR */
@@ -57,6 +109,7 @@ p {
 .navigation ul {
   padding: 20px;
   margin: 0;
+  list-style: none;
 }
 
 .navigation li {
@@ -77,5 +130,5 @@ p {
   text-align: center;
   font-size: 2rem;
   border-bottom: dashed 2px currentColor;
-  text-shadow: 0 0 3px black; 
+  text-shadow: 0 0 3px black;
 }
