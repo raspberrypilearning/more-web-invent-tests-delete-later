@@ -16,19 +16,35 @@ main {
 .img_section {
   object-fit: contain;
   width: 50vw;
+  position: sticky;
+  top: -1rem;
 }
 
 section {
   height: 100vh;
 }
 
-.crawl {
+.rise {
+  animation: rising 2s ease;
+}
+
+@keyframes rising {
+  from {
+    transform: translateY(20%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+.snail {
   margin-top: 0;
   opacity: 0;
   transform: translateX(-300px);
   transition: all 2s ease-out;
   transition-delay: 0.4s;
-  z-index: -1;
+  z-index: 2;
+  scale: 50%;
 }
 
 .start-crawl {
@@ -38,10 +54,11 @@ section {
 
 p {
   font-size: 3cqh;
+  padding-left: 9rem;
 }
 
-.topslug {
-  background-image: url("coolSnail.jpeg");
+.topimage {
+  background-image: url("garden.jpeg");
   background-size: cover;
   background-position: fixed;
   background-attachment: fixed;
@@ -52,35 +69,6 @@ p {
     opacity: 1;
     transform: translateX(20vw);
   }
-}
-
-.snail_letter {
-  position: relative;
-  display: inline-block;
-  opacity: 0;
-  font-size: 10cqh;
-}
-
-.snail_letter_animate {
-  animation: enterFromSides 2s ease-in-out forwards;
-}
-
-.snail_letter:nth-child(3) {
-  animation-delay: 0.1s;
-  transform: translateX(20vw);
-}
-
-.snail_letter:nth-child(1),
-.snail_letter:nth-child(2) {
-  animation-delay: 0.7s;
-  transform: translateX(0vw);
-  transform: translateY(5vh);
-}
-
-.snail_letter:nth-last-child(1),
-.snail_letter:nth-last-child(2) {
-  animation-delay: 0.4s;
-  transform: translateX(30vw);
 }
 
 /* NAV BAR */
@@ -100,10 +88,11 @@ p {
 
 .navigation a:hover {
   color: #bffbfd;
+  transition: all 500ms;
 }
 
 .navigation ul {
-  padding: 20px;
+  padding: 1rem;
   margin: 0;
   list-style: none;
 }
@@ -134,10 +123,9 @@ p {
 .sentinal {
   /* DOM element for triggering the intersection observer event */
   /* you can use 'height' to determine when the event is triggered */
-  height: 3rem;
+  height: 1rem;
   position: relative;
   top: 0;
-  left: 0;
   right: 0;
   background-color: #f10c49;
   opacity: 0.1;
@@ -147,19 +135,19 @@ p {
   color: black;
   background-color: white;
   opacity: 0.6;
-  position: -webkit-sticky; /* Need to explain this one? */
   position: sticky;
-  top: 2rem;
-  padding: 1rem;
-  line-height: 1.5;
+  top: 0rem;
+  left: 1rem;
+  padding: 2rem;
+  line-height: 2;
   box-decoration-break: clone;
-  z-index: 1;
+  z-index: 0;
   transition: all 300ms;
   will-change: color, background-color;
 
   &.enabled {
     color: white;
     background-color: #a70267;
-    opacity: 0.9;
+    opacity: 1;
   }
 }

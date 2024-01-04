@@ -93,17 +93,30 @@ body {
 /* Define the animation */
 @keyframes wipe-enter {
     0% {
-        transform: scale(0, .025);
+        transform: translateY(0vh);
     }
 
     50% {
-        transform: scale(1, .025);
+        transform: translateY(10vh);
     }
 }
 
 /* Animated entrance */
 @media (prefers-reduced-motion: no-preference) {
     .animated {
-        animation: wipe-enter 1s 1;
+        animation: slideUp 2s 1;
     }
+}
+
+.slideUp {
+  animation: slideUp 2s 1;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
 }

@@ -1,71 +1,44 @@
 window.onload = function () {
-  if (!!window.IntersectionObserver) {
-    let observer = new IntersectionObserver(
-      (entries, observer) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            console.log(entry);
+  // CRAWLING SNAIL
 
-            //DO THE THING HERE, for example:
+  const snail_animation = document.getElementById("crawl");
 
-            for (var i = 1; i <= 5; i++) {
-              var element = document.getElementById("letter" + i);
-              element.classList.remove("hide");
-            }
-          } else {
-            entry.classList.add("hide");
-          }
-        });
-      },
-      { rootMargin: "0% 0% -50% 0%" }
-    );
-    document.querySelectorAll("p").forEach((p) => {
-      observer.observe(p);
-    });
+  const snail_observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("start-crawl");
+        } else {
+          entry.target.classList.remove("start-crawl");
+        }
+      });
+    },
+    { rootMargin: "0% 0% -50% 0%" }
+  );
+    snail_observer.observe(snail_animation);
+  
 
-    const snail_animation = document.querySelectorAll(".crawl");
+  // RISING TEXT
 
-    const snail_observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("start-crawl");
-          } else {
-            entry.target.classList.remove("start-crawl");
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
+  const rise_animation = document.getElementById("riser");
 
-    for (let i = 0; i < snail_animation.length; i++) {
-      const elements = snail_animation[i];
+  const rise_observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          console.log(entry); // FOR TESTING
+          entry.target.classList.add("rise");
+        } else {
+          entry.target.classList.remove("rise");
+        }
+      });
+    },
+    { rootMargin: "0% 0% 20% 0%" }
+  );
+    rise_observer.observe(rise_animation);
 
-      snail_observer.observe(elements);
-    }
 
-    const letter_animation = document.querySelectorAll(".snail_letter");
-
-    const letter_observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            console.log(entry);
-            entry.target.classList.add("snail_letter_animate");
-          } else {
-            entry.target.classList.remove("snail_letter_animate");
-          }
-        });
-      },
-      { rootMargin: "0% 0% -50% 0%" }
-    );
-
-    for (let i = 0; i < letter_animation.length; i++) {
-      const elements = letter_animation[i];
-
-      letter_observer.observe(elements);
-    }
-  } else document.querySelector("#warning").style.display = "block";
+  // STICKY HEADER
 
   const headerEl = document.querySelector(".header");
   const sentinalEl = document.querySelector(".sentinal");

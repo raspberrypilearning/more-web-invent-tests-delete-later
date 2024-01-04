@@ -6,7 +6,6 @@
     <title>Animation test</title>
     <script type="text/javascript" src="ioTest.js"></script>
     <link rel="stylesheet" href="ioTest.css" />
-    <link rel="stylesheet" href="ioDrop.css" />
   </head>
 
   <body>
@@ -14,23 +13,14 @@
       <ul>
         <li><a href="index.html">Page 1</a></li>
         <li><a href="plot.html">Page 2</a></li>
-        <li><a href="share.html">Page 3</a></li>
-        <div id="droptext">
-          <div id="letter1" class="hide">S</div>
-          <div id="letter2" class="hide">n</div>
-          <div id="letter3" class="hide">a</div>
-          <div id="letter4" class="hide">i</div>
-          <div id="letter5" class="hide">l</div>
-        </div>
       </ul>
     </nav>
     <main>
       <div id="mark">50% of viewport for testing</div>
-      <section class="topslug"></section>
+      <section class="topimage"></section>
       <div class="sentinal"></div>
       <h1 class="header">Once <br />Upon<br />A<br />Time</h1>
-      <span class="page1">
-        <p>
+        <p id="riser">
           The first part of a story that tells about a recursive snail that
           tells about a recursive snail that tells about a recursive snail that
           tells about a recursive snail that tells about a recursive snail that
@@ -45,20 +35,11 @@
           tells about a recursive snail that tells about a recursive snail that
           tells about a recursive snail
         </p>
-      </span>
-      <div class="img_section">
-        <img class="crawl" src="snail.svg" alt="" />
-      </div>
+            <div class="img_section">
+                <img id="crawl" class="snail" src="snail.svg" alt="" />
+            </div>
 
-      <div class="observe">
-        <span class="snail_letter">S</span>
-        <span class="snail_letter">n</span>
-        <span class="snail_letter">a</span>
-        <span class="snail_letter">i</span>
-        <span class="snail_letter">l</span>
-      </div>
-
-      <section class="topslug"></section>
+      <section class="topimage"></section>
     </main>
   </body>
 </html>

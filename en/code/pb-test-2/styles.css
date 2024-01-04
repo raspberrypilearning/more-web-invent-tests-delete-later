@@ -73,6 +73,10 @@ body {
     --right-colour:#777;
 }
 
+.animated {
+    animation: wipe-enter 1s 1;
+}
+
 /* Responsive layout - stacks the columns on top of each other */
 @media (max-width: 600px) {
     .grid-container {
@@ -93,12 +97,5 @@ body {
 
     50% {
         transform: scale(1, .025);
-    }
-}
-
-/* Animated entrance */
-@media (prefers-reduced-motion: no-preference) {
-    .animated {
-        animation: wipe-enter 1s 1;
     }
 }
