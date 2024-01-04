@@ -259,79 +259,49 @@ input:checked + .slider:before {
   margin: 20px;
 }
 
-.blog-container {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+/* Captcha CSS */
+
+#image{
+	margin-top: 10px;
+	box-shadow: 5px 5px 5px 5px gray;
+	width: 60px;;
+	padding: 20px;
+	font-weight: 400;
+	padding-bottom: 0px;
+	height: 40px;
+	user-select: none;
+	text-decoration:line-through;
+	font-style: italic;
+	font-size: x-large;
+	border: red 2px solid;
+	margin-left: 10px;
+	
+}
+#user-input{
+	box-shadow: 5px 5px 5px 5px gray;
+	width:auto;
+	margin-right: 10px;
+	padding: 20px;
+	padding-bottom: 0px;
+	height: 50px;
+	border: red 0px solid;
+}
+input{
+	border:1px black solid;
+  height: 30px;
+  width: auto;
+}
+.inline{
+	display:inline-block;
+}
+#btn{
+	box-shadow: 5px 5px 5px grey;
+	color: aqua;
+	margin: 10px;
+	background-color: brown;
+  width: auto;
 }
 
-.blog-box {
-  width: 300px;
-  margin: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.blog-box:hover {
-  transform: scale(1.05);
-}
-
-.blog-img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px 8px 0 0;
-}
-
-.blog-text {
-  padding: 20px;
-}
-
-.blog-text span {
-  font-size: 14px;
-  color: #777;
-}
-
-.blog-title {
-  display: block;
-  font-size: 18px;
-  font-weight: 600;
-  color: #333;
-  margin: 10px 0;
-  text-decoration: none;
-  transition: color 0.3s ease-in-out;
-}
-
-.blog-title:hover {
-  color: #007BFF;
-}
-
-.blog-text p {
-  font-size: 14px;
-  line-height: 1.5;
-  color: #555;
-}
-
-.blog-text a {
-  display: inline-block;
-  font-size: 14px;
-  color: #007BFF;
-  text-decoration: none;
-  transition: color 0.3s ease-in-out;
-}
-
-.blog-text a:hover {
-  color: #0056b3;
-}
-
-.blog-heading {
-  text-align: center;
-  font-size: 24px;
-  font-weight: 700;
-  margin: 40px 0;
-  color: #333;
-}
 
 @media only screen and (max-width: 768px) {
   .header {
@@ -367,10 +337,6 @@ input:checked + .slider:before {
 
   .hero-slide img {
     height: 100%;
-  }
-  
-  .blog-box {
-    width: 100%;
   }
   
 }
@@ -410,14 +376,4 @@ body.dark-mode {
 
 }
 
-.dark-mode .blog-heading {
-  color: #fff;
-}
 
-.dark-mode .blog-text p {
-  color: #fff;
-}
-
-.dark-mode .blog-title {
-  color: #fff;
-}

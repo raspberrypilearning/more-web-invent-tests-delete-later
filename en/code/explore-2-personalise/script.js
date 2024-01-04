@@ -57,68 +57,64 @@ function updateHeroSlider() {
     heroSlider.style.transform = `translateX(${-currentHeroIndex * heroSlideWidth}px)`;
 }
 
-// Username & password function
-function checkCredentials() {
-  const username = userNameInput.value;
-  const password = passwordInput.value;
+//Captcha Function
+let captcha;
 
-  
-  if (username === "your_username" && password === "your_password") {
-      loginSection.style.display = "none";
-      successfulLoginSection.style.display = "block";
-  } else {
-      alertMessage.style.display = "block";
-  }
+document.addEventListener("DOMContentLoaded", function () {
+    // Check if the user has already successfully logged in during this session
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+
+    if (isLoggedIn === 'true') {
+        // If already logged in, hide the captcha section and show the successful login section
+        document.getElementById("captchaSection").style.display = 'none';
+        document.getElementById("successfulLogin").style.display = 'block';
+    } else {
+        // If not logged in, show the captcha section
+        document.getElementById("captchaSection").style.display = 'block';
+        document.getElementById("successfulLogin").style.display = 'none';
+    }
+});
+
+function generate() {
+
+	// Clear old input
+	document.getElementById("submit").value = "";
+
+	// Access the element to store
+	// the generated captcha
+	captcha = document.getElementById("image");
+	let uniquechar = "";
+
+	const randomchar =
+"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+	// Generate captcha for length of
+	// 5 with random character
+	for (let i = 1; i < 5; i++) {
+		uniquechar += randomchar.charAt(
+			Math.random() * randomchar.length)
+	}
+
+	// Store generated input
+	captcha.innerHTML = uniquechar;
 }
 
-// Function to load content on successful login
-document.addEventListener("DOMContentLoaded", function () {
-  const loginSection = document.getElementById("loginSection");
-  const successfulLoginSection = document.getElementById("successfulLogin");
-  const userNameInput = document.getElementById("userNameInput");
-  const passwordInput = document.getElementById("passwordInput");
-  const alertMessage = document.getElementById("alert");
+function printmsg() {
+	const usr_input = document
+		.getElementById("submit").value;
 
-  successfulLoginSection.style.display = "none";
-});
-
- // Function to generate a random captcha string
-document.addEventListener('DOMContentLoaded', function() {
-  function generateCaptcha() {
-      const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-      let captcha = '';
-      for (let i = 0; i < 6; i++) {
-          captcha += characters.charAt(Math.floor(Math.random() * characters.length));
-      }
-      return captcha;
-  }
-
-  // Function to update the captcha image
-  function updateCaptchaImage() {
-      const captchaImage = document.getElementById('captchaImage');
-      const captchaText = generateCaptcha();
-      captchaImage.alt = captchaText;
-      captchaImage.src = 'https://via.placeholder.com/150x50?text=' + captchaText;
-  }
-
-  // Function to check the entered captcha
-  window.checkCaptcha = function() {
-      const enteredCaptcha = document.getElementById('captchaInput').value;
-      const correctCaptcha = document.getElementById('captchaImage').alt;
-
-      const captchaAlert = document.getElementById('captchaAlert');
-      const successfulLoginSection = document.getElementById('successfulLogin');
-
-      if (enteredCaptcha === correctCaptcha) {
-          captchaAlert.style.display = 'none';
-          captchaSection.style.display = 'none';
-          successfulLoginSection.style.display = 'block';
-      } else {
-          captchaAlert.style.display = 'block';
-          successfulLoginSection.style.display = 'none';
-      }
-  };
-
-  // Update the captcha image on page load
-  updateCaptchaImage();
-});
+	// Check whether the input is equal
+	// to generated captcha or not
+	if (usr_input == captcha.innerHTML) {
+		document.getElementById("key").innerHTML = "Matched";
+        // Store the successful login state in local storage
+        localStorage.setItem('isLoggedIn', 'true');
+        document.getElementById("captchaSection").style.display = 'none';
+        document.getElementById("successfulLogin").style.display = 'block';
+		generate();
+	}
+	else {
+		document.getElementById("key").innerHTML = "not Matched";
+        generate();
+	}
+}

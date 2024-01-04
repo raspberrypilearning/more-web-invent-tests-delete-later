@@ -28,21 +28,36 @@
     </header>
    
     <main>
-        <section class="userLogin" id="captchaSection">
-            <h1>Puzzle Verification</h1>
-            <p>Enter the characters from the image below to unlock exclusive content:</p>
-            <img id="captchaImage" alt="Captcha Image">
-            <input type="text" id="captchaInput">
-            <button onclick="checkCaptcha()">Enter</button>
-            <p id="captchaAlert" style="display: none;">Incorrect captcha. Please try again.</p>
+        <section id="captchaSection" onload="generate()">
+            <h1>Login</h1>
+            <p>Welcome Comic book creator, enter the captcha to unlock exclusive content!</p>
+            <span id="user-input" class="inline">
+                <input type="text"
+                       id="submit"
+                       placeholder=" Enter Captcha code" />
+            </span>
+         
+            <span class="inline" onclick="generate()">
+                <i class="fas fa-sync"></i>
+            </span>
+         
+            <span id="image"
+                 class="inline"
+                 selectable="False">
+            </span>
+            <input type="Submit"
+                   id="btn"
+                   onclick="printmsg()" />
+         
+            <p id="key"></p>
         </section>
         <section id="successfulLogin" style="display: none;">
-            <div class="blog-heading">
+            <span class="blog-heading">
                 <span> Heroes of Pi</span>
-            </div>
+            </span>
     
             <div class="blog-container">
-                <div class="blog-box">
+                <span class="blog-box">
                     <img src="sandstorm.jpg" alt="AI robot with diagnostic bolts and tools surrounding the robot" class="blog-img">
                 
     

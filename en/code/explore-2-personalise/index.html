@@ -10,38 +10,62 @@
     <title>SuperPi Comic Book</title>
 </head>
 <body>
+    <section id="captchaSection" onload="generate()">
+        <h1>Login</h1>
+        <p>Welcome Comic book creator, enter the captcha to unlock exclusive content!</p>
+        <span id="user-input" class="inline">
+            <input type="text"
+                   id="submit"
+                   placeholder=" Enter Captcha code" />
+        </span>
+     
+        <span class="inline" onclick="generate()">
+            <i class="fas fa-sync"></i>
+        </span>
+     
+        <span id="image"
+             class="inline"
+             selectable="False">
+        </span>
+        <input type="Submit"
+               id="btn"
+               onclick="printmsg()" />
+     
+        <p id="key"></p>
+    </section>
     
-    <header class="header">
-        <a href="index.html" class="logo">Pi Comics</a>
-        <nav class="navbar" id="nav">
-            <a href="index.html">HOME</a>
-            <a href="comicbook.html">CREATE COMIC</a>
-            <a href="tvshows.html">TV SHOWS</a>
-        </nav>
-        <div class="toggle-container">
-            <label class="switch">
-              <input type="checkbox" id="darkModeToggle" />
-              <span class="slider"></span>
-            </label>
-            <span class="toggle-label material-symbols-outlined">light_mode</span>
-          </div>  
-        </header>
+    <div id="successfulLogin" style="display: none;">
+        <header class="header">
+            <a href="index.html" class="logo">Pi Comics</a>
+            <nav class="navbar" id="nav">
+                <a href="index.html">HOME</a>
+                <a href="comicbook.html">CREATE COMIC</a>
+            </nav>
+            <div class="toggle-container">
+                <label class="switch">
+                <input type="checkbox" id="darkModeToggle" />
+                <span class="slider"></span>
+                </label>
+                <span class="toggle-label material-symbols-outlined">light_mode</span>
+            </div>  
+            </header>
 
-        <main>
+            <main>
 
-        <div class="hero-container">
-            <div class="hero-slider">
-                <div class="hero-slide"><img src="stacey_hero.jpg" alt="Slide 1"></div>
-                <div class="hero-slide"><img src="safina_hero.jpg" alt="Slide 2"></div>
-                <div class="hero-slide"><img src="layton_hero.jpg" alt="Slide 3"></div>
+            <div class="hero-container">
+                <div class="hero-slider">
+                    <div class="hero-slide"><img src="stacey_hero.jpg" alt="Slide 1"></div>
+                    <div class="hero-slide"><img src="safina_hero.jpg" alt="Slide 2"></div>
+                    <div class="hero-slide"><img src="layton_hero.jpg" alt="Slide 3"></div>
+                </div>
+                <button class="hero-nav-btn prev" onclick="prevHero()">❮</button>
+                <button class="hero-nav-btn next" onclick="nextHero()">❯</button>
             </div>
-            <button class="hero-nav-btn prev" onclick="prevHero()">❮</button>
-            <button class="hero-nav-btn next" onclick="nextHero()">❯</button>
-        </div>
-    </main>
-    <footer>
-        <p> Ⓒ <span id="currentYear"></span> - All Rights Reserved</p>
-    </footer>
+        </main>
+        <footer>
+            <p> Ⓒ <span id="currentYear"></span> - All Rights Reserved</p>
+        </footer>
+</div>
 </body>
 <script src="script.js"></script>
 </html>
