@@ -13,10 +13,9 @@ window.onload = function () {
         }
       });
     },
-    { rootMargin: "0% 0% -50% 0%" }
+    { rootMargin: "0% 0% -20% 0%" }
   );
-    snail_observer.observe(snail_animation);
-  
+  snail_observer.observe(snail_animation);
 
   // RISING TEXT
 
@@ -35,19 +34,19 @@ window.onload = function () {
     },
     { rootMargin: "0% 0% 20% 0%" }
   );
-    rise_observer.observe(rise_animation);
-
+  rise_observer.observe(rise_animation);
+  // rise_observer.disconnect; // ADD THIS LATER (AND REMOVE THE ELSE) TO MODEL BET PRACTICE IN PERFORMANCE?
 
   // STICKY HEADER
 
   const headerEl = document.querySelector(".header");
-  const sentinalEl = document.querySelector(".sentinal");
+  const triggerEl = document.querySelector(".trigger");
 
-  const sentinelhandler = (entries) => {
+  const header_handler = (entries) => {
     console.log(entries);
     // entries is an array of observed dom nodes
     // we're only interested in the first one at [0]
-    // because that's our .sentinal node.
+    // because that's our .trigger node.
     // Here observe whether or not that node is in the viewport
     if (!entries[0].isIntersecting) {
       headerEl.classList.add("enabled");
@@ -56,9 +55,9 @@ window.onload = function () {
     }
   };
   // create the observer
-  const observer = new window.IntersectionObserver(sentinelhandler);
+  const observer = new window.IntersectionObserver(header_handler);
   // give the observer some dom nodes to keep an eye on
-  observer.observe(sentinalEl);
+  observer.observe(triggerEl);
 };
 
 // ^^^^^^^^^^^^^ WORKING!!! ^^^^^^^^^^^^^^^^^^^^^//

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Animation test</title>
-    <script type="text/javascript" src="ioTest.js"></script>
+    <script type="text/javascript" src="lazyloader.js"></script>
     <link rel="stylesheet" href="ioTest.css" />
   </head>
 
@@ -12,34 +12,46 @@
     <nav class="navigation">
       <ul>
         <li><a href="index.html">Page 1</a></li>
-        <li><a href="plot.html">Page 2</a></li>
+        <li><a href="page2.html">Page 2</a></li>
       </ul>
     </nav>
     <main>
-      <div id="mark">50% of viewport for testing</div>
       <section class="topimage"></section>
-      <div class="sentinal"></div>
-      <h1 class="header">Once <br />Upon<br />A<br />Time</h1>
-        <p id="riser">
-          The first part of a story that tells about a recursive snail that
-          tells about a recursive snail that tells about a recursive snail that
-          tells about a recursive snail that tells about a recursive snail that
-          tells about a recursive snail that tells about a recursive snail that
-          tells about a recursive snail that tells about a recursive snail that
-          tells about a recursive snail that tells about a recursive snail that
-          tells about a recursive snail that tells about a recursive snail that
-          tells about a recursive snail that tells about a recursive snail that
-          tells about a recursive snail that tells about a recursive snail that
-          tells about a recursive snail that tells about a recursive snail that
-          tells about a recursive snail that tells about a recursive snail that
-          tells about a recursive snail that tells about a recursive snail that
-          tells about a recursive snail
-        </p>
-            <div class="img_section">
-                <img id="crawl" class="snail" src="snail.svg" alt="" />
-            </div>
-
-      <section class="topimage"></section>
+      <img class="lazy" src="spinner.gif" data-src="bee.png" />
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <img class="lazy" src="spinner.gif" data-src="butterfly.png" />
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <img class="lazy" src="spinner.gif" data-src="ladybug.png" />
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <img class="lazy" src="spinner.gif" data-src="snail.svg" />
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <img class="lazy" src="spinner.gif" data-src="insect.png" />
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
     </main>
   </body>
 </html>
