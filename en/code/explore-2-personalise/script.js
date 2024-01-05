@@ -57,7 +57,7 @@ function updateHeroSlider() {
     heroSlider.style.transform = `translateX(${-currentHeroIndex * heroSlideWidth}px)`;
 }
 
-//Captcha Function
+// Captcha Function
 let captcha;
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -72,49 +72,46 @@ document.addEventListener("DOMContentLoaded", function () {
         // If not logged in, show the captcha section
         document.getElementById("captchaSection").style.display = 'block';
         document.getElementById("successfulLogin").style.display = 'none';
+
+        // Call generate function to load captcha
+        generate();
     }
 });
 
 function generate() {
+    // Clear old input
+    document.getElementById("submit").value = "";
 
-	// Clear old input
-	document.getElementById("submit").value = "";
+    // Access the element to store the generated captcha
+    captcha = document.getElementById("image");
+    let uniquechar = "";
 
-	// Access the element to store
-	// the generated captcha
-	captcha = document.getElementById("image");
-	let uniquechar = "";
+    const randomchar = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-	const randomchar =
-"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    // Generate captcha for length of 5 with random character
+    for (let i = 0; i < 5; i++) {
+        uniquechar += randomchar.charAt(
+            Math.random() * randomchar.length
+        );
+    }
 
-	// Generate captcha for length of
-	// 5 with random character
-	for (let i = 1; i < 5; i++) {
-		uniquechar += randomchar.charAt(
-			Math.random() * randomchar.length)
-	}
-
-	// Store generated input
-	captcha.innerHTML = uniquechar;
+    // Store generated input
+    captcha.innerHTML = uniquechar;
 }
 
 function printmsg() {
-	const usr_input = document
-		.getElementById("submit").value;
+    const usr_input = document.getElementById("submit").value;
 
-	// Check whether the input is equal
-	// to generated captcha or not
-	if (usr_input == captcha.innerHTML) {
-		document.getElementById("key").innerHTML = "Matched";
+    // Check whether the input is equal to the generated captcha or not
+    if (usr_input == captcha.innerHTML) {
+        document.getElementById("key").innerHTML = "Matched";
         // Store the successful login state in local storage
         localStorage.setItem('isLoggedIn', 'true');
         document.getElementById("captchaSection").style.display = 'none';
         document.getElementById("successfulLogin").style.display = 'block';
-		generate();
-	}
-	else {
-		document.getElementById("key").innerHTML = "not Matched";
         generate();
-	}
+    } else {
+        document.getElementById("key").innerHTML = "not Matched";
+        generate();
+    }
 }

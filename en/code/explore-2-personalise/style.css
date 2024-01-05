@@ -294,6 +294,11 @@ input{
 .inline{
 	display:inline-block;
 }
+
+#captchaSection {
+  text-align: center;
+}
+
 #btn{
 	box-shadow: 5px 5px 5px grey;
 	color: aqua;

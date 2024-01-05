@@ -291,9 +291,15 @@ input{
   height: 30px;
   width: auto;
 }
+
 .inline{
 	display:inline-block;
 }
+
+#captchaSection {
+  text-align: center;
+}
+
 #btn{
 	box-shadow: 5px 5px 5px grey;
 	color: aqua;
@@ -340,40 +346,3 @@ input{
   }
   
 }
-
-
-/* Dark Mode Styles */
-body.dark-mode {
-    background: linear-gradient(to right, #d2cfcf, #bcb7bc);
-    color: #ffffff;
-  }
-  
-.dark-mode .navigation {
-    background-color: #8e6363;
-  }
-  
-.dark-mode .year {
-    color: #fff;
-  }
-  
-
-.dark-mode .logo {
-    color: rgb(243, 239, 239);
-    
-}
-
-.dark-mode .navbar a {
-  color: #ffffff;
-}
-
-.dark-mode .header {
-  background: #e6b400;
-}
-
-.dark-mode footer {
-  background-color: #e6b400;;
-  color: #ffffff;
-
-}
-
-
