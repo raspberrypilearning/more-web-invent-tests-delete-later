@@ -56,7 +56,7 @@
                         <option value="Shapeshift">Shapeshift</option>
                         <option value="Super speed">Speedstar</option>
                         <option value="Magic">Magic</option>
-                        <option value="Time hop">Time hop</option>
+                        <option value="Time hop">Time travel</option>
                     </select>
                     <button onclick="changeDisplay('class')">Submit</button>
                 </div>
@@ -67,7 +67,7 @@
             </div>
             <div class="description-section">
                 <div id="description-input">
-                    <h2>Appearance: </h2>
+                    <label>Appearance: </label> 
                     <textarea id="description">Type the appearance of your comic character here....</textarea>
                     <button onclick="changeDisplay('description')">Submit</button>
                 </div>
@@ -76,18 +76,23 @@
                     <span id="description-span"></span>
                 </div>
             </div>
-            <div class="background-section">
-                <div id="background-input">
-                    <h2>Background:</h2>
-                    <textarea id="background">Type your background here....</textarea>
-                    <button onclick="changeDisplay('background')">Submit</button>
+            <div class="origin-section">
+                <div id="origin-input">
+                    <label>Origin Story: </label> 
+                    <textarea id="origin">Type your origin story here....</textarea>
+                    <button onclick="changeDisplay('origin')">Submit</button>
                 </div>
-                <div id="background-display">
-                    <h2>Background:</h2>
-                    <span id="background-span"></span>
+                <div id="origin-display">
+                    <h2>Origin Story:</h2>
+                    <span id="origin-span"></span>
                 </div>
             </div>
         </section>
+        <section id="summary-section">
+            <h2>Superhero Summary</h2>
+            <p id="summary-paragraph"></p>
+        </section>
+
     </main>
 
     <footer>

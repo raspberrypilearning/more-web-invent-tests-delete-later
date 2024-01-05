@@ -16,6 +16,7 @@ body {
     padding: 20px;
     min-height: 72.5%;
     width: 100%;
+    box-sizing: border-box;
   }
 
 .character-sheet {
@@ -29,7 +30,7 @@ body {
 .name-section,
 .class-section,
 .description-section,
-.background-section {
+.origin-section {
     width: 100%;
     box-sizing: border-box;
 }
@@ -62,20 +63,51 @@ button:hover {
 
 
 #description-input,
-#background-input {
-    flex: 1; 
+#origin-input, #class-input {
+    width: 500px; 
     box-sizing: border-box;
 }
 
 #description-input textarea,
-#background-input textarea {
+#origin-input textarea {
     height: 100px; 
 }
 
 #description-display,
-#background-display {
+#origin-display {
     flex: 1; 
     box-sizing: border-box;
+}
+
+#name-span, 
+#class-span,
+#description-span,
+#origin-span {
+  margin: 22px;
+  font-size: 18px;
+}
+
+
+#summary-section {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  display: none;
+  justify-self: center;
+}
+
+#summary-section h2 {
+  text-align: center;
+  color: #333;
+}
+
+#summary-section p {
+  text-align: center;
+  margin-top: 10px;
+  color: #007BFF;
 }
 
 .header {
