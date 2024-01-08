@@ -135,3 +135,10 @@ function printmsg() {
         generate();
     }
 }
+// Function to logout and clear local storage
+function logout() {
+    localStorage.removeItem('isLoggedIn');
+    document.getElementById("captchaSection").style.display = 'block';
+    document.getElementById("successfulLogin").style.display = 'none';
+    generate();
+}
