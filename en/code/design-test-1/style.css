@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Cute+Font&display=swap');
+
 body {
-    background-color: #ECE8EF;
-    color: #000500;
+    background-color: #008000;
+    color: white;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -8,21 +10,8 @@ body {
     min-height: 100vh; /* Make the content fill the page so the footer is at the bottom */
     display: flex;
     flex-direction: column;
-}
-
-body.liverpool {
-  background-color: red;
-  color: white;
-}
-
-body .man-city {
-  background-color: lightblue;
-  color: white;
-}
-
-body .tottenham {
-  background-color: white;
-  color: black;
+    font-family: "Cute Font", sans-serif;
+    font-size: 32px;
 }
 
 main {
@@ -48,16 +37,17 @@ h1 {
 }
 
 nav {
-  height: 60px;
-  display: flex;
-  justify-content: center;
-  background-color: lightblue;
-  position: sticky;
-  top: 0;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    background-color: #93bf85;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 .dropdown {
-  width: 140px;
+  width: 220px;
   font-size: large;
   padding: 10px;
   display: flex;
@@ -68,8 +58,9 @@ button {
   width: 100%;
   border: none;
   background-color: white;
-  font-size: inherit;
+  font-size: 32px;
   min-height: 100%;
+    font-family: inherit;
 }
 
 #dropdown-options {
@@ -87,22 +78,186 @@ button {
   flex-direction: column;
 }
 
-.content-holder {
-  display: grid;
-  grid-template-rows: repeat(3, 100vh 20vh);
+#instruction {
+    height: 100vh;
+
+    h1 {
+        font-size: 62px;
+    }
 }
 
-.team-1 {
+#content-holder {
+  display: none;
+  grid-template-rows: repeat(3, 100vh auto);
+}
+
+#slot-1 {
   grid-row-start: 2;
   grid-row-end: 3;
 }
 
-.team-2 {
+.results {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 5px 5px black;
+    padding: 5px;
+    font-size: 32px;
+}
+
+.results.liverpool {
+    background-color: rgba(0, 178, 169, 0.8);
+    
+    h1 {
+        color: #F6EB61;
+    }
+}
+
+.results.man-city {
+    background-color: rgba(28, 44, 91, 0.8);
+
+    h1 {
+        color: rgb(255, 198, 89);
+    }
+}
+
+.results.tottenham {
+    background-color: rgba(19, 34, 87, 0.8);
+    
+    h1 {
+        color: white;
+    }
+}
+
+#slot-2 {
   grid-row-start: 4;
   grid-row-end: 5;
 }
 
-.team-3 {
+.news {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 5px 5px black;
+    padding: 5px;
+    font-size: 32px;
+}
+
+.news.liverpool {
+    background-color: rgba(246, 235, 97, 0.8);
+    color: black;
+    h1 {
+        color: rgb(0, 178, 169);
+    }
+}
+
+.news.man-city {
+    background-color: rgba(255, 198, 89, 0.8);
+    color: black;
+    h1 {
+        color: rgb(28, 44, 91);
+    }
+}
+
+.news.tottenham {
+    background-color: rgba(19, 31, 83, 0.8);
+    color: white;
+    h1 {
+        color: white;
+    }
+}
+
+#slot-3 {
   grid-row-start: 6;
   grid-row-end: 7;
+}
+
+.players {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 5px 5px black;
+    padding: 5px;
+    font-size: 32px;
+    transform: translateY(-70%);
+}
+
+.players.liverpool {
+    background-color: rgba(0, 178, 169, 0.8);
+
+    h1 {
+        color: #F6EB61;
+    }
+}
+
+.players.man-city {
+    background-color: rgba(236, 51, 37, 0.8);
+    color: white;
+    h1 {
+        color: rgb(255, 198, 89);
+    }
+}
+
+
+.players.tottenham {
+    background-color: rgba(19, 31, 83, 0.8);
+    color: white;
+    h1 {
+        color: white;
+    }
+}
+
+.liverpool {
+  background-color: #C8102E;
+  color: white;
+}
+
+.man-city {
+  background-color: #6CABDD;
+  color: white;
+}
+
+.tottenham {
+  background-color: white;
+  color: white;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+    animation: appear 2s ease;
+}
+
+@keyframes grow {
+  from {
+      transform: scale(0);
+      opacity: 0;
+  }
+  to {
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+
+.grow-in {
+    animation: grow 2s ease;
+}
+
+@keyframes rise {
+  from {
+      transform: translateY(20%);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(-70%);
+      opacity: 1;
+  }
+}
+
+.rise-in {
+    animation: rise 2s ease;
 }

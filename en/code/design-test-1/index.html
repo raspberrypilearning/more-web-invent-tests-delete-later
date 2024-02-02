@@ -12,26 +12,29 @@
         <div class="dropdown">
           <button onclick="openDropdown()">Choose Team &#9207;</button>
           <div id="dropdown-options">
-            <a href="" onclick="option1()">Liverpool</a>
-            <a href="">Manchester City</a>
-            <a href="">Tottenham</a>
+            <button onclick="option1()">Liverpool</button>
+            <button onclick="option2()">Manchester City</button>
+            <button onclick="option3()">Tottenham</button>
           </div>
         </div>
       </nav>
     </header>
     <main>
-      <section class="content-holder">
-        <div class="team-1">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <section id="instruction">
+        <h1>Select a team!</h1>
+      </section>
+      <section id="content-holder">
+        <div id="slot-1" class="results">
+
         </div>
-        <div class="team-2">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <div id="slot-2" class="news">
+
         </div>
-        <div class="team-3">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <div id="slot-3" class="players">
+          
         </div>
       </section>
     </main>
-  <script src="scripts.js"></script>
+    <script src="scripts.js"></script>
   </body>
 </html>
