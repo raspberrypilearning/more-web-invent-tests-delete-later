@@ -1,7 +1,6 @@
 const dropdown = document.getElementById("dropdown-options");
 
 function openDropdown(){
-    console.log("clicked");
     if (dropdown.classList.contains("open")){
         dropdown.classList.remove("open");
     } else {
@@ -12,6 +11,7 @@ function openDropdown(){
 const body = document.querySelector("body");
 const instruction = document.querySelector("#instruction");
 const content = document.querySelector("#content-holder");
+const title = document.querySelector("#title");
 const slot1 = document.querySelector("#slot-1");
 const slot2 = document.querySelector("#slot-2");
 const slot3 = document.querySelector("#slot-3");
@@ -30,6 +30,8 @@ function option1(){
     clear();
     
     body.classList.add("liverpool");
+
+    title.innerHTML = "Liverpool FC";
     
     slot1.classList.add("liverpool");
     slot1.innerHTML = "<h1>Recent results</h1> \n \
@@ -54,7 +56,10 @@ function option1(){
 
 function option2(){
     clear();
+    
     body.classList.add("man-city");
+
+    title.innerHTML = "Manchester City";
 
     slot1.classList.add("man-city");
     slot1.innerHTML = "<h1>Recent results</h1> \n \
@@ -79,7 +84,10 @@ function option2(){
 
 function option3(){
     clear();
+    
     body.classList.add("tottenham");
+
+    title.innerHTML = "Tottenham Hotspur";
 
     slot1.classList.add("tottenham");
     slot1.innerHTML = "<h1>Recent results</h1> \n \
@@ -122,6 +130,7 @@ const slot3observer = new IntersectionObserver((entries) => {
     if (entries[0].isIntersecting) {
       console.log("news"); // Show learners the Console?
       slot3.classList.add("rise-in");
+      slot3observer.unobserve(entries[0].target);
     }
 });
 slot3observer.observe(slot3);

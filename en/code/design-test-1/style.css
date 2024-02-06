@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Cute+Font&display=swap');
 
+* {
+    transition: .4s ease-in-out;
+}
+
 body {
     background-color: #008000;
     color: white;
@@ -12,6 +16,7 @@ body {
     flex-direction: column;
     font-family: "Cute Font", sans-serif;
     font-size: 32px;
+    transition: 
 }
 
 main {
@@ -76,6 +81,7 @@ button {
 #dropdown-options.open {
   display: flex;
   flex-direction: column;
+  z-index: 1;
 }
 
 #instruction {
@@ -89,6 +95,11 @@ button {
 #content-holder {
   display: none;
   grid-template-rows: repeat(3, 100vh auto);
+}
+
+#content-holder > h1 {
+    font-size: 3em;
+    margin: auto;
 }
 
 #slot-1 {
@@ -216,7 +227,7 @@ button {
 
 .tottenham {
   background-color: white;
-  color: white;
+  color: black;
 }
 
 @keyframes appear {
