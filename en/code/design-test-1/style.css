@@ -113,6 +113,7 @@ button {
     box-shadow: 5px 5px black;
     padding: 5px;
     font-size: 32px;
+    opacity: 0;
 }
 
 .results.liverpool {
@@ -150,6 +151,7 @@ button {
     box-shadow: 5px 5px black;
     padding: 5px;
     font-size: 32px;
+    opacity: 0;
 }
 
 .news.liverpool {
@@ -188,6 +190,7 @@ button {
     padding: 5px;
     font-size: 32px;
     transform: translateY(-70%);
+    opacity: 0;
 }
 
 .players.liverpool {
@@ -240,6 +243,7 @@ button {
 }
 
 .fade-in {
+    opacity: 1;
     animation: appear 2s ease;
 }
 
@@ -255,6 +259,7 @@ button {
 }
 
 .grow-in {
+    opacity: 1;
     animation: grow 2s ease;
 }
 
@@ -270,5 +275,6 @@ button {
 }
 
 .rise-in {
+    opacity: 1;
     animation: rise 2s ease;
 }
