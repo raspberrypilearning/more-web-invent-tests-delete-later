@@ -54,8 +54,9 @@ nav {
 .dropdown {
   width: 220px;
   font-size: large;
-  padding: 10px;
+  padding: 5px;
   display: flex;
+  min-height: 100%;
   flex-direction: column;
 }
 
@@ -64,8 +65,7 @@ button {
   border: none;
   background-color: white;
   font-size: 32px;
-  min-height: 100%;
-    font-family: inherit;
+  font-family: inherit;
 }
 
 #dropdown-options {
@@ -75,6 +75,7 @@ button {
   color: white;
   min-width: 140px;
   text-align: center;
+    gap: 10px
   z-index: 1;
 }
 
@@ -134,7 +135,7 @@ button {
 
 .results.tottenham {
     background-color: rgba(19, 34, 87, 0.8);
-    
+    color: white;
     h1 {
         color: white;
     }
