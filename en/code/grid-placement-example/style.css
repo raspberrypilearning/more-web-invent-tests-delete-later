@@ -1,0 +1,17 @@
+body {
+  background-color: rgb(200, 200, 200);
+  height: 100vh;
+}
+
+section {
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  width: 95%;
+}
+
+#grid-container {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+}
